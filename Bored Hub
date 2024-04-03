@@ -41,9 +41,17 @@ local Section = Tab:AddSection({
 
 
 Tab:AddButton({
-	Name = "Button!",
+	Name = "Crossbow Mod",
 	Callback = function()
-      		print("button pressed")
+      		while true do
+		    game.Players.LocalPlayer.Character.Crossbow.Configuration.ShotCooldown = 0
+wait()
+game.Players.LocalPlayer.Character.Crossbow.Configuration.GravityFactor = 0
+wait()
+game.Players.LocalPlayer.Character.Crossbow.Configuration.BulletSpeed = 1000
+wait()
+game.Players.LocalPlayer.Character.Crossbow.CurrentAmmo = 100
+				end
   	end    
 })
 
