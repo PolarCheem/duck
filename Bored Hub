@@ -55,7 +55,7 @@ Tab1:AddSlider({
 	Increment = 1,
 	ValueName = "bananas",
 	Callback = function(Value)
-		LocalPlayer.Character.Humanoid.WalkSpeed(Value)
+		LocalPlayer.Character.Humanoid.WalkSpeed = Value
 	end    
 })
 
