@@ -1,6 +1,6 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 
-local Window1 = OrionLib:MakeWindow({Name = "Testing", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+local Window1 = OrionLib:MakeWindow({Name = "13's Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
 --[[
 Name = <string> - The name of the UI.
@@ -26,6 +26,18 @@ Icon = <string> - The icon of the tab.
 PremiumOnly = <bool> - Makes the tab accessible to Sirus Premium users only.
 ]]
 
+local Tab2 = Window1:MakeTab({
+    Name = "Main",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+--[[
+Name = <string> - The name of the tab.
+Icon = <string> - The icon of the tab.
+PremiumOnly = <bool> - Makes the tab accessible to Sirus Premium users only.
+]]
+
 local Section1 = Tab1:AddSection({
     Name = "Universal"
 })
@@ -33,6 +45,15 @@ local Section1 = Tab1:AddSection({
 --[[
 Name = <string> - The name of the section.
 ]]
+
+local Section2 = Tab2:AddSection({
+    Name = "OP"
+})
+
+--[[
+Name = <string> - The name of the section.
+]]
+
 
 Tab1:AddButton({
 	Name = "Hitbox Expander",
@@ -102,6 +123,26 @@ Increment = <number> - How much the slider will change value when dragging.
 Default = <number> - The default value of the slider.
 ValueName = <string> - The text after the value number.
 Callback = <function> - The function of the slider.
+]]
+
+Tab:AddButton({
+	Name = "OP Crossbow",
+	Callback = function()
+      		local op = true
+while op do
+game.Players.LocalPlayer.Character.Crossbow.Configuration.ShotCooldown = 0
+wait()
+game.Players.LocalPlayer.Character.Crossbow.Configuration.GravityFactor = 0
+wait()
+game.Players.LocalPlayer.Character.Crossbow.Configuration.BulletSpeed = 1000
+wait()
+game.Players.LocalPlayer.Character.Crossbow.CurrentAmmo = 100
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
 ]]
 
 OrionLib:Init()
