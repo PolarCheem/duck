@@ -50,12 +50,12 @@ Tab1:AddSlider({
 	Name = "Walkspeed",
 	Min = 0,
 	Max = 500,
-	Default = 50,
+	Default = 24,
 	Color = Color3.fromRGB(255,255,255),
 	Increment = 1,
-	ValueName = "bananas",
+	ValueName = "speed",
 	Callback = function(Value)
-		LocalPlayer.Character.Humanoid.WalkSpeed = Value
+		LocalPlayer.Character.Humanoid.WalkSpeed = (Value)
 	end    
 })
 
