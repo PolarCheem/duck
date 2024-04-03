@@ -14,29 +14,18 @@ Icon = <string> - URL to the image you want displayed on the window.
 CloseCallback = <function> - Function to execute when the window is closed.
 ]]
 
-local Tab1 = Window1:MakeTab({
-    Name = "Player",
-    Icon = "rbxassetid://4483345998",
-    PremiumOnly = false
-})
-
---[[
-Name = <string> - The name of the tab.
-Icon = <string> - The icon of the tab.
-PremiumOnly = <bool> - Makes the tab accessible to Sirus Premium users only.
-]]
-
-local Tab2 = Window1:MakeTab({
+local Tab = Window1:MakeTab({
     Name = "Main",
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
 })
 
---[[
-Name = <string> - The name of the tab.
-Icon = <string> - The icon of the tab.
-PremiumOnly = <bool> - Makes the tab accessible to Sirus Premium users only.
-]]
+
+local Tab1 = Window1:MakeTab({
+    Name = "Player",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
 
 local Section1 = Tab1:AddSection({
     Name = "Universal"
@@ -46,7 +35,7 @@ local Section1 = Tab1:AddSection({
 Name = <string> - The name of the section.
 ]]
 
-local Section2 = Tab2:AddSection({
+local Section = Tab:AddSection({
     Name = "OP"
 })
 
@@ -125,8 +114,8 @@ ValueName = <string> - The text after the value number.
 Callback = <function> - The function of the slider.
 ]]
 
-Tab2:AddButton({
-	Name = "Button!",
+Tab:AddButton({
+	Name = "Op Crossbow",
 	Callback = function()
       		print("button pressed")
   	end    
