@@ -36,13 +36,16 @@ Name = <string> - The name of the section.
 ]]
 
 local Section = Tab:AddSection({
-    Name = "OP"
+	Name = "Mods"
 })
 
---[[
-Name = <string> - The name of the section.
-]]
 
+Tab:AddButton({
+	Name = "Button!",
+	Callback = function()
+      		print("button pressed")
+  	end    
+})
 
 Tab1:AddButton({
 	Name = "Hitbox Expander",
@@ -51,22 +54,12 @@ Tab1:AddButton({
   	end    
 })
 
---[[
-Name = <string> - The name of the button.
-Callback = <function> - The function of the button.
-]]
-
 Tab1:AddButton({
     Name = "InfiniteYield",
     Callback = function()
               loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
       end    
 })
-
---[[
-Name = <string> - The name of the button.
-Callback = <function> - The function of the button.
-]]
 
 Tab1:AddSlider({
 	Name = "Walkspeed",
@@ -81,15 +74,6 @@ Tab1:AddSlider({
 	end    
 })
 
---[[
-Name = <string> - The name of the slider.
-Min = <number> - The minimal value of the slider.
-Max = <number> - The maxium value of the slider.
-Increment = <number> - How much the slider will change value when dragging.
-Default = <number> - The default value of the slider.
-ValueName = <string> - The text after the value number.
-Callback = <function> - The function of the slider.
-]]
 
 Tab1:AddSlider({
 	Name = "JumpPower",
@@ -104,25 +88,4 @@ Tab1:AddSlider({
 	end    
 })
 
---[[
-Name = <string> - The name of the slider.
-Min = <number> - The minimal value of the slider.
-Max = <number> - The maxium value of the slider.
-Increment = <number> - How much the slider will change value when dragging.
-Default = <number> - The default value of the slider.
-ValueName = <string> - The text after the value number.
-Callback = <function> - The function of the slider.
-]]
-
-Tab:AddButton({
-	Name = "Op Crossbow",
-	Callback = function()
-      		print("button pressed")
-  	end    
-})
-
---[[
-Name = <string> - The name of the button.
-Callback = <function> - The function of the button.
-]]
 OrionLib:Init()
