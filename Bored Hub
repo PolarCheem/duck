@@ -125,7 +125,7 @@ ValueName = <string> - The text after the value number.
 Callback = <function> - The function of the slider.
 ]]
 
-Tab:AddButton({
+Tab2:AddButton({
 	Name = "OP Crossbow",
 	Callback = function()
       		local op = true
@@ -137,6 +137,7 @@ wait()
 game.Players.LocalPlayer.Character.Crossbow.Configuration.BulletSpeed = 1000
 wait()
 game.Players.LocalPlayer.Character.Crossbow.CurrentAmmo = 100
+end
   	end    
 })
 
