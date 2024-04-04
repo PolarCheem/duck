@@ -95,8 +95,10 @@ end
 if game.PlaceId == 12781634259 then
 
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-
 local Window = OrionLib:MakeWindow({Name = "13 - Head Tap", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+local Football = game.Workspace.Football
+local PFootball = game.Workspace.PracticeFootball
+
 
 local Tab = Window:MakeTab({
 	Name = "Main",
@@ -124,9 +126,6 @@ Tab:AddButton({
       		print("button pressed")
   	end    
 })
-
-local Football = game.Workspace.Football
-local PFootball = game.Workspace.PracticeFootball
 
 
 OrionLib:Init()
