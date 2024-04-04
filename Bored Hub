@@ -144,19 +144,19 @@ end
 if game.PlaceId == 15479868981 then
 
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "13 - Touch Down Sim", HidePremium = false, SaveConfig = true, ConfigFolder = "13Hub"})
+local Window = OrionLib:MakeWindow({Name = "13 - TouchDown Sim", HidePremium = false, SaveConfig = true, ConfigFolder = "13Hub"})
 
-local MTab = Window:MakeTab({
+local Tab = Window:MakeTab({
 	Name = "Main",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
 
-local MSection = Tab:AddSection({
+local Section = Tab:AddSection({
 	Name = "Main"
 })
 
-MTab:AddToggle({
+Tab:AddToggle({
 	Name = "1 Defender Inf Wins",
 	Default = false,
 	Callback = function(Value)
@@ -183,7 +183,7 @@ game:GetService("ReplicatedStorage"):WaitForChild("PushHandler_TouchdownFunc"):I
 
 
 
-local Wins1 = true
+local Wins1 = false
 
 OrionLib:Init()
 
