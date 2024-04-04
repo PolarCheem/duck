@@ -92,11 +92,40 @@ OrionLib:Init()
 
 end
 
-if game.PlaceId == a then
+if game.PlaceId == 12781634259 then
 
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 
-local Window1 = OrionLib:MakeWindow({Name = "13 - ", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+local Window1 = OrionLib:MakeWindow({Name = "13 - Head Tap", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+
+local MainTab = Window1:MakeTab({
+	Name = "Main",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local PlayerTab = Window1:MakeTab({
+	Name = "Player",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local MainSection = MainTab:AddSection({
+	Name = "Main"
+})
+
+local PlayerSection = PlayerTab:AddSection({
+	Name = "Universal"
+})
+
+PlayerTab:AddButton({
+	Name = "Catch Expander",
+	Callback = function()
+      		game.Players.LocalPlayer.Character.HumanoidRootPart.Size = 8, 8, 8
+  	end    
+})
+
+
 
 OrionLib:Init()
 
