@@ -35,13 +35,13 @@ Tab:AddButton({
 	Name = "Crossbow Mod",
 	Callback = function()
       		while true do
-		    game.Workspace.A_poze.Crossbow.Configuration.ShotCooldown = 0
+		    game.Players.LocalPlayer.Crossbow.Configuration.ShotCooldown = 0
 wait()
-game.Workspace.A_poze.Crossbow.Configuration.GravityFactor = 0
+game.Players.LocalPlayer.Crossbow.Configuration.GravityFactor = 0
 wait()
-game.Workspace.A_poze.Crossbow.Configuration.BulletSpeed = 1000
+game.Players.LocalPlayer.Crossbow.Configuration.BulletSpeed = 1000
 wait()
-game.Workspace.A_poze.Crossbow.CurrentAmmo = 100
+game.Players.LocalPlayer.Crossbow.CurrentAmmo = 100
 				end
   	end    
 })
@@ -69,7 +69,7 @@ Tab1:AddSlider({
 	Increment = 1,
 	ValueName = "speed",
 	Callback = function(Value)
-game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Vector3.new(Value)
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
 	end    
 })
 
@@ -83,7 +83,7 @@ Tab1:AddSlider({
 	Increment = 1,
 	ValueName = "power",
 	Callback = function(Value)
-game.Players.LocaPlayer.Character.Humanoid.JumpPower = Vector3.new(Value)
+game.Players.LocaPlayer.Character.Humanoid.JumpPower = Value
 	end    
 })
 
@@ -208,7 +208,7 @@ Tab1:AddSlider({
 	Increment = 1,
 	ValueName = "speed",
 	Callback = function(Value)
-game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Vector3.new(Value)
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
 	end    
 })
 
@@ -221,7 +221,7 @@ Tab1:AddSlider({
 	Increment = 1,
 	ValueName = "power",
 	Callback = function(Value)
-game.Players.LocaPlayer.Character.Humanoid.JumpPower = Vector3.new(Value)
+game.Players.LocaPlayer.Character.Humanoid.JumpPower = Value
 	end    
 })
 
