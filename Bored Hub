@@ -119,12 +119,15 @@ local PlayerSection = PlayerTab:AddSection({
 })
 
 local Football = game.Workspace.Football
+loca PFootball = game.Workspace.PracticeFootball
 
 MainTab:AddButton({
 	Name = "Football Expander",
 	Callback = function()
 		while football do
-      		Football.size = 20,20,20
+      		Football.size = 20, 20, 20
+					wait()
+					PFootball.size = 20, 20, 20
 				end
   	end    
 })
