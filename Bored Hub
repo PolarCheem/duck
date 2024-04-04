@@ -156,6 +156,8 @@ local Section = Tab:AddSection({
 	Name = "Main"
 })
 
+local Wins1 = false
+
 Tab:AddToggle({
 	Name = "1 Defender Inf Wins",
 	Default = false,
@@ -183,7 +185,7 @@ game:GetService("ReplicatedStorage"):WaitForChild("PushHandler_TouchdownFunc"):I
 
 
 
-local Wins1 = false
+
 
 OrionLib:Init()
 
