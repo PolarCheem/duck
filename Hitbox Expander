@@ -246,9 +246,10 @@ local Section = Tab:AddSection({
 })
 
 local RedOrb = false
+local GemOrb = false
 
 Tab:AddToggle({
-	Name = "Auto Red Orb",
+	Name = "Auto Red City",
 	Default = false,
 	Callback = function(Value)
 		RedOrb = Value
@@ -265,7 +266,23 @@ wait()
 	end    
 })
 
+Tab:AddToggle({
+	Name = "Auto Gem City",
+	Default = false,
+	Callback = function(Value)
+		RedOrb = Value
+		while GemOrb do
+		local args = {
+    [1] = "collectOrb",
+    [2] = "Gem",
+    [3] = "City"
+}
 
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer(unpack(args))
+wait()
+		end
+	end    
+})
 
 
 
