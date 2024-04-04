@@ -11,6 +11,13 @@ local Section = Tab:AddSection({
 	Name = "Universal"
 })
 
+Tab:AddButton({
+	Name = "Copy Game ID",
+	Callback = function()
+      		setcliboard(tostring(gameId))
+  	end    
+})
+
 Tab:AddSlider({
 	Name = "Hitbox Expander",
 	Min = 0,
@@ -48,8 +55,33 @@ end)
 	end    
 })
 
+Tab:AddSlider({
+	Name = "Walkspeed",
+	Min = 0,
+	Max = 500,
+	Default = 24,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "speed",
+	Callback = function(Value)
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Vector3.new(Value)
+	end    
+})
 
+Tab:AddSlider({
+	Name = "JumpPower",
+	Min = 0,
+	Max = 500,
+	Default = 20,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "power",
+	Callback = function(Value)
+game.Players.LocaPlayer.Character.Humanoid.JumpPower = Vector3.new(Value)
+	end    
+})
 
+local gameId = game.PlaceId
 
 OrionLib:Init()
 
