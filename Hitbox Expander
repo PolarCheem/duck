@@ -1,21 +1,275 @@
-game:GetService('RunService').RenderStepped:Connect(function()
-    if IsDisabled then
-        local localPlayer = game:GetService('Players').LocalPlayer
-        if not localPlayer then return end
-        
-        local localPlayerTeam = localPlayer.Team
-        
-        for _, player in ipairs(game:GetService('Players'):GetPlayers()) do
-            if player ~= localPlayer and (not IsTeamCheckEnabled or player.Team ~= localPlayerTeam) then
-                local humanoidRootPart = player.Character and player.Character:FindFirstChild("HumanoidRootPart")
-                if humanoidRootPart then
-                    humanoidRootPart.Size = Vector3.new(HeadSize, HeadSize, HeadSize)
-                    humanoidRootPart.Transparency = 0.7
-                    humanoidRootPart.BrickColor = BrickColor.new("Really blue")
-                    humanoidRootPart.Material = Enum.Material.Neon
-                    humanoidRootPart.CanCollide = false
-                end
-            end
-        end
-    end
-end)
+if game.PlaceId == 16440734455 then
+
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window1 = OrionLib:MakeWindow({Name = "13 - Fortline", HidePremium = false, SaveConfig = true, ConfigFolder = "13Hub"})
+
+
+
+local Tab = Window1:MakeTab({
+    Name = "Main",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+
+local Tab1 = Window1:MakeTab({
+    Name = "Player",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+local Section1 = Tab1:AddSection({
+    Name = "Universal"
+})
+
+--[[
+Name = <string> - The name of the section.
+]]
+
+local Section = Tab:AddSection({
+	Name = "Mods"
+})
+
+
+Tab:AddButton({
+	Name = "Crossbow Mod",
+	Callback = function()
+      		while true do
+		    game.Workspace.A_poze.Crossbow.Configuration.ShotCooldown = 0
+wait()
+game.Workspace.A_poze.Crossbow.Configuration.GravityFactor = 0
+wait()
+game.Workspace.A_poze.Crossbow.Configuration.BulletSpeed = 1000
+wait()
+game.Workspace.A_poze.Crossbow.CurrentAmmo = 100
+				end
+  	end    
+})
+
+Tab1:AddButton({
+	Name = "Hitbox Expander",
+	Callback = function()
+      		loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-Update-script-hitbox-9326"))()
+  	end    
+})
+
+Tab1:AddButton({
+    Name = "InfiniteYield",
+    Callback = function()
+              loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+      end    
+})
+
+Tab1:AddSlider({
+	Name = "Walkspeed",
+	Min = 0,
+	Max = 500,
+	Default = 24,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "speed",
+	Callback = function(Value)
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Vector3.new(Value)
+	end    
+})
+
+
+Tab1:AddSlider({
+	Name = "JumpPower",
+	Min = 0,
+	Max = 500,
+	Default = 20,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "power",
+	Callback = function(Value)
+game.Players.LocaPlayer.Character.Humanoid.JumpPower = Vector3.new(Value)
+	end    
+})
+
+OrionLib:Init()
+
+end
+
+if game.PlaceId == 12781634259 then
+
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "13 - Head Tap", HidePremium = false, SaveConfig = true, ConfigFolder = "13Hub"})
+
+local Tab = Window:MakeTab({
+	Name = "Main",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Tab1 = Window:MakeTab({
+	Name = "Player",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Section = Tab:AddSection({
+	Name = "Main"
+})
+
+local Section1 = Tab1:AddSection({
+	Name = "Universal"
+})
+
+Tab:AddButton({
+	Name = "Football hitbox",
+	Callback = function()
+			while fb do
+			Football.Size = Vector3.new(30, 30, 30)
+		wait()
+			PFootball.Size = Vector3.new(30, 30, 30)
+		wait()
+		Football.Transparency = 0.7
+		wait()
+		PFootball.Transparency = 0.7
+		wait()
+			end
+  	end    
+})
+
+
+local fb = true
+local Football = Workspace.Football.Football
+local PFootball = Workspace.PracticeFootball.Football
+
+OrionLib:Init()
+
+end
+
+if game.PlaceId == 15479868981 then
+
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "13 - TouchDown Sim", HidePremium = false, SaveConfig = true, ConfigFolder = "13Hub"})
+
+local Tab = Window:MakeTab({
+	Name = "Main",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Tab1 = Window:MakeTab({
+	Name = "Player",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Section = Tab:AddSection({
+	Name = "Main"
+})
+
+local Section1 = Tab1:AddSection({
+	Name = "Universal"
+})
+
+local Wins1 = false
+
+Tab:AddToggle({
+	Name = "1 Defender Inf Wins",
+	Default = false,
+	Callback = function(Value)
+		local Wins1 = Value
+		
+		while Wins1 do
+		local args = {
+    [1] = game:GetService("ReplicatedStorage"):WaitForChild("Defenders"):WaitForChild("Defender1"),
+    [2] = game:GetService("ReplicatedStorage"):WaitForChild("Fields"):WaitForChild("Field_01"),
+    [3] = false
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("PushHandler_AddNpcFunc"):InvokeServer(unpack(args))
+	wait()
+		local args = {
+    [1] = 1272790022
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("PushHandler_TouchdownFunc"):InvokeServer(unpack(args))
+		end
+	end    
+})
+
+Tab1:AddButton({
+    Name = "InfiniteYield",
+    Callback = function()
+              loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+      end    
+})
+
+Tab1:AddSlider({
+	Name = "Walkspeed",
+	Min = 0,
+	Max = 500,
+	Default = 24,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "speed",
+	Callback = function(Value)
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Vector3.new(Value)
+	end    
+})
+
+Tab1:AddSlider({
+	Name = "JumpPower",
+	Min = 0,
+	Max = 500,
+	Default = 20,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "power",
+	Callback = function(Value)
+game.Players.LocaPlayer.Character.Humanoid.JumpPower = Vector3.new(Value)
+	end    
+})
+
+
+OrionLib:Init()
+
+end
+
+if game.PlaceId == 3101667897 then
+
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "13 - Legends Of Speed ⚡", HidePremium = false, SaveConfig = true, ConfigFolder = "13Hub"})
+
+local Tab = Window:MakeTab({
+	Name = "Main",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Section = Tab:AddSection({
+	Name = "Main"
+})
+
+local RedOrb = false
+
+Tab:AddToggle({
+	Name = "Auto Red Orb",
+	Default = false,
+	Callback = function(Value)
+		RedOrb = Value
+		while RedOrb do
+		local args = {
+    [1] = "collectOrb",
+    [2] = "Red Orb",
+    [3] = "City"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer(unpack(args))
+wait()
+		end
+	end    
+})
+
+
+
+
+
+
+OrionLib:Init()
+
+end
