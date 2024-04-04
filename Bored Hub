@@ -125,9 +125,9 @@ MainTab:AddButton({
 	Name = "Football Expander",
 	Callback = function()
 		while football do
-      		Football.size = 20, 20, 20
+      		Football.Size = 20, 20, 20
 					wait()
-					PFootball.size = 20, 20, 20
+					PFootball.Size = 20, 20, 20
 				end
   	end    
 })
