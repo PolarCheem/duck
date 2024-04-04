@@ -341,3 +341,43 @@ wait()
 OrionLib:Init()
 
 end
+
+if game.PlaceId == 155615604 then
+
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "13 - Prison Life", HidePremium = false, SaveConfig = true, ConfigFolder = "13Hub"})
+
+local Tab = Window:MakeTab({
+	Name = "Main",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Section = Tab:AddSection({
+	Name = "Weapons"
+})
+
+Tab:AddDropdown({
+	Name = "Give Item",
+	Default = "none",
+	Options = {"none", "M9", "Remington 870", "AK-47"},
+	Callback = function(Value)
+		local A_1 = game:GetService("Workspace")["Prison_ITEMS"].giver[Value].ITEMPICKUP
+        local Event = game:GetService("Workspace").Remote.ItemHandler
+        Event:InvokeServer(A_1)
+	end    
+})
+
+
+
+
+
+
+
+
+
+
+
+OrionLib:Init()
+
+end
