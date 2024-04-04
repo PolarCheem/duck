@@ -122,25 +122,10 @@ local Football = game.Workspace.Football
 local PFootball = game.Workspace.PracticeFootball
 
 Tab:AddButton({
-	Name = "Football Expander",
+	Name = "Button!",
 	Callback = function()
-		while football do
-      		Football.Size = 20, 20, 20
-					wait()
-					PFootball.Size = 20, 20, 20
-				end
+      		print("button pressed")
   	end    
 })
-
-Tab1:AddButton({
-	Name = "Catch Expander",
-	Callback = function()
-      		game.Players.LocalPlayer.Character.HumanoidRootPart.Size = 8, 8, 8
-  	end    
-})
-
-
-
-OrionLib:Init()
 
 end
