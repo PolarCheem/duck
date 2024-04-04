@@ -129,8 +129,8 @@ Tab:AddButton({
 })
 
 local fb = true
-local Football = game.Workspace.Football
-local PFootball = game.Workspace.PracticeFootball
+local Football = game.Workspace.Football.Football
+local PFootball = game.Workspace.PracticeFootball.Football
 
 OrionLib:Init()
 
