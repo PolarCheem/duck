@@ -14,7 +14,7 @@ local Section = Tab:AddSection({
 Tab:AddButton({
 	Name = "Copy Game ID",
 	Callback = function()
-      		setcliboard(tostring(gameId))
+      		setclipboard(tostring(gameId))
   	end    
 })
 
