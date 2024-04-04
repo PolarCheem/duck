@@ -1,18 +1,10 @@
+if game.PlaceId == 16440734455 then
+
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 
-local Window1 = OrionLib:MakeWindow({Name = "13's Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+local Window1 = OrionLib:MakeWindow({Name = "13 - Fortline", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
---[[
-Name = <string> - The name of the UI.
-HidePremium = <bool> - Whether or not the user details shows Premium status or not.
-SaveConfig = <bool> - Toggles the config saving in the UI.
-ConfigFolder = <string> - The name of the folder where the configs are saved.
-IntroEnabled = <bool> - Whether or not to show the intro animation.
-IntroText = <string> - Text to show in the intro animation.
-IntroIcon = <string> - URL to the image you want to use in the intro animation.
-Icon = <string> - URL to the image you want displayed on the window.
-CloseCallback = <function> - Function to execute when the window is closed.
-]]
+
 
 local Tab = Window1:MakeTab({
     Name = "Main",
@@ -97,3 +89,15 @@ Tab1:AddSlider({
 })
 
 OrionLib:Init()
+
+end
+
+if game.PlaceId == a then
+
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+
+local Window1 = OrionLib:MakeWindow({Name = "13 - ", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+
+OrionLib:Init()
+
+end
