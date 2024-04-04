@@ -1,8 +1,7 @@
 if game.PlaceId == 16440734455 then
 
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-
-local Window1 = OrionLib:MakeWindow({Name = "13 - Fortline", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+local Window1 = OrionLib:MakeWindow({Name = "13 - Fortline", HidePremium = false, SaveConfig = true, ConfigFolder = "13Hub"})
 
 
 
@@ -95,7 +94,7 @@ end
 if game.PlaceId == 12781634259 then
 
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "13 - Head Tap", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = "13 - Head Tap", HidePremium = false, SaveConfig = true, ConfigFolder = "13Hub"})
 
 local Tab = Window:MakeTab({
 	Name = "Main",
@@ -137,6 +136,18 @@ Tab:AddButton({
 local fb = true
 local Football = Workspace.Football.Football
 local PFootball = Workspace.PracticeFootball.Football
+
+OrionLib:Init()
+
+end
+
+if game.PlaceId == game then
+
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "13 - ", HidePremium = false, SaveConfig = true, ConfigFolder = "13Hub"})
+
+
+
 
 OrionLib:Init()
 
