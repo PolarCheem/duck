@@ -118,30 +118,25 @@ local Section1 = Tab1:AddSection({
 })
 
 Tab:AddButton({
-	Name = "Football Size",
+	Name = "Football hitbox",
 	Callback = function()
 			while fb do
 			Football.Size = Vector3.new(30, 30, 30)
 		wait()
 			PFootball.Size = Vector3.new(30, 30, 30)
+		wait()
+		Football.Transparency = 0.7
+		wait()
+		PFootball.Transparency = 0.7
+		wait()
 			end
   	end    
 })
 
-Tab:AddButton({
-	Name = "Football Visible Hitbox",
-	Callback = function()
-      		while fb2 do
-				Football.Transparency = 0.70
-		wait()
-			PFootball.Transparency = 0.70
-  	end    
-})
 
-local fb2 = true
 local fb = true
-local Football = game.Workspace.Football.Football
-local PFootball = game.Workspace.PracticeFootball.Football
+local Football = Workspace.Football.Football
+local PFootball = Workspace.PracticeFootball.Football
 
 OrionLib:Init()
 
