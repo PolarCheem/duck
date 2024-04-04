@@ -96,32 +96,32 @@ if game.PlaceId == 12781634259 then
 
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 
-local Window1 = OrionLib:MakeWindow({Name = "13 - Head Tap", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = "13 - Head Tap", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
-local MainTab = Window1:MakeTab({
+local Tab = Window:MakeTab({
 	Name = "Main",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
 
-local PlayerTab = Window1:MakeTab({
+local Tab1 = Window:MakeTab({
 	Name = "Player",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
 
-local MainSection = MainTab:AddSection({
+local Section = Tab:AddSection({
 	Name = "Main"
 })
 
-local PlayerSection = PlayerTab:AddSection({
+local Section1 = Tab1:AddSection({
 	Name = "Universal"
 })
 
 local Football = game.Workspace.Football
 local PFootball = game.Workspace.PracticeFootball
 
-MainTab:AddButton({
+Tab:AddButton({
 	Name = "Football Expander",
 	Callback = function()
 		while football do
@@ -132,7 +132,7 @@ MainTab:AddButton({
   	end    
 })
 
-PlayerTab:AddButton({
+Tab1:AddButton({
 	Name = "Catch Expander",
 	Callback = function()
       		game.Players.LocalPlayer.Character.HumanoidRootPart.Size = 8, 8, 8
