@@ -51,7 +51,7 @@ end)
 
 
 
-
+OrionLib:Init()
 
 if game.PlaceId == 16440734455 then
 
