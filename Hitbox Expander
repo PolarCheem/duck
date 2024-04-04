@@ -247,6 +247,7 @@ local Section = Tab:AddSection({
 
 local RedOrb = false
 local GemOrb = false
+local Crystal = true
 
 Tab:AddToggle({
 	Name = "Auto Red Orb",
@@ -318,15 +319,18 @@ wait()
 
 Tab:AddDropdown({
 	Name = "Auto Open Crystals",
-	Default = "Inferno Crystal",
-	Options = {"Inferno Crystal", "2"},
+	Default = "none",
+	Options = {"none", "Inferno Crystal"},
 	Callback = function(Value)
+		while Crystal do
 		local args = {
     [1] = "openCrystal",
     [2] = Value
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("openCrystalRemote"):InvokeServer(unpack(args))
+wait()
+		end
 	end    
 })
 
