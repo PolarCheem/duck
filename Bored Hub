@@ -14,6 +14,8 @@ local Section = Tab:AddSection({
 Tab:AddButton({
 	Name = "Copy Game ID",
 	Callback = function()
+					local gameId = game.PlaceId
+
       		setclipboard(tostring(gameId))
   	end    
 })
@@ -80,8 +82,6 @@ Tab:AddSlider({
 game.Players.LocaPlayer.Character.Humanoid.JumpPower = Vector3.new(Value)
 	end    
 })
-
-local gameId = game.PlaceId
 
 OrionLib:Init()
 
