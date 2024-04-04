@@ -69,7 +69,7 @@ Tab1:AddSlider({
 	Increment = 1,
 	ValueName = "speed",
 	Callback = function(Value)
-		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Vector3.new(Value)
 	end    
 })
 
@@ -83,7 +83,7 @@ Tab1:AddSlider({
 	Increment = 1,
 	ValueName = "power",
 	Callback = function(Value)
-		game.Players.LocaPlayer.Character.Humanoid.JumpPower = Value
+game.Players.LocaPlayer.Character.Humanoid.JumpPower = Vector3.new(Value)
 	end    
 })
 
@@ -152,8 +152,18 @@ local Tab = Window:MakeTab({
 	PremiumOnly = false
 })
 
+local Tab1 = Window:MakeTab({
+	Name = "Player",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
 local Section = Tab:AddSection({
 	Name = "Main"
+})
+
+local Section1 = Tab1:AddSection({
+	Name = "Universal"
 })
 
 local Wins1 = false
@@ -182,9 +192,38 @@ game:GetService("ReplicatedStorage"):WaitForChild("PushHandler_TouchdownFunc"):I
 	end    
 })
 
+Tab1:AddButton({
+    Name = "InfiniteYield",
+    Callback = function()
+              loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+      end    
+})
 
+Tab1:AddSlider({
+	Name = "Walkspeed",
+	Min = 0,
+	Max = 500,
+	Default = 24,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "speed",
+	Callback = function(Value)
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Vector3.new(Value)
+	end    
+})
 
-
+Tab1:AddSlider({
+	Name = "JumpPower",
+	Min = 0,
+	Max = 500,
+	Default = 20,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "power",
+	Callback = function(Value)
+game.Players.LocaPlayer.Character.Humanoid.JumpPower = Vector3.new(Value)
+	end    
+})
 
 
 OrionLib:Init()
