@@ -121,9 +121,9 @@ Tab:AddButton({
 	Name = "Football Size",
 	Callback = function()
 			while fb do
-			Football.Size = 20, 20, 20
+			Football.Size = 30, 30, 30
 		wait()
-			PFootball.Size = 20, 20, 20
+			PFootball.Size = 30, 30, 30
 			end
   	end    
 })
