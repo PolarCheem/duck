@@ -131,13 +131,14 @@ Tab:AddButton({
 Tab:AddButton({
 	Name = "Football Visible Hitbox",
 	Callback = function()
-      		while fb do
+      		while fb2 do
 				Football.Transparency = 0.70
 		wait()
 			PFootball.Transparency = 0.70
   	end    
 })
 
+local fb2 = true
 local fb = true
 local Football = game.Workspace.Football.Football
 local PFootball = game.Workspace.PracticeFootball.Football
