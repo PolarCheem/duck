@@ -270,7 +270,7 @@ Tab:AddToggle({
 	Name = "Auto Gem City",
 	Default = false,
 	Callback = function(Value)
-		RedOrb = Value
+		GemOrb = Value
 		while GemOrb do
 		local args = {
     [1] = "collectOrb",
