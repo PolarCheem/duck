@@ -1,4 +1,4 @@
-wait(8)
+
 
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local Window = OrionLib:MakeWindow({Name = "13 - Universal", HidePremium = false, SaveConfig = true, ConfigFolder = "13Hub"})
