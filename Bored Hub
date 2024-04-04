@@ -1,3 +1,34 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "13 - Universal", HidePremium = false, SaveConfig = true, ConfigFolder = "13Hub"})
+
+local Tab = Window:MakeTab({
+	Name = "Universal",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Section = Tab:AddSection({
+	Name = "Universal"
+})
+
+Tab:AddSlider({
+	Name = "Hitbox Expander",
+	Min = 0,
+	Max = 50,
+	Default = 20,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "size",
+	Callback = function(Value)
+		print(Value)
+	end    
+})
+
+
+
+
+
+
 if game.PlaceId == 16440734455 then
 
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
