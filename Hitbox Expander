@@ -368,9 +368,13 @@ Tab:AddDropdown({
 	Default = "none",
 	Options = {"none", "M9", "Remington 870", "AK-47"},
 	Callback = function(Value)
-		local A_1 = game:GetService("Workspace")["Prison_ITEMS"].giver[Value].ITEMPICKUP
-        local Event = game:GetService("Workspace").Remote.ItemHandler
-        Event:InvokeServer(A_1)
+		local args = {
+    [1] = workspace:WaitForChild("Prison_ITEMS"):WaitForChild("giver"):WaitForChild(Value):WaitForChild("ITEMPICKUP")
+}
+
+workspace:WaitForChild("Remote"):WaitForChild("ItemHandler"):InvokeServer(unpack(args))
+
+       
 	end    
 })
 
