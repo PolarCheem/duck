@@ -316,6 +316,21 @@ wait()
 	end    
 })
 
+Tab:AddDropdown({
+	Name = "Auto Open Crystals",
+	Default = "Inferno Crystal",
+	Options = {"Inferno Crystal", "2"},
+	Callback = function(Value)
+		local args = {
+    [1] = "openCrystal",
+    [2] = Value
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("openCrystalRemote"):InvokeServer(unpack(args))
+	end    
+})
+
+
 
 
 
