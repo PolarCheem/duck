@@ -119,7 +119,7 @@ local PlayerSection = PlayerTab:AddSection({
 })
 
 local Football = game.Workspace.Football
-loca PFootball = game.Workspace.PracticeFootball
+local PFootball = game.Workspace.PracticeFootball
 
 MainTab:AddButton({
 	Name = "Football Expander",
