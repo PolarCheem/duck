@@ -121,9 +121,9 @@ Tab:AddButton({
 	Name = "Football Size",
 	Callback = function()
 			while fb do
-			Football.Size = 30, 30, 30
+			Football.Size = Vector3.new(30, 30, 30)
 		wait()
-			PFootball.Size = 30, 30, 30
+			PFootball.Size = Vector3.new(30, 30, 30)
 			end
   	end    
 })
