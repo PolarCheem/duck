@@ -118,12 +118,18 @@ local Section1 = Tab1:AddSection({
 })
 
 Tab:AddButton({
-	Name = "Button!",
+	Name = "Football Size",
 	Callback = function()
-      		print("button pressed")
+      		local fb = true
+			while fb do
+			Football.Size = 20, 20, 20
+		wait()
+			PFootball.Size = 20, 20, 20
+			end
   	end    
 })
 
+l
 local Football = game.Workspace.Football
 local PFootball = game.Workspace.PracticeFootball
 
