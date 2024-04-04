@@ -132,9 +132,9 @@ Tab:AddButton({
 	Name = "Football Visible Hitbox",
 	Callback = function()
       		while fb do
-				Football.transparency = 0.70
+				Football.Transparency = 0.70
 		wait()
-			PFootball.transparency = 0.70
+			PFootball.Transparency = 0.70
   	end    
 })
 
