@@ -1,23 +1,6 @@
-getgenv().green = true
+getgenv().expand = true
 
-
-while green do
-local args = {
-    [1] = "Accuracy",
-    [2] = 1,
-    [3] = 1,
-    [4] = true
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("ServerEvent"):FireServer(unpack(args))
-wait()
-local args = {
-    [1] = "Accuracy",
-    [2] = 1,
-    [3] = 1,
-    [4] = "Layup"
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("ServerEvent"):FireServer(unpack(args))
-wait()
+while expand do
+game.Workspace.Football.Size = Vector3.new(30, 30, 30)
+wait(1)
 end
