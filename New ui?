@@ -1,0 +1,54 @@
+local Mercury = loadstring(game:HttpGet("https://raw.githubusercontent.com/deeeity/mercury-lib/master/src.lua"))()
+local GUI = Mercury:Create{
+    Name = "13 - Fortline",
+    Size = UDim2.fromOffset(600, 400),
+    Theme = Mercury.Themes.Dark,
+    Link = "https://github.com/deeeity/mercury-lib"
+}
+
+local Tab = GUI:Tab{
+	Name = "Main",
+	Icon = "rbxassetid://8569322835"
+}
+
+Tab:Slider{
+	Name = "Hitbox Expander",
+	Default = 20,
+	Min = 0,
+	Max = 100,
+	Callback = function() 
+local HeadSize = Callback
+local IsDisabled = true
+local IsTeamCheckEnabled = true
+
+game:GetService('RunService').RenderStepped:Connect(function()
+    if IsDisabled then
+        local localPlayer = game:GetService('Players').LocalPlayer
+        if not localPlayer then return end
+        
+        local localPlayerTeam = localPlayer.Team
+        
+        for _, player in ipairs(game:GetService('Players'):GetPlayers()) do
+            if player ~= localPlayer and (not IsTeamCheckEnabled or player.Team ~= localPlayerTeam) then
+                local humanoidRootPart = player.Character and player.Character:FindFirstChild("HumanoidRootPart")
+                if humanoidRootPart then
+                    humanoidRootPart.Size = Vector3.new(HeadSize, HeadSize, HeadSize)
+                    humanoidRootPart.Transparency = 0.7
+                    humanoidRootPart.BrickColor = BrickColor.new("Really blue")
+                    humanoidRootPart.Material = Enum.Material.Neon
+                    humanoidRootPart.CanCollide = false
+                end
+            end
+        end
+    end
+end)
+end
+}
+
+Tab:Button{
+	Name = "Op crossbow",
+	Description = makes ur crossbow op,
+	Callback = function() 
+	game.Players.LocalPlayer.Character.Crossbow.Configurations.CurrentAmmo = 30
+end
+}
