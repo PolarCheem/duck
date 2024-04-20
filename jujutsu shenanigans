@@ -1,0 +1,25 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "13 - JS", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+
+local Tab = Window:MakeTab({
+	Name = "Main",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Section = Tab:AddSection({
+	Name = "Main"
+})
+
+Tab:AddBind({
+	Name = "BlackFlash",
+	Default = Enum.KeyCode.Z,
+	Hold = false,
+	Callback = function()
+		game:GetService("UserInputService").InputBegan:Connect(function(input, gameProcessedEvent)
+  if input.KeyCode == Enum.KeyCode.Callback and not gameProcessedEvent then
+    MyFunction()
+  end
+end)
+	end    
+})
