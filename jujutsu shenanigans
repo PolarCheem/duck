@@ -16,20 +16,22 @@ Tab:AddBind({
 	Default = Enum.KeyCode.Z,
 	Hold = false,
 	Callback = function()
-		game:GetService("UserInputService").InputBegan:Connect(function(input, gameProcessedEvent)
-  if input.KeyCode == Enum.KeyCode.Callback and not gameProcessedEvent then
-    local args = {
-    [1] = false
-}
+		-- define the function to be called
+local function MyFunction()
+  print("Keybind activated!")
+end
 
-game:GetService("ReplicatedStorage"):WaitForChild("Knit"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("DivergentFistService"):WaitForChild("RE"):WaitForChild("Activated"):FireServer(unpack(args))
-wait(0.30)
-local args = {
-    [1] = false
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Knit"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("DivergentFistService"):WaitForChild("RE"):WaitForChild("Activated"):FireServer(unpack(args))
+-- bind the function to the "E" key
+game:GetService("UserInputService").InputBegan:Connect(function(input, gameProcessedEvent)
+  if input.KeyCode == Enum.KeyCode.E and not gameProcessedEvent then
+    MyFunction()
   end
 end)
 	end    
 })
+
+
+
+
+
+OrionLib
