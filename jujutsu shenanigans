@@ -46,4 +46,4 @@ end)
 
 
 
-OrionLib
+OrionLib:Init()
