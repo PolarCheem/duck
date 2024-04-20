@@ -23,7 +23,7 @@ end
 
 -- bind the function to the "E" key
 game:GetService("UserInputService").InputBegan:Connect(function(input, gameProcessedEvent)
-  if input.KeyCode == Enum.KeyCode.E and not gameProcessedEvent then
+  if input.KeyCode == Callback and not gameProcessedEvent then
     MyFunction()
   end
 end)
