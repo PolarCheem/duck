@@ -23,10 +23,11 @@ Tab:AddToggle({
 		local 5 = game:GetService("Workspace").dungeon.room5.enemyFolder
 		local 6 = game:GetService("Workspace").dungeon.room6.enemyFolder
 		local 7 = game:GetService("Workspace").dungeon.room7.enemyFolder
+		local player = game.Players.Character.LocalPlayer
 		local mob1 = game:GetService("Workspace").dungeon.room1.enemyFolder.Sandstone Soldier
 
 	while auto do
-
+player.HumanoidRootPart.CFrame = CFrame.new(mob1.HumanoidRootPart.CFrame)
 
 wait()
 end
