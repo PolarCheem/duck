@@ -11,6 +11,36 @@ local Section = Tab:AddSection({
 	Name = "Main"
 })
 
+
+
+Tab:AddButton({
+	Name = "Black Flash",
+	Callback = function()
+      		local args = {
+    [1] = false
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Knit"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("DivergentFistService"):WaitForChild("RE"):WaitForChild("Activated"):FireServer(unpack(args))
+wait(0.30)
+local args = {
+    [1] = false
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Knit"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("DivergentFistService"):WaitForChild("RE"):WaitForChild("Activated"):FireServer(unpack(args))
+	  	end
+	end    
+})
+
+Tab:AddButton({
+	Name = "World Slash",
+	Callback = function()
+      		print("button pressed")
+  	end    
+})
+
+
+
+
 Tab:AddBind({
 	Name = "BlackFlash",
 	Default = Enum.KeyCode.Z,
@@ -41,8 +71,6 @@ game:GetService("UserInputService").InputBegan:Connect(function(input, gameProce
 end)
 	end    
 })
-
-
 
 
 
