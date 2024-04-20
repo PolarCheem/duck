@@ -18,7 +18,17 @@ Tab:AddBind({
 	Callback = function()
 		game:GetService("UserInputService").InputBegan:Connect(function(input, gameProcessedEvent)
   if input.KeyCode == Enum.KeyCode.Callback and not gameProcessedEvent then
-    MyFunction()
+    local args = {
+    [1] = false
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Knit"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("DivergentFistService"):WaitForChild("RE"):WaitForChild("Activated"):FireServer(unpack(args))
+wait(0.30)
+local args = {
+    [1] = false
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Knit"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("DivergentFistService"):WaitForChild("RE"):WaitForChild("Activated"):FireServer(unpack(args))
   end
 end)
 	end    
