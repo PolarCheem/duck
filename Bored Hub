@@ -329,8 +329,23 @@ local Tab2 = Window:MakeTab({
 	PremiumOnly = false
 })
 
-local Section2 = Tab2:AddSection({
+local Section = Tab2:AddSection({
 	Name = "Main"
+})
+
+Tab2:AddSlider({
+	Name = "Jumppower",
+	Min = 0,
+	Max = 100,
+	Default = 10,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "power",
+	Callback = function(Value)
+		char = game.Players.LocalPlayer.Character
+
+char.Humanoid.Jumppower = Value
+	end    
 })
 
 Tab2:AddSlider({
@@ -348,20 +363,7 @@ char.Humanoid.Walkspeed = Value
 	end    
 })
 
-Tab2:AddSlider({
-	Name = "Jumppowet",
-	Min = 0,
-	Max = 100,
-	Default = 10,
-	Color = Color3.fromRGB(255,255,255),
-	Increment = 1,
-	ValueName = "power",
-	Callback = function(Value)
-		char = game.Players.LocalPlayer.Character
 
-char.Humanoid.Jumppower = Value
-	end    
-})
 
 
 
