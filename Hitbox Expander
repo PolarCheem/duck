@@ -363,7 +363,20 @@ Tab:AddToggle({
 	Callback = function(Value)
 		while anti do
 		wait()
-	
+	local function destroyKillScript()
+  local player = game.Players.LocalPlayer
+  local character = player.Character
+  
+  if character then
+    local killScript = character:FindFirstChild("KillScript")
+    if killScript then
+      killScript:Destroy()
+      print("Destroyed KillScript in character.") -- Optional message
+    end
+  end
+end
+
+destroyKillScript() -- Call the function immediately
 			end
 	end    
 })
