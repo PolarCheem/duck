@@ -1,5 +1,19 @@
+--code script
 local args = {
-    [1] = "a"
+    [1] = "sorry4thebugs"
 }
 
 game:GetService("ReplicatedStorage").Remotes.RedeemCode:InvokeServer(unpack(args))
+wait(2.5)
+local args = {
+    [1] = "220MVisitsArrancarTerrorism"
+}
+
+game:GetService("ReplicatedStorage").Remotes.RedeemCode:InvokeServer(unpack(args))
+
+
+
+
+
+
+
