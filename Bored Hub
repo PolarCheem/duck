@@ -291,7 +291,7 @@ local Section = Tab:AddSection({
 Tab:AddButton({
 	Name = "Auto Finish",
 	Callback = function()
-      		local New_CFrame = game:GetService("Workspace").tower.sections.finish.FinishGlow.CFrame
+      		local New_CFrame = game:GetService("Workspace").tower.sections.finish.exit.ParticleBrick.CFrame
 
 local ts = game:GetService('TweenService')
 local char = game.Players.LocalPlayer.Character
