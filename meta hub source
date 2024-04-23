@@ -769,7 +769,7 @@ local passTypeSwitch = {
     ["Mag"] = "Dime"
 }
 
-local passType = "Mag"
+local passType = "Jump"
 
 --[[do
     local WhitelistedMousePart = Instance.new("Part")
