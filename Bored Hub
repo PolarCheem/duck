@@ -273,7 +273,7 @@ wait()
 OrionLib:Init()
 end
 
-if game.PlaceId == 16440734455 then
+if game.PlaceId == 1962086868 then
 
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local Window = OrionLib:MakeWindow({Name = "13 - TOH", HidePremium = false, SaveConfig = true, ConfigFolder = "13Hub"})
