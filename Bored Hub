@@ -323,7 +323,45 @@ destroyKillScript()
   	end    
 })
 
+local Tab2 = Window:MakeTab({
+	Name = "Player",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
 
+local Section2 = Tab2:AddSection({
+	Name = "Main"
+})
+
+Tab2:AddSlider({
+	Name = "Walkspeed",
+	Min = 0,
+	Max = 100,
+	Default = 24,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "speed",
+	Callback = function(Value)
+		local char = game.Players.LocalPlayer.Character
+
+char.Humanoid.Walkspeed = Value
+	end    
+})
+
+Tab2:AddSlider({
+	Name = "Jumppowet",
+	Min = 0,
+	Max = 100,
+	Default = 10,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "power",
+	Callback = function(Value)
+		char = game.Players.LocalPlayer.Character
+
+char.Humanoid.Jumppower = Value
+	end    
+})
 
 
 
