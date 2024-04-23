@@ -288,12 +288,10 @@ local Section = Tab:AddSection({
 	Name = "Main"
 })
 
-Tab:AddToggle({
+Tab:AddButton({
 	Name = "Auto Finish",
-	Default = false,
-	Callback = function(Value)
-		while auto do 
-local New_CFrame = game:GetService("Workspace").tower.sections.finish.exit.ParticleBrick.CFrame
+	Callback = function()
+      		local New_CFrame = game:GetService("Workspace").tower.sections.finish.exit.ParticleBrick.CFrame
 
 local ts = game:GetService('TweenService')
 local char = game.Players.LocalPlayer.Character
@@ -302,9 +300,28 @@ local part = char.HumanoidRootPart
 local ti = TweenInfo.new(1, Enum.EasingStyle.Linear)
 local tp = {CFrame = New_CFrame}
 ts:Create(part, ti, tp):Play()
-wait(3)
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Anti Death",
+	Callback = function()
+      		while true do
+				local function destroyKillScript()
+  local player = game.Players.LocalPlayer
+  local character = player.Character
+  
+  if character then
+    local killScript = character:FindFirstChild("KillScript")
+    if killScript then
+      killScript:Destroy()
+      print("Destroyed KillScript in character.") -- Optional message
+    end
+  end
 end
-	end    
+
+destroyKillScript()
+  	end    
 })
 
 
@@ -313,8 +330,6 @@ end
 
 
 
-
-getgenv().auto = Value
 
 OrionLib:Init()
 end
