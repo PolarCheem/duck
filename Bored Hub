@@ -372,3 +372,14 @@ char.Humanoid.Walkspeed = Value
 
 OrionLib:Init()
 end
+
+if game.PlaceId == 8204899140 then
+
+loadstring(game:HttpGet("https://github.com/PolarCheem/duck/blob/main/meta%20hub%20source"))()
+end
+
+if game.PlaceId == 8206123457 then
+
+loadstring(game:HttpGet("https://github.com/PolarCheem/duck/blob/main/meta%20hub%20source"))()
+end
+
