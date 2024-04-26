@@ -1,0 +1,18 @@
+true = false
+getgenv().ez = true
+
+
+while ez do
+
+local args = {
+    [1] = 88,
+    [2] = Vector3.new(-0.06121501699090004, -1.1348077058792114, -0.16250084340572357),
+    [3] = "Shoot",
+    [5] = false,
+    [6] = true
+}
+
+game:GetService("ReplicatedStorage").Remotes.Ball:FireServer(unpack(args))
+
+wait()
+end
