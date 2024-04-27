@@ -1,0 +1,8 @@
+while true do
+local args = {
+    [3] = "Dribble"
+}
+
+game:GetService("ReplicatedStorage").Remotes.Ball:FireServer(unpack(args))
+wait()
+end
