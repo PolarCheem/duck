@@ -1,8 +1,7 @@
-while true do
-local args = {
-    [3] = "Dribble"
-}
+local player = game.Players.LocalPlayer.Character
 
-game:GetService("ReplicatedStorage").Remotes.Ball:FireServer(unpack(args))
-wait()
+while true do
+player.HumanoidRootPart.RootAttachment.Hitbox.Size = Vector3.new20, 20, 20)
+player.HumanoidRootPart.RootAttachment.Hitbox.Transparency = 0.8
+wait(5)
 end
