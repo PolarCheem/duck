@@ -2,6 +2,6 @@ local Size2 = 35
 		local player = game:GetService("Players").LocalPlayer
 while true do
 player.Character.HumanoidRootPart.RootAttachment.Hitbox.Size = Vector3.new(Size2, Size2, Size2)
-player.Character.HumanoidRootPart.RootAttachment.Hitbox.Transparency = 1
+player.Character.HumanoidRootPart.RootAttachment.Hitbox.Transparency = 0.95
 wait(0)
 	end
