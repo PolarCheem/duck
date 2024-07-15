@@ -1,8 +1,7 @@
 local TSize = 20
-local football = game:GetService("Workspace").Football
+local football = game:GetService("Players").LocalPlayer.Character
 
 while true do
-football.Size = Vector3.new(TSize, TSize, TSize)
-football.Transparency = 0.8
-wait()
+football.GAMEOBJECTS.b97f62e5-6d39-4796-9710-05581827b8e5 = Vector3.new(TSize, TSize, TSize)
+football.GAMEOBJECTS.b97f62e5-6d39-4796-9710-05581827b8e5 = 0.8
 end
