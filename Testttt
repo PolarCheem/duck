@@ -8,5 +8,5 @@ wait(0)
 
 while true do
 game:GetService("ReplicatedStorage").Remotes.TouchedLocal:FireServer()
-wait(0.5)
+wait(0.1)
 end
