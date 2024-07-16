@@ -1,11 +1,6 @@
 local player = game:GetService("Players").LocalPlayer
-while true do
-player.Character.HumanoidRootPart.RootAttachment.Hitbox.Size = Vector3.new(35, 25, 25)
-player.Character.HumanoidRootPart.RootAttachment.Hitbox.Transparency = 0.85
-wait(0)
-	end
 
 while true do
-game:GetService("ReplicatedStorage").Remotes.TouchedLocal:FireServer()
-wait(0.1)
+player.Charactee.Humanoid.Walkspeed = 23
+wait(0)
 end
