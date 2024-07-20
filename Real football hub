@@ -25,6 +25,14 @@ wait(0)
 end
 end)
 
+tab.newButton("Anti Votekick", "Disables votr kick", function()
+    while true do
+		game.Players.LocalPlayer.PlayerGui.Main.voteKick:Destroy()
+		game.Players.LocalPlayer.PlayerGui.Main.VoteKick:Destroy()
+wait(0)
+end
+end)
+
 tab2.newSlider("LegReach", "Changes your leg reach", 50, false, function(num)
     local Size = num
 local player = game.Players.LocalPlayer
