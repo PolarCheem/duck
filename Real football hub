@@ -7,6 +7,7 @@ local tab = DrRayLibrary.newTab("Bypass / Misc", "ImageIdHere")
 local tab2 = DrRayLibrary.newTab("Boot Reach", "ImageIdHere")
 local tab3 = DrRayLibrary.newTab("Hand Reach", "ImageIdHere")
 local tab4 = DrRayLibrary.newTab("Head Reach", "ImageIdHere")
+local tab5 = DrRayLibrary.newTab("Torso Reach", "ImageIdHere")
 
 tab.newButton("AntiCheat Bypass", "Bypasses the anti cheat", function()
     while true do
@@ -86,6 +87,18 @@ end)
 
 tab4.newButton("Head transparent", "Makes heads transparency 1", function()
     game.Players.LocalPlayer.Character.Head.Transparency = 1
+end)
+
+tab5.newSlider("Torso Reach", "Epic slider", 100, false, function(num)
+    local Size = num
+game.Players.LocalPlayer.Character.UpperTorso.Size = Vector3.new(Size, Size, Size)
+game.Players.LocalPlayer.Character.LowerTorso.Size = Vector3.new(Size, Size, Size)
+end)
+
+tab5.newButton("Torso Transparent", "Prints Hello!", function()
+    game.Players.LocalPlayer.Character.UpperTorso.Transparency = 1
+game.Players.LocalPlayer.Character.LowerTorso.Transparency = 1
+
 end)
 
 end
