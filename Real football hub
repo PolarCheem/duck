@@ -3,8 +3,10 @@ if game.PlaceId == 14004668761 then
 local DrRayLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/DrRay-UI-Library/main/DrRay.lua"))()
 local window = DrRayLibrary:Load("RF24 - 2010ono", "Default")
 
-local tab = DrRayLibrary.newTab("Bypass", "ImageIdHere")
-local tab2 = DrRayLibrary.newTab("Reach", "ImageIdHere")
+local tab = DrRayLibrary.newTab("Bypass / Misc", "ImageIdHere")
+local tab2 = DrRayLibrary.newTab("Boot Reach", "ImageIdHere")
+local tab3 = DrRayLibrary.newTab("Hand Reach", "ImageIdHere")
+local tab4 = DrRayLibrary.newTab("Head Reach", "ImageIdHere")
 
 tab.newButton("AntiCheat Bypass", "Bypasses the anti cheat", function()
     while true do
@@ -18,7 +20,6 @@ end)
 
 tab2.newSlider("LegReach", "Changes your leg reach", 50, false, function(num)
     local Size = num
-while true do
 local player = game.Players.LocalPlayer
 local character = player.Character or player.CharacterAdded:Wait()
 
@@ -30,8 +31,6 @@ character["LeftBoot"].CanCollide = false
 
 character["RightBoot"].Massless = true
 character["LeftBoot"].Massless = true
-wait(0)
-end
 end)
 
 tab2.newButton("Legs Transparency", "Makes the legs invisible", function()
@@ -45,7 +44,7 @@ wait(0)
 end
 end)
 
-tab2.newSlider("GK Reach", "Increases hand", 20, false, function(num)
+tab3.newSlider("GK Reach", "Increases hand", 20, false, function(num)
     local Size = num
 
 game.Players.LocalPlayer.Character["RightHand"].Size = Vector3.new(Size, Size, Size)
@@ -56,9 +55,22 @@ game.Players.LocalPlayer.Character["RightHand"].Size = Vector3.new(Size, Size, S
         game.Players.LocalPlayer.Character["LeftHand"].Massless = true
 end)
 
-tab2.newButton("GK Transparency", "Makes it invis", function()
+tab3.newButton("GK Transparency", "Makes it invis", function()
     game.Players.LocalPlayer.Character["RightHand"].Transparency = 1
 game.Players.LocalPlayer.Character["LeftHand"].Transparency = 1
+end)
+
+tab4.newSlider("Head Reach", "Head reach", 50, false, function(num)
+    local Size = num
+		local player = game.Players.LocalPlayer.Character
+
+player.Head.Massless = true
+player.Head.CanCollide = false
+player.Head.Size = Vector3.new(Size, Size, Size)
+end)
+
+tab4.newButton("Head transparent", "Makes heads transparency 1", function()
+    game.Players.LocalPlayer.Character.Head.Transparency = 1
 end)
 
 end
