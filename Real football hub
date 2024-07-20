@@ -1,0 +1,44 @@
+local DrRayLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/DrRay-UI-Library/main/DrRay.lua"))()
+local window = DrRayLibrary:Load("RF24 - 2010ono", "Default")
+
+local tab = DrRayLibrary.newTab("Bypass", "ImageIdHere")
+local tab2 = DrRayLibrary.newTab("Reach", "ImageIdHere")
+
+tab.newButton("AntiCheat Bypass", "Bypasses the anti cheat", function()
+    while true do
+
+game.ReplicatedStorage.KAIEvent:Destroy()
+game.ReplicatedStorage.Shared:Destroy()
+game.ReplicatedStorage.Network.NetworkBindableEvent:Destroy()
+wait(0)
+end
+end)
+
+tab2.newSlider("LegReach", "Changes your leg reach", 50, false, function(num)
+    local Size = num
+while true do
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+
+character["RightBoot"].Size = Vector3.new(Size, Size, Size)
+character["LeftBoot"].Size = Vector3.new(Size, Size, Size)
+
+character["RightBoot"].CanCollide = false
+character["LeftBoot"].CanCollide = false
+
+character["RightBoot"].Massless = true
+character["LeftBoot"].Massless = true
+wait(0)
+end
+end)
+
+tab2.newButton("Legs Transparency", "Makes the legs invisible", function()
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+
+while true do
+    character["RightBoot"].Transparency = 1
+		character["LeftBoot"].Transparency = 1
+wait(0)
+end
+end)
