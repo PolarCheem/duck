@@ -42,3 +42,20 @@ while true do
 wait(0)
 end
 end)
+
+tab2.newSlider("GK Reach", "Increases hand", 20, false, function(num)
+    local Size = num
+
+game.Players.LocalPlayer.Character["RightHand"].Size = Vector3.new(Size, Size, Size)
+        game.Players.LocalPlayer.Character["LeftHand"].Size = Vector3.new(Sizs, Size, Size)
+        game.Players.LocalPlayer.Character["RightHand"].CanCollide = false
+        game.Players.LocalPlayer.Character["LeftHand"].CanCollide = false
+        game.Players.LocalPlayer.Character["RightHand"].Massless = true
+        game.Players.LocalPlayer.Character["LeftHand"].Massless = true
+end)
+
+tab2.newButton("GK Transparency", "Makes it invis", function()
+    game.Players.LocalPlayer.Character["RightHand"].Transparency = 1
+game.Players.LocalPlayer.Character["LeftHand"].Transparency = 1
+end)
+
