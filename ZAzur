@@ -1,5 +1,3 @@
-local player = game.Players.LocalPlayer
-local character = player.Character or player.CharacterAdded:Wait()
 
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()local GUI = Mercury:Create{
 local Window = OrionLib:MakeWindow({Name = "RF24", HidePremium = false, SaveConfig = true, ConfigFolder = "ORIONTESTHUB"})
@@ -51,6 +49,8 @@ character["LeftBoot"].Transparency = 1
 	end    
 })
 
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
 
 
 OrionLib:Init()
