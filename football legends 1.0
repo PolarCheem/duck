@@ -2,13 +2,10 @@ local player = game.Players.LocalPlayer
 
 local character = workspace:WaitForChild(player.Name)
 
-local hitbox = character:WaitForChild("LeftFoot")
-local hitbox2 = character:WaitForChild("RightFoot")
+local hitbox = character:WaitForChild("PlayerHitBox")
 
 while true do
 hitbox.CanCollide = false
 hitbox.Massless = true
 wait(0)
-hitbox2.CanCollide = false
-hitbox2.Massless = true
 end
