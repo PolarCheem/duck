@@ -1,3 +1,5 @@
+if game.PlaceId == 14004668761 then
+
 local DrRayLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/DrRay-UI-Library/main/DrRay.lua"))()
 local window = DrRayLibrary:Load("RF24 - 2010ono", "Default")
 
@@ -59,3 +61,4 @@ tab2.newButton("GK Transparency", "Makes it invis", function()
 game.Players.LocalPlayer.Character["LeftHand"].Transparency = 1
 end)
 
+end
