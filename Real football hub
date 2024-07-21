@@ -174,58 +174,6 @@ wait(0)
 end
 end)
 
-tab2.newSlider("Leg Reach", "Epic slider", 50, false, function(num)
-    local player = game.Players.LocalPlayer
-local character = workspace:WaitForChild(player.Name)
-
-hitbox.CanCollide = false
-hitbox.Massless = true
-
-hitbox.Size = Vector3.new(num, num, num)
-wait(0)
-hitbox2.CanCollide = false
-hitbox2.Massless = true
-hitbox2.Size = Vector3.new(num, num, num)
-end)
-
-tab2.newButton("Leg Transparency", "Prints Hello!", function()
-	   local hitbox = character:WaitForChild("Right Leg")
-			local player = game.Players.LocalPlayer
-local character = workspace:WaitForChild(player.Name)
-local hitbox2 = character:WaitForChild("Left Leg")
-
-		hitbox.Transparency = 1
-		hitbox2.Transparency = 1
-end)
-
-tab3.newSlider("GK Reach", "Epic slider", 1000, false, function(num)
-    local hitbox = character:WaitForChild("Right Arm")
-		local hitbox2 = character:WaitForChild("Left Arm”)
-local player = game.Players.LocalPlayer.Character
-local character = workspace:WaitForChild(player.Name)
-
-
-hitbox.CanCollide = false
-hitbox.Massless = true
-hitbox.Size = Vector3.new(num,num,num)
-wait(0)
-hitbox2.CanCollide = false
-hitbox2.Massless = true
-hitbox2.Size = Vector3.new(num,num,num)
-
-end)
-
-tab3.newDropdown("GK transparency", "Select one of these options!", {"0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1"}, function(selectedOption)
-    local player = game.Players.LocalPlayer
-local character = workspace:WaitForChild(player.Name)
-
-
-local hitbox = character:WaitForChild("Right Arm")
-		local hitbox2 = character:WaitForChild("Left Arm”)
-
-hitbox2.Transparency = selectedOption
-hitbox.Transparency = selectedOption
-end)
 
 
 end
