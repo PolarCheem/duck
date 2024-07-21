@@ -160,8 +160,8 @@ end
 
 if game.PlaceId == 14165106859 then
 
-local DrRayLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/DrRay-UI-Library/main/DrRay.lua"))()
-local window = DrRayLibrary:Load("TRS 2010ono", "Default")
+local DrRayLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/DrRay-UI-Library/main/DrRay.lua"))()local window = DrRayLibrary:Load("TRS 2010ono", "Default")
+local window = DrRayLibrary:Load("TRS", "Default")
 
 local tab = DrRayLibrary.newTab("Bypass-Misc", "ImageIdHere")
 local tab2 = DrRayLibrary.newTab("Leg Reach", "ImageIdHere")
