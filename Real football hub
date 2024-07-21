@@ -137,19 +137,21 @@ end
 
 if game.PlaceId == 15131312477 then
 
-local player = game.Players.LocalPlayer
-
 local DrRayLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/DrRay-UI-Library/main/DrRay.lua"))()
 local window = DrRayLibrary:Load("Ultimate Soccer 2010ono", "Default")
 
 local tab = DrRayLibrary.newTab("Reach", "ImageIdHere")
 
 tab.newSlider("Universal Reach", "Gives yourself all the reaches", 50, false, function(num)
-    player.Character.HumanoidRootPart.RootAttachment.Hitbox.Size = Vector3.new(num, num, num)
+    local player = game.Players.LocalPlayer
+
+player.Character.HumanoidRootPart.RootAttachment.Hitbox.Size = Vector3.new(num, num, num)
 end)
 
 tab.newSlider("Reach Transparency", "Epic slider", 1, false, function(num)
-    player.Character.HumanoidRootPart.RootAttachment.Hitbox.Transparency = num
+    local player = game.Players.LocalPlayer
+
+player.Character.HumanoidRootPart.RootAttachment.Hitbox.Transparency = num
 end)
 
 
@@ -157,9 +159,6 @@ end)
 end
 
 if game.PlaceId == 14165106859 then
-
-local player = game.Players.LocalPlayer.Character
-local character = workspace:WaitForChild(player.Name)
 
 local DrRayLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/DrRay-UI-Library/main/DrRay.lua"))()
 local window = DrRayLibrary:Load("TRS 2010ono", "Default")
@@ -202,6 +201,8 @@ end)
 tab3.newSlider("GK Reach", "Epic slider", 1000, false, function(num)
     local hitbox = character:WaitForChild("Right Arm")
 		local hitbox2 = character:WaitForChild("Left Arm”)
+local player = game.Players.LocalPlayer.Character
+local character = workspace:WaitForChild(player.Name)
 
 
 hitbox.CanCollide = false
