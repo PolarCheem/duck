@@ -108,7 +108,7 @@ end)
 
 end
 
-if game.PlaceId == 14004668761 then
+if game.PlaceId == 16447934574 then
 
 local DrRayLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/DrRay-UI-Library/main/DrRay.lua"))()
 local window = DrRayLibrary:Load("TOUCH FOOTBALL 2010ono", "Default")
