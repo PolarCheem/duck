@@ -34,6 +34,18 @@ wait(0)
 end
 end)
 
+tab.newToggle("Auto Run", "Toggle! (prints the state)", true, function(toggleState)
+    if toggleState then
+        local run = true
+while run do
+game.Players.LocalPlayer.Character.Humanoid.Walkspeed = 22
+wait(0)
+end
+    else
+        local run = false
+    end
+end)
+
 tab2.newSlider("LegReach", "Changes your leg reach", 50, false, function(num)
     local Size = num
 local player = game.Players.LocalPlayer
