@@ -176,9 +176,7 @@ end
 end)
 
 tab2.newSlider("Leg Reach", "Epic slider", 50, false, function(num)
-    local hitbox = character:WaitForChild("Right Leg")
-		local hitbox2 = character:WaitForChild("Left Leg")
-
+    
 hitbox.CanCollide = false
 hitbox.Massless = true
 
@@ -220,6 +218,8 @@ hitbox2.Transparency = selectedOption
 hitbox.Transparency = selectedOption
 end)
 
+local hitbox = character:WaitForChild("Right Leg")
+		local hitbox2 = character:WaitForChild("Left Leg")
 
 
 end
