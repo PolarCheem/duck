@@ -134,3 +134,92 @@ tab.newSlider("Reach Transparency", "Epic slider", 1, false, function(num)
 end)
 
 end
+
+if game.PlaceId == 15131312477 then
+
+local player = game.Players.LocalPlayer
+
+local DrRayLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/DrRay-UI-Library/main/DrRay.lua"))()
+local window = DrRayLibrary:Load("Ultimate Soccer 2010ono", "Default")
+
+local tab = DrRayLibrary.newTab("Reach", "ImageIdHere")
+
+tab.newSlider("Universal Reach", "Gives yourself all the reaches", 50, false, function(num)
+    player.Character.HumanoidRootPart.RootAttachment.Hitbox.Size = Vector3.new(num, num, num)
+end)
+
+tab.newSlider("Reach Transparency", "Epic slider", 1, false, function(num)
+    player.Character.HumanoidRootPart.RootAttachment.Hitbox.Transparency = num
+end)
+
+
+
+end
+
+if game.PlaceId == 14165106859 then
+
+local player = game.Players.LocalPlayer.Character
+local character = workspace:WaitForChild(player.Name)
+
+local DrRayLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/DrRay-UI-Library/main/DrRay.lua"))()
+local window = DrRayLibrary:Load("TRS 2010ono", "Default")
+
+local tab = DrRayLibrary.newTab("Bypass-Misc", "ImageIdHere")
+local tab2 = DrRayLibrary.newTab("Leg Reach", "ImageIdHere")
+local tab3 = DrRayLibrary.newTab("Arm Reach", "ImageIdHere")
+
+tab.newButton("AntiCheat Bypasser", "Prints Hello!", function()
+    while true do
+player.Physics:Destroy()
+wait(0)
+end
+end)
+
+tab2.newSlider("Leg Reach", "Epic slider", 50, false, function(num)
+    local hitbox = character:WaitForChild("Right Leg")
+		local hitbox2 = character:WaitForChild("Left Leg")
+
+hitbox.CanCollide = false
+hitbox.Massless = true
+
+hitbox.Size = Vector3.new(num, num, num)
+wait(0)
+hitbox2.CanCollide = false
+hitbox2.Massless = true
+hitbox2.Size = Vector3.new(num, num, num)
+end)
+
+tab2.newButton("Leg Transparency", "Prints Hello!", function()
+	   local hitbox = character:WaitForChild("Right Leg")
+			local hitbox2 = character:WaitForChild("Left Leg")
+
+		hitbox.Transparency = 1
+		hitbox2.Transparency = 1
+end)
+
+tab3.newSlider("GK Reach", "Epic slider", 1000, false, function(num)
+    local hitbox = character:WaitForChild("Right Arm")
+		local hitbox2 = character:WaitForChild("Left Arm”)
+
+
+hitbox.CanCollide = false
+hitbox.Massless = true
+hitbox.Size = Vector3.new(num,num,num)
+wait(0)
+hitbox2.CanCollide = false
+hitbox2.Massless = true
+hitbox2.Size = Vector3.new(num,num,num)
+
+end)
+
+tab3.newDropdown("GK transparency", "Select one of these options!", {"0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1"}, function(selectedOption)
+    local hitbox = character:WaitForChild("Right Arm")
+		local hitbox2 = character:WaitForChild("Left Arm”)
+
+hitbox2.Transparency = selectedOption
+hitbox.Transparency = selectedOption
+end)
+
+
+
+end
