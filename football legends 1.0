@@ -7,7 +7,7 @@ local hitbox = character:WaitForChild("PlayerHitBox")
 while true do
 hitbox.CanCollide = false
 hitbox.Massless = true
-hitbox.Size = Vector3.new(50,50,50)
+hitbox.Size = Vector3.new(50,50,15)
 hitbox.Transparency = 0.7
 wait(0)
 end
