@@ -176,7 +176,9 @@ end
 end)
 
 tab2.newSlider("Leg Reach", "Epic slider", 50, false, function(num)
-    
+    local player = game.Players.LocalPlayer
+local character = workspace:WaitForChild(player.Name)
+
 hitbox.CanCollide = false
 hitbox.Massless = true
 
@@ -189,7 +191,9 @@ end)
 
 tab2.newButton("Leg Transparency", "Prints Hello!", function()
 	   local hitbox = character:WaitForChild("Right Leg")
-			local hitbox2 = character:WaitForChild("Left Leg")
+			local player = game.Players.LocalPlayer
+local character = workspace:WaitForChild(player.Name)
+local hitbox2 = character:WaitForChild("Left Leg")
 
 		hitbox.Transparency = 1
 		hitbox2.Transparency = 1
@@ -211,15 +215,16 @@ hitbox2.Size = Vector3.new(num,num,num)
 end)
 
 tab3.newDropdown("GK transparency", "Select one of these options!", {"0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1"}, function(selectedOption)
-    local hitbox = character:WaitForChild("Right Arm")
+    local player = game.Players.LocalPlayer
+local character = workspace:WaitForChild(player.Name)
+
+
+local hitbox = character:WaitForChild("Right Arm")
 		local hitbox2 = character:WaitForChild("Left Arm”)
 
 hitbox2.Transparency = selectedOption
 hitbox.Transparency = selectedOption
 end)
-
-local hitbox = character:WaitForChild("Right Leg")
-		local hitbox2 = character:WaitForChild("Left Leg")
 
 
 end
