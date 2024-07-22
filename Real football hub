@@ -217,3 +217,33 @@ end)
 
 
 end
+
+if game.PlaceId == 18135650102 then
+
+local DrRayLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/DrRay-UI-Library/main/DrRay.lua"))()
+local window = DrRayLibrary:Load("PowerUp Soccer", "Default")
+
+local tab = DrRayLibrary.newTab("Misc", "ImageIdHere")
+local tab2 = DrRayLibrary.newTab("Foot Reach", "ImageIdHere")
+
+
+tab.newButton("Inf Stamina", "Gives inf stamina", function()
+    game.Players.LocalPlayer.PlayerGui.Stamina:Destroy()
+end)
+
+tab2.newSlider("Foot Reach", "Reach", 50, false, function(num)
+local player = game.Players.LocalPlayer.Character
+
+player.LeftFoot.Size = Vector3.new(num,num,num)
+player.LeftFoot.Massless = true
+player.LeftFoot.CanCollide = false
+player.RightFoot.Size = Vector3.new(num,num,num)
+player.RightFoot.Massless = true
+player.RightFoot.CanCollide = false
+end)
+
+
+
+
+
+end
