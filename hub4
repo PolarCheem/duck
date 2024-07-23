@@ -70,10 +70,11 @@ end)
 
 tab5.newSlider("Reach", "head reach", 50, false, function(num)
 local player = game.Players.LocalPlayer.Character
+local hitbox = player:WaitForChild("Head")
 
-player.Head.Massless = true
-player.Head.CanCollide = false
-player.Head.Size = Vector3.new(num, num, num)
+hitbox.CanCollide = false
+hitbox.Massless = true
+hitbox.Size = Vector3.new(num, num, num)
 end)
 
 tab5.newDropdown("Transparency", "0-1", {"0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1"}, function(selectedOption)
@@ -85,10 +86,11 @@ end)
 
 tab4.newSlider("Reach", "torso reach", 50, false, function(num)
 local player = game.Players.LocalPlayer.Character
+local hitbox = player:WaitForChild("Torso")
 
-player.Torso.Massless = true
-player.Torso.CanCollide = false
-player.Torso.Size = Vector3.new(num, num, num)
+hitbox.CanCollide = false
+hitbox.Massless = true
+hitbox.Size = Vector3.new(num, num, num)
 end)
 
 tab4.newDropdown("Transparency", "0-1", {"0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1"}, function(selectedOption)
