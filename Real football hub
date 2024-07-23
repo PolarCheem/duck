@@ -71,7 +71,7 @@ tab3.newSlider("GK Reach", "Increases hand", 20, false, function(num)
     local Size = num
 
 game.Players.LocalPlayer.Character.RightHand.Size = Vector3.new(Size, Size, Size)
-        game.Players.LocalPlayer.Character.LeftHand.Size = Vector3.new(Sizs, Size, Size)
+        game.Players.LocalPlayer.Character.LeftHand.Size = Vector3.new(Size, Size, Size)
         game.Players.LocalPlayer.Character.RightHand.CanCollide = false
         game.Players.LocalPlayer.Character.LeftHand.CanCollide = false
         game.Players.LocalPlayer.Character.RightHand.Massless = true
