@@ -57,11 +57,8 @@ hitbox.Transparency = selectedOption
 hitbox2.Transparency = selectedOption
 end)
 
-local catch = false
-
-tab3.newToggle("Auto Catch", "Spams auto catch", false, function(toggleState)
-    if toggleState then
-while catch == true do
+tab3.newButton("Button", "Prints Hello!", function()
+while true do
 local args = {
     [1] = workspace:WaitForChild("Balls"):WaitForChild("TPS"),
     [3] = game:GetService("Players").LocalPlayer
@@ -69,10 +66,36 @@ local args = {
 
 game:GetService("ReplicatedStorage"):WaitForChild("CatchBall"):FireServer(unpack(args))
 end
-    else
-        local catch = false
-    end
 end)
 
+tab4.newSlider("Reach", "head reach", 50, false, function(num)
+local player = game.Players.LocalPlayee.Character
+
+player.Head.Massless = true
+player.Head.CanCollide = false
+player.Head.Size = Vector3.new(num,num,num)
+end)
+
+tab4.newDropdown("Transparency", "0-1", {"0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1"}, function(selectedOption)
+local player = game.Players.LocalPlayer.Character
+
+player.Head.Transparency = selectedOption
+player.Head.Transparency = selectedOption
+end)
+
+tab5.newSlider("Reach", "torso reach", 50, false, function(num)
+local player = game.Players.LocalPlayee.Character
+
+player.Torso.Massless = true
+player.Torso.CanCollide = false
+player.Torso.Size = Vector3.new(num,num,num)
+end)
+
+tab5.newDropdown("Transparency", "0-1", {"0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1"}, function(selectedOption)
+local player = game.Players.LocalPlayer.Character
+
+player.Torso.Transparency = selectedOption
+player.Torso.Transparency = selectedOption
+end)
 
 
