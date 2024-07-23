@@ -1,7 +1,7 @@
 if game.PlaceId == 18401497017 then
 
 local DrRayLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/DrRay-UI-Library/main/DrRay.lua"))()
-local window = DrRayLibrary:Load("kai 😎", "Default")
+local window = DrRayLibrary:Load("Montengo Bay", "Default")
 
 local tab = DrRayLibrary.newTab("Bypass", "ImageIdHere")
 local tab2 = DrRayLibrary.newTab("LEG", "ImageIdHere")
@@ -28,7 +28,7 @@ hitbox2.Massless = true
 hitbox2.Size = Vector3.new(num, 2, num)
 end)
 
-tab2.newDropdown("Transparency", "0-1", {"0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1"}, function(selectedOption)
+tab2.newDropdown("Transparency", "0", {"0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1"}, function(selectedOption)
 local player = game.Players.LocalPlayer.Character
 local hitbox = player:WaitForChild("Right Leg")
 local hitbox2 = player:WaitForChild("Left Leg")
@@ -50,7 +50,7 @@ hitbox2.Massless = true
 hitbox2.Size = Vector3.new(num, num, num)
 end)
 
-tab3.newDropdown("Transparency", "0-1", {"0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1"}, function(selectedOption)
+tab3.newDropdown("Transparency", "0", {"0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1"}, function(selectedOption)
 local player = game.Players.LocalPlayer.Character
 local hitbox = player:WaitForChild("Right Arm")
 local hitbox2 = player:WaitForChild("Left Arm")
@@ -59,7 +59,7 @@ hitbox.Transparency = selectedOption
 hitbox2.Transparency = selectedOption
 end)
 
-tab3.newButton("Button", "Prints Hello!", function()
+tab3.newButton("auto Catch Ball", "catches ball!", function()
 while true do
 local args = {
     [1] = workspace:WaitForChild("Balls"):WaitForChild("TPS"),
@@ -80,7 +80,7 @@ hitbox.Massless = true
 hitbox.Size = Vector3.new(num, num, num)
 end)
 
-tab5.newDropdown("Transparency", "0-1", {"0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1"}, function(selectedOption)
+tab5.newDropdown("Transparency", "0", {"0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1"}, function(selectedOption)
 local player = game.Players.LocalPlayer.Character
 
 player.Head.Transparency = selectedOption
@@ -96,7 +96,7 @@ hitbox.Massless = true
 hitbox.Size = Vector3.new(num, num, num)
 end)
 
-tab4.newDropdown("Transparency", "0-1", {"0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1"}, function(selectedOption)
+tab4.newDropdown("Transparency", "0", {"0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1"}, function(selectedOption)
 local player = game.Players.LocalPlayer.Character
 
 player.Torso.Transparency = selectedOption
@@ -220,5 +220,95 @@ tab5.newButton("Torso Transparent", "Prints Hello!", function()
 game.Players.LocalPlayer.Character.LowerTorso.Transparency = 1
 
 end)
+
+end
+
+if game.PlaceId == 9847297509 then
+
+local DrRayLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/DrRay-UI-Library/main/DrRay.lua"))()
+local window = DrRayLibrary:Load("MPS Match Pitch", "Default")
+
+local tab = DrRayLibrary.newTab("LEG", "ImageIdHere")
+local tab1 = DrRayLibrary.newTab("GK", "ImageIdHere")
+local tab2 = DrRayLibrary.newTab("CHEST", "ImageIdHere")
+local tab3 = DrRayLibrary.newTab("HEAD", "ImageIdHere")
+
+tab.newSlider("Reach", "Enables reach", 50, false, function(num)
+local player = game.Players.LocalPlayer.Character
+local hitbox = player:WaitForChild("Right Leg")
+local hitbox2 = player:WaitForChild("Left Leg")
+
+hitbox.CanCollide = false
+hitbox.Massless = true
+hitbox.Size = Vector3.new(num, 2, num)
+hitbox2.CanCollide = false
+hitbox2.Massless = true
+hitbox2.Size = Vector3.new(num, 2, num)
+end)
+
+tab.newDropdown("Transparency", "0", {"0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1"}, function(selectedOption)
+local player = game.Players.LocalPlayer.Character
+local hitbox = player:WaitForChild("Right Leg")
+local hitbox2 = player:WaitForChild("Left Leg")
+
+hitbox.Transparency = selectedOption
+hitbox2.Transparency = selectedOption
+end)
+
+tab1.newSlider("Reach", "GK reach", 50, false, function(num)
+local player = game.Players.LocalPlayer.Character
+local hitbox = player:WaitForChild("Right Arm")
+local hitbox2 = player:WaitForChild("Left Arm")
+
+hitbox.CanCollide = false
+hitbox.Massless = true
+hitbox.Size = Vector3.new(num, num, num)
+hitbox2.CanCollide = false
+hitbox2.Massless = true
+hitbox2.Size = Vector3.new(num, num, num)
+end)
+
+tab1.newDropdown("Transparency", "0", {"0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1"}, function(selectedOption)
+local player = game.Players.LocalPlayer.Character
+local hitbox = player:WaitForChild("Right Arm")
+local hitbox2 = player:WaitForChild("Left Arm")
+
+hitbox.Transparency = selectedOption
+hitbox2.Transparency = selectedOption
+end)
+
+tab3.newSlider("Reach", "head reach", 50, false, function(num)
+local player = game.Players.LocalPlayer.Character
+local hitbox = player:WaitForChild("Head")
+
+hitbox.face:Destroy()
+hitbox.CanCollide = false
+hitbox.Massless = true
+hitbox.Size = Vector3.new(num, num, num)
+end)
+
+tab3.newDropdown("Transparency", "0", {"0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1"}, function(selectedOption)
+local player = game.Players.LocalPlayer.Character
+
+player.Head.Transparency = selectedOption
+player.Head.Transparency = selectedOption
+end)
+
+tab2.newSlider("Reach", "torso reach", 50, false, function(num)
+local player = game.Players.LocalPlayer.Character
+local hitbox = player:WaitForChild("Torso")
+
+hitbox.CanCollide = false
+hitbox.Massless = true
+hitbox.Size = Vector3.new(num, num, num)
+end)
+
+tab2.newDropdown("Transparency", "0", {"0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1"}, function(selectedOption)
+local player = game.Players.LocalPlayer.Character
+
+player.Torso.Transparency = selectedOption
+player.Torso.Transparency = selectedOption
+end)
+
 
 end
