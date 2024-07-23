@@ -336,14 +336,6 @@ else
 end
 end)
 
-tab.newButton("Anti Cheat2", "use rhis after 1", function()
-game.ReplicatedStorage.Events.T:Destroy()
-end)
-
-tab.newButton("Anti Cheat3", "use rhis after 2", function()
-game.ReplicatedStorage.Events.Y:Destroy()
-end)
-
 tab2.newSlider("Reach", "Enables reach", 50, false, function(num)
 local player = game.Players.LocalPlayer.Character
 local hitbox = player:WaitForChild("Right Leg")
