@@ -314,5 +314,5 @@ end)
 
 end
 else 
-game.Players.LocalPlayer:Kick(“.ono101”)
+game.Players.LocalPlayer:Kick(“Buy it please”)
 end
