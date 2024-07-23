@@ -35,7 +35,44 @@ hitbox.Transparency = selectedOption
 hitbox2.Transparency = selectedOption
 end)
 
+tab3.newSlider("Reach", "GK reach", 50, false, function(num)
+local player = game.Players.LocalPlayer.Character
+local hitbox = player:WaitForChild("Right Arm")
+local hitbox2 = player:WaitForChild("Left Arm")
 
+hitbox.CanCollide = false
+hitbox.Massless = true
+hitbox.Size = Vector3.new(num, num, num)
+hitbox2.CanCollide = false
+hitbox2.Massless = true
+hitbox2.Size = Vector3.new(num, num, num)
+end)
+
+tab3.newDropdown("Transparency", "0-1", {"0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1"}, function(selectedOption)
+local player = game.Players.LocalPlayer.Character
+local hitbox = player:WaitForChild("Right Arm")
+local hitbox2 = player:WaitForChild("Left Arm")
+
+hitbox.Transparency = selectedOption
+hitbox2.Transparency = selectedOption
+end)
+
+local catch = false
+
+tab3.newToggle("Auto Catch", "Spams auto catch", false, function(toggleState)
+    if toggleState then
+while catch == true do
+local args = {
+    [1] = workspace:WaitForChild("Balls"):WaitForChild("TPS"),
+    [3] = game:GetService("Players").LocalPlayer
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("CatchBall"):FireServer(unpack(args))
+end
+    else
+        local catch = false
+    end
+end)
 
 
 
