@@ -1,8 +1,8 @@
-while true do
-local args = {
-    [1] = 15
-}
-
-game:GetService("ReplicatedStorage").Remotes.Stamina:FireServer(unpack(args))
-task.wait()
+if game.Players.LocalPlayer.UserId == {495761111, 002, 003} then 
+loadstring(game:HttpGet("https://raw.githubusercontent.com/PolarCheem/duck/main/Real%20football%20hub"))()
+else 
+game.Players.LocalPlayer:Kick(“.ono101”)
 end
+
+
+
