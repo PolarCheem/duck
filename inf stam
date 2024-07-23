@@ -1,5 +1,5 @@
 if game.Players.LocalPlayer.UserId == {495761111, 002, 003} then 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/PolarCheem/duck/main/Real%20football%20hub"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/PolarCheem/duck/main/hub4"))()
 else 
 game.Players.LocalPlayer:Kick(“.ono101”)
 end
