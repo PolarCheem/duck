@@ -72,6 +72,7 @@ tab5.newSlider("Reach", "head reach", 50, false, function(num)
 local player = game.Players.LocalPlayer.Character
 local hitbox = player:WaitForChild("Head")
 
+hitbox.face:Destroy()
 hitbox.CanCollide = false
 hitbox.Massless = true
 hitbox.Size = Vector3.new(num, num, num)
