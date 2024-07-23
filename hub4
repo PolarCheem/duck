@@ -324,7 +324,7 @@ local tab3 = DrRayLibrary.newTab("GK", "ImageIdHere")
 local tab4 = DrRayLibrary.newTab("CHEST", "ImageIdHere")
 local tab5 = DrRayLibrary.newTab("HEAD", "ImageIdHere")
 
-tab.newButton("Bypass AntiCheat", "Deletes the anti cheat", function()
+tab.newButton("Anticheat 1", "Deletes the anti cheat", function()
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local Events = ReplicatedStorage:WaitForChild("Events")
 
@@ -334,9 +334,13 @@ if Remote then
 else
     print("Remote 'x' not found in ReplicatedStorage.Events")
 end
+end)
 
+tab.newButton("Anti Cheat2", "use rhis after 1", function()
 game.ReplicatedStorage.Events.T:Destroy()
-wait(0.5)
+end)
+
+tab.newButton("Anti Cheat3", "use rhis after 2", function()
 game.ReplicatedStorage.Events.Y:Destroy()
 end)
 
