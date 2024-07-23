@@ -21,8 +21,9 @@ end)
 
 tab.newButton("Infinite Stamina", "Infinite stamina", function()
     while true do
-game.Players.LocalPlayer.PlayerGui.UI.Stamina:Destroy()
-wait(0)
+game.Players.LocalPlayer.PlayerGui.UI.Stamina.Bar.Visible = false
+
+game.Players.LocalPlayer.PlayerGui.UI.Stamina.Infinite.Visible = truewait(0)
 end
 end)
 
