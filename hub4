@@ -1,144 +1,43 @@
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "theyenvykai", HidePremium = false, SaveConfig = false, ConfigFolder = "OrionTest"})
+local DrRayLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/DrRay-UI-Library/main/DrRay.lua"))()
+local window = DrRayLibrary:Load("kai 😎", "Default")
 
-local Tab = Window:MakeTab({
-	Name = "Bypass/Misc",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-})
-local Tab2 = Window:MakeTab({
-	Name = "Leg",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-})
-local Tab3 = Window:MakeTab({
-	Name = "GK",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-})
-local Tab4 = Window:MakeTab({
-	Name = "Chest",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-})
-local Tab5 = Window:MakeTab({
-	Name = "Head",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-})
+local tab = DrRayLibrary.newTab("Bypass", "ImageIdHere")
+local tab2 = DrRayLibrary.newTab("LEG", "ImageIdHere")
+local tab3 = DrRayLibrary.newTab("GK", "ImageIdHere")
+local tab4 = DrRayLibrary.newTab("CHEST", "ImageIdHere")
+local tab5 = DrRayLibrary.newTab("HEAD", "ImageIdHere")
 
-local Section = Tab:AddSection({
-	Name = "AntiCheat"
-})
-local Section = Tab2:AddSection({
-	Name = "Reach"
-})
-local Section = Tab3:AddSection({
-	Name = "Reach"
-})
-local Section = Tab4:AddSection({
-	Name = "Reach"
-})
-local Section = Tab5:AddSection({
-	Name = "Reach"
-})
-
-Tab:AddButton({
-	Name = "AntiCheat Bypass",
-	Callback = function()
+tab.newButton("Bypass AntiCheat", "Deletes the anti cheat", function()
 while true do
 game.Players.LocalPlayer.Character.ClientServerResponse:Destroy()
-wait(0)
 end
-  	end    
-})
+end)
 
-Tab2:AddSlider({
-	Name = "Leg Reach",
-	Min = 0,
-	Max = 50,
-	Default = 1,
-	Color = Color3.fromRGB(255,255,255),
-	Increment = 1,
-	ValueName = "size",
-	Callback = function(Value)
-Size = Value
+tab2.newSlider("Reach", "Enables reach", 50, false, function(num)
 local player = game.Players.LocalPlayer
 local character = workspace:WaitForChild(player.Name)
-
 local hitbox = character:WaitForChild("Right Leg")
 local hitbox2 = character:WaitForChild("Left Leg")
 
-
 hitbox.CanCollide = false
 hitbox.Massless = true
-hitbox.Size = Vector3.new(Size, 2, Size)
+hitbox.Size = Vector3.new(num, 2, num)
 hitbox2.CanCollide = false
 hitbox2.Massless = true
-hitbox2.Size = Vector3.new(Size, 2, Size)
-	end    
-})
+hitbox2.Size = Vector3.new(num, 2, num)
+end)
 
-Tab2:AddDropdown({
-	Name = "Leg Transparency",
-	Default = "0",
-	Options = {"0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1"},
-	Callback = function(Value)
+tab2.newDropdown("Transparency", "0-1", {"0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1"}, function(selectedOption)
 local player = game.Players.LocalPlayer
 local character = workspace:WaitForChild(player.Name)
-
 local hitbox = character:WaitForChild("Right Leg")
 local hitbox2 = character:WaitForChild("Left Leg")
 
-hitbox.Transparency = Value
-hitbox2.Transparency = Value
-	end    
-})
-
-Tab3:AddSlider({
-	Name = "GK Reach",
-	Min = 0,
-	Max = 50,
-	Default = 5,
-	Color = Color3.fromRGB(255,255,255),
-	Increment = 1,
-	ValueName = "size",
-	Callback = function(Value)
-Size = Value
-local player = game.Players.LocalPlayer
-local character = workspace:WaitForChild(player.Name)
-
-local hitbox = character:WaitForChild("Right Arm")
-local hitbox2 = character:WaitForChild("Left Arm")
-
-
-hitbox.CanCollide = false
-hitbox.Massless = true
-hitbox.Size = Vector3.new(Size, Size, Size)
-hitbox2.CanCollide = false
-hitbox2.Massless = true
-hitbox2.Size = Vector3.new(Size, Size, Size)
-	end    
-})
-
-Tab3:AddDropdown({
-	Name = "Arm Transparency",
-	Default = "1",
-	Options = {"0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1"},
-	Callback = function(Value)
-local player = game.Players.LocalPlayer
-local character = workspace:WaitForChild(player.Name)
-
-local hitbox = character:WaitForChild("Right Arm")
-local hitbox2 = character:WaitForChild("Left Arm")
-
-hitbox.Transparency = Value
-hitbox2.Transparency = Value
-	end    
-})
+hitbox.Transparency = selectedOption
+hitbox2.Transparency = selectedOption
+end)
 
 
 
 
 
-OrionLib:Init()
