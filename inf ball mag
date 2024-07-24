@@ -1,13 +1,13 @@
-while true do
-game:GetService("ReplicatedStorage").Remotes.TouchedLocal:FireServer()
-wait()
-end
-wait(1)
-while true do
-local args = {
-    [1] = 15
-}
+local DrRayLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/DrRay-UI-Library/main/DrRay.lua"))()
+local window = DrRayLibrary:Load("Universal", "Default")
 
-game:GetService("ReplicatedStorage").Remotes.Stamina:FireServer(unpack(args))
-task.wait()
-end
+local tab = DrRayLibrary.newTab("Anti Cheats", "ImageIdHere")
+local tab1 = DrRayLibrary.newTab("Leg", "ImageIdHere")
+local tab2 = DrRayLibrary.newTab("Arm", "ImageIdHere")
+
+tab.newButton("Button", "Prints Hello!", function()
+    print('Hello!')
+end)
+
+
+
