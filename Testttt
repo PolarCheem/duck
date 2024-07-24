@@ -1,6 +1,26 @@
-local player = game:GetService("Players").LocalPlayer
+local objectsToSave = {
+"SetEquipped",
+"SetGraphic",
+"SetInformation",
+"SetKeybind",
+"SetMisc",
+"SetToolOrder",
+"Emote",
+}
 
-while true do
-player.Charactee.Humanoid.Walkspeed = 23
-wait(0)
+local function deleteRemovedObjects()
+for _, object in pairs(ReplicatedStorage.Remotes:GetChildren()) do
+local found = false
+for _, name in pairs(objectsToSave) do
+if object.Name == name then
+found = true
+break
 end
+end
+if not found then
+object:Destroy()
+end
+end
+end
+
+deleteRemovedObjects()
