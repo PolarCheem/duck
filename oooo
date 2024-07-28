@@ -1,3 +1,4 @@
+local player = game.Players.LocalPlayer.Character
 local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
 local Window = Fluent:CreateWindow({
     Title = "Test" .. Fluent.Version,
@@ -11,6 +12,8 @@ local Window = Fluent:CreateWindow({
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/PolarCheem/duck/main/jujutsu%20shenanigans"))()
 
+
+
 local Options = Fluent.Options
 
 -- Fluent provides Lucide Icons, they are optional
@@ -22,3 +25,42 @@ local Tabs = {
     Head = Window:AddTab({ Title = "Head", Icon = "" }),
 	Set = Window:AddTab({ Title = "Settings", Icon = "settings" })
 }
+
+local Section = Main:AddSection("Bypass")
+
+Main:AddButton({
+    Title = "Bypass Cheat",
+    Description = "Very important button",
+    Callback = function()
+while true do
+game.Players.LocalPlayer.Character.Physics:Destroy()
+wait(0)
+end
+    end
+})
+
+local Section = Leg:AddSection("Reach")
+
+local Slider = Leg:AddSlider("Reach", 
+{
+    Title = "Reach",
+    Description = "This is a reach slider",
+    Default = 2,
+    Min = 0,
+    Max = 50,
+    Rounding = 1,
+    Callback = function(Value)
+local right = player:WaitForChild("Right Leg")
+local left = player:WaitForChild("Left Leg")
+
+right.Massless = true
+right.CanCollide = true
+right.Size = Vector3.new(Value, Value, Value)
+
+
+	end
+})
+
+
+
+
