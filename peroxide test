@@ -1,2 +1,59 @@
-;vCO1~_
-Q6h{	,.N+.Bq58Gn,S=	'jV0
+
+local player = game.Players.LocalPlayer
+local gui = Instance.new("ScreenGui")
+local imageButton = Instance.new("ImageButton")
+
+imageButton.Size = UDim2.new(0, 25, 0, 25) -- make it a square
+imageButton.Position = UDim2.new(0.5, 0, 0.5, 0) -- center it
+imageButton.BackgroundColor3 = Color3.new(0, 0, 0) -- black background
+imageButton.BorderColor3 = Color3.new(0, 0, 0) -- black border
+imageButton.Image = "rbxassetid://18690872471" -- circular image
+
+gui.Parent = player.PlayerGui
+imageButton.Parent = gui
+
+-- Make the button draggable
+local userInputService = game:GetService("UserInputService")
+local dragToggle = false
+local dragInput
+local dragStart
+local startX
+local startY
+
+local function updateInput(input)
+local delta = input.Position - dragStart
+local position = UDim2.new(startX.Scale, startX.Offset + delta.X, startY.Scale, startY.Offset + delta.Y)
+imageButton.Position = position
+end
+
+imageButton.InputBegan:Connect(function(input)
+if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+dragToggle = true
+dragStart = input.Position
+startX = imageButton.Position.X
+startY = imageButton.Position.Y
+input.Changed:Connect(function()
+if input.UserInputState == Enum.UserInputState.Change then
+updateInput(input)
+end
+end)
+end
+end)
+
+imageButton.InputEnded:Connect(function(input)
+if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+dragToggle = false
+end
+end)
+
+-- Add a click event to the button
+imageButton.MouseButton1Click:Connect(function()
+-- Code to run when the button is clicked
+local screenGui = game.CoreGui.ScreenGui
+
+for _, child in pairs(screenGui:GetChildren()) do
+if child:IsA("Frame") then
+child.Visible = true
+end
+end
+end)
