@@ -6,7 +6,7 @@ imageButton.Size = UDim2.new(0, 20, 0, 20) -- make it a square
 imageButton.Position = UDim2.new(0.5, -160, 0.5, -200) -- center it
 imageButton.BackgroundColor3 = Color3.new(0, 0, 0) -- black background
 imageButton.BorderColor3 = Color3.new(0, 0, 0) -- black border
-imageButton.Image = "http://www.roblox.com/asset/18690872471" -- circular image
+imageButton.Image = "rbxassetid://18690872471" -- circular image
 
 gui.Parent = player.PlayerGui
 imageButton.Parent = gui
