@@ -2,7 +2,7 @@ local player = game.Players.LocalPlayer
 local gui = Instance.new("ScreenGui")
 local imageButton = Instance.new("ImageButton")
 
-imageButton.Size = UDim2.new(0, 20, 0, 20) -- make it a square
+imageButton.Size = UDim2.new(0, 40, 0, 40) -- make it a square
 imageButton.Position = UDim2.new(0.5, -100, 0.5, -100) -- center it
 imageButton.BackgroundColor3 = Color3.new(0, 0, 0) -- black background
 imageButton.BorderColor3 = Color3.new(0, 0, 0) -- black border
