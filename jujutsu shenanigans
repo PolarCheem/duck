@@ -14,13 +14,11 @@ imageButton.Parent = gui
 -- Add a click event to the button
 imageButton.MouseButton1Click:Connect(function()
     -- Code to run when the button is clicked
-local userInputService = game:GetService("UserInputService")
+local screenGui = game.CoreGui.ScreenGui
 
-local function pressLeftShift()
-userInputService:SetKeyDown(Enum.KeyCode.LeftShift)
-wait() -- hold the key down for a frame
-userInputService:SetKeyUp(Enum.KeyCode.LeftShift)
+for _, child in pairs(screenGui:GetChildren()) do
+if child:IsA("Frame") then
+child.Visible = true
 end
-
-pressLeftShift()
+end
 end)
