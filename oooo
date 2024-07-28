@@ -20,5 +20,5 @@ local Tabs = {
     Arm = Window:AddTab({ Title = "GK", Icon = "" }),
     Body = Window:AddTab({ Title = "Torso", Icon = "" }),
     Head = Window:AddTab({ Title = "Head", Icon = "" }),
-		Set = Window:AddTab({ Title = "Settings", Icon = "settings" })
+	Set = Window:AddTab({ Title = "Settings", Icon = "settings" })
 }
