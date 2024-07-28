@@ -1,44 +1,18 @@
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "13 - JS", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+local player = game.Players.LocalPlayer
+local gui = Instance.new("ScreenGui")
+local imageButton = Instance.new("ImageButton")
 
-local Tab = Window:MakeTab({
-	Name = "Main",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-})
+imageButton.Size = UDim2.new(0, 20, 0, 20) -- make it a square
+imageButton.Position = UDim2.new(0.5, -160, 0.5, -200) -- center it
+imageButton.BackgroundColor3 = Color3.new(0, 0, 0) -- black background
+imageButton.BorderColor3 = Color3.new(0, 0, 0) -- black border
+imageButton.Image = "http://www.roblox.com/asset/18690872471" -- circular image
 
-local Section = Tab:AddSection({
-	Name = "Main"
-})
+gui.Parent = player.PlayerGui
+imageButton.Parent = gui
 
-
-
-Tab:AddButton({
-	Name = "Black Flash",
-	Callback = function()
-      		local args = {
-    [1] = false
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Knit"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("DivergentFistService"):WaitForChild("RE"):WaitForChild("Activated"):FireServer(unpack(args))
-wait(0.30)
-local args = {
-    [1] = false
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Knit"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("DivergentFistService"):WaitForChild("RE"):WaitForChild("Activated"):FireServer(unpack(args))
-	  	end
-	end    
-})
-
-Tab:AddButton({
-	Name = "World Slash",
-	Callback = function()
-      		print("button pressed")
-  	end    
-})
-
-
-
-
-OrionLib:Init()
+-- Add a click event to the button
+imageButton.MouseButton1Click:Connect(function()
+    -- Code to run when the button is clicked
+    print("Button clicked!")
+end)
