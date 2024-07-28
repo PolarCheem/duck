@@ -15,6 +15,10 @@ local Options = Fluent.Options
 
 -- Fluent provides Lucide Icons, they are optional
 local Tabs = {
-    Main = Window:AddTab({ Title = "Main", Icon = "" }),
-    Settings = Window:AddTab({ Title = "Settings", Icon = "settings" })
+    Main = Window:AddTab({ Title = "Bypass", Icon = "" }),
+    Leg = Window:AddTab({ Title = "Leg", Icon = "" }),
+    Arm = Window:AddTab({ Title = "GK", Icon = "" }),
+    Body = Window:AddTab({ Title = "Torso", Icon = "" }),
+    Head = Window:AddTab({ Title = "Head", Icon = "" }),
+		Set = Window:AddTab({ Title = "Settings", Icon = "settings" })
 }
