@@ -30,3 +30,17 @@ game:GetService("ReplicatedStorage").Events.Breathing:FireServer(unpack(args))
 wait(0)
 end
 end)
+
+tab.newDropdown("BossTP", "Select one of these options!", {"TanjiroBossTP", "SanemiTP"}, function(selectedOption)
+local args = {
+    [1] = selectedOption
+}
+
+game:GetService("ReplicatedStorage").Events.TPNPC:FireServer(unpack(args))
+end)
+
+
+
+
+
+
