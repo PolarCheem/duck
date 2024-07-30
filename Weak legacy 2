@@ -41,13 +41,13 @@ local args = {
 game:GetService("ReplicatedStorage").Events.TPNPC:FireServer(unpack(args))
 end)
 
-tab1.newDropdown("Boss Quest", "Select one of these options!", {"Obanai Quesr", "Hantengu Quest", "Mitsuri Quest"}, function(selectedOption)
+tab1.newDropdown("Boss Quest", "Select one of these options!", {"Obanai Quest", "Hantengu Quest", "Mitsuri Quest"}, function(selectedOption)
 local args = {
     [1] = selectedOption,
     [2] = 1,
     [3] = "20K YEN, 100K XP",
-    [4] = "OBANAI",
-    [5] = "OBANAI ATTACK"
+    [4] = "QUEST",
+    [5] = "QUEST ATTACK"
 }
 
 game:GetService("ReplicatedStorage").Events.QuestTake:FireServer(unpack(args))
