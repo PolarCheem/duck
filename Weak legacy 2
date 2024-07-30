@@ -1,0 +1,12 @@
+local DrRayLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/DrRay-UI-Library/main/DrRay.lua"))()
+local window = DrRayLibrary:Load("Weak Legacy 2", "Default")
+
+local tab = DrRayLibrary.newTab("Main", "ImageIdHere")
+
+tab.newButton("Instant Kill", "Instant", function()
+
+end)
+
+tab.newButton("Auto Breath", "Prints Hello!", function()
+
+end)
