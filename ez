@@ -24,4 +24,13 @@ if v ~= game.Players.LocalPlayer.Character and v:FindFirstChild("Humanoid") then
 v.Humanoid.Health = 0
 end
 end
+wait(0)
+while true do
+local args = {
+    [1] = "BeginHamonBreathing"
+}
+
+game:GetService("ReplicatedStorage").Events.Breathing:FireServer(unpack(args))
+wait(0)
+end
 end)
