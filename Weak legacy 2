@@ -38,9 +38,12 @@ local character = player.Character
 if character then
 local humanoid = character:FindFirstChild("Humanoid")
 
+while true do
 if humanoid then
 humanoid.WalkSpeed = num -- Change the walk speed to 20
 end
+end
+wait(0)
 end
 end)
 
