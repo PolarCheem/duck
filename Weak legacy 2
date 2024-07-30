@@ -4,7 +4,20 @@ local window = DrRayLibrary:Load("Weak Legacy 2", "Default")
 local tab = DrRayLibrary.newTab("Main", "ImageIdHere")
 
 tab.newButton("Instant Kill", "Instant", function()
-
+while true do
+for _, v in pairs(workspace.CharactersAndNPCs:GetChildren()) do
+if v ~= game.Players.LocalPlayer.Character and v:FindFirstChild("Humanoid") then
+local humanoid = v:FindFirstChild("Humanoid")
+if humanoid then
+local healthPercentage = humanoid.Health / humanoid.MaxHealth
+if healthPercentage <= 0.9 then
+humanoid.Health = 0
+end
+end
+end
+end
+wait(0)
+end
 end)
 
 tab.newButton("Auto Breath", "Prints Hello!", function()
