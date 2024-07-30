@@ -19,10 +19,19 @@ button.Parent = frame
 
 -- Add the click event
 button.MouseButton1Click:Connect(function()
+while true do
 for _, v in pairs(workspace.CharactersAndNPCs:GetChildren()) do
 if v ~= game.Players.LocalPlayer.Character and v:FindFirstChild("Humanoid") then
-v.Humanoid.Health = 0
+local humanoid = v:FindFirstChild("Humanoid")
+if humanoid then
+local healthPercentage = humanoid.Health / humanoid.MaxHealth
+if healthPercentage <= 0.9 then
+humanoid.Health = 0
 end
+end
+end
+end
+wait(0)
 end
 wait(0)
 while true do
