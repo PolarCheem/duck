@@ -6,7 +6,7 @@ gui.Parent = game.Players.LocalPlayer.PlayerGui
 local frame = Instance.new("Frame")
 frame.BackgroundColor3 = Color3.new(0, 0, 0)
 frame.Size = UDim2.new(0, 30, 0, 30)
-frame.Position = UDim2.new(0, 0, 0, 0)
+frame.Position = UDim2.new(0, -160, 0, -200)
 frame.Parent = gui
 
 -- Create the TextButton
