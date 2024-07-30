@@ -21,5 +21,12 @@ end
 end)
 
 tab.newButton("Auto Breath", "Prints Hello!", function()
+while true do
+local args = {
+    [1] = "BeginHamonBreathing"
+}
 
+game:GetService("ReplicatedStorage").Events.Breathing:FireServer(unpack(args))
+wait(0)
+end
 end)
