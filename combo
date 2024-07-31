@@ -6,7 +6,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Communicate:FireServer(unpack(args))
-wait(0.3
+wait(1)
 local args = {
     [1] = {
         ["Goal"] = "LeftClickRelease",
@@ -24,7 +24,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Communicate:FireServer(unpack(args))
-wait(0.2
+wait(0.5)
 local args = {
     [1] = {
         ["Dash"] = Enum.KeyCode.W,
@@ -42,7 +42,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Communicate:FireServer(unpack(args))
-wait(0.3
+wait(1)
 local args = {
     [1] = {
         ["Goal"] = "LeftClickRelease",
@@ -60,7 +60,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Communicate:FireServer(unpack(args))
-wait(0.5)
+wait(1.2)
 local args = {
     [1] = {
         ["Tool"] = game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Normal Punch"),
