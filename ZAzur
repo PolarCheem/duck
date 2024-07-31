@@ -9,6 +9,15 @@ game:GetService("Players").LocalPlayer.Character.Communicate:FireServer(unpack(a
 wait(1)
 local args = {
     [1] = {
+        ["Goal"] = "LeftClickRelease",
+        ["Mobile"] = true
+    }
+}
+
+game:GetService("Players").LocalPlayer.Character.Communicate:FireServer(unpack(args))
+wait(0)
+local args = {
+    [1] = {
         ["Goal"] = "Record Jump"
     }
 }
