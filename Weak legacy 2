@@ -41,11 +41,11 @@ local args = {
 game:GetService("ReplicatedStorage").Events.TPNPC:FireServer(unpack(args))
 end)
 
-tab2.newButton("Obanai", "Prints Hello!", function()
+tab1.newButton("Obanai", "Prints Hello!", function()
 local args = {
     [1] = "Obanai Quest",
     [2] = 1,
-    [3] = "20K YEN, 100K XP",
+    [3] = "6K YEN, 50K XP",
     [4] = "OBANAI",
     [5] = "OBANAI ATTACK"
 }
@@ -53,7 +53,7 @@ local args = {
 game:GetService("ReplicatedStorage").Events.QuestTake:FireServer(unpack(args))
 end)
 
-tab2.newButton("Mitsuri", "Prints Hello!", function()
+tab1.newButton("Mitsuri", "Prints Hello!", function()
 local args = {
     [1] = "Mitsuri Quest",
     [2] = 1,
@@ -65,7 +65,7 @@ local args = {
 game:GetService("ReplicatedStorage").Events.QuestTake:FireServer(unpack(args))
 end)
 
-tab2.newButton("Hantengu", "Prints Hello!", function()
+tab1.newButton("Hantengu", "Prints Hello!", function()
 local args = {
     [1] = "Hantengu Quest",
     [2] = 1,
