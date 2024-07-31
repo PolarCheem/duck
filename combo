@@ -1,0 +1,71 @@
+local args = {
+    [1] = {
+        ["Mobile"] = true,
+        ["Goal"] = "LeftClick"
+    }
+}
+
+game:GetService("Players").LocalPlayer.Character.Communicate:FireServer(unpack(args))
+wait(0.3
+local args = {
+    [1] = {
+        ["Goal"] = "LeftClickRelease",
+        ["Mobile"] = true
+    }
+}
+
+game:GetService("Players").LocalPlayer.Character.Communicate:FireServer(unpack(args))
+wait(0)
+local args = {
+    [1] = {
+        ["Tool"] = game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Shove"),
+        ["Goal"] = "Console Move"
+    }
+}
+
+game:GetService("Players").LocalPlayer.Character.Communicate:FireServer(unpack(args))
+wait(0.2
+local args = {
+    [1] = {
+        ["Dash"] = Enum.KeyCode.W,
+        ["Key"] = Enum.KeyCode.Q,
+        ["Goal"] = "KeyPress"
+    }
+}
+
+game:GetService("Players").LocalPlayer.Character.Communicate:FireServer(unpack(args))
+local args = {
+    [1] = {
+        ["Mobile"] = true,
+        ["Goal"] = "LeftClick"
+    }
+}
+
+game:GetService("Players").LocalPlayer.Character.Communicate:FireServer(unpack(args))
+wait(0.3
+local args = {
+    [1] = {
+        ["Goal"] = "LeftClickRelease",
+        ["Mobile"] = true
+    }
+}
+
+game:GetService("Players").LocalPlayer.Character.Communicate:FireServer(unpack(args))
+wait(0)
+local args = {
+    [1] = {
+        ["Tool"] = game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Consecutive Punches"),
+        ["Goal"] = "Console Move"
+    }
+}
+
+game:GetService("Players").LocalPlayer.Character.Communicate:FireServer(unpack(args))
+wait(0.5)
+local args = {
+    [1] = {
+        ["Tool"] = game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Normal Punch"),
+        ["Goal"] = "Console Move"
+    }
+}
+
+game:GetService("Players").LocalPlayer.Character.Communicate:FireServer(unpack(args))
