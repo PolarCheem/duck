@@ -16,7 +16,7 @@ labelButton1.BackgroundTransparency = 1
 labelButton1.TextStrokeTransparency = 0
 labelButton1.TextStrokeColor3 = Color3.new(0, 0, 0)
 labelButton1.FontSize = Enum.FontSize.Size24
-labelButton1.Text = "Button 1"
+labelButton1.Text = "Saitama"
 labelButton1.Parent = frame
 
 labelButton1.MouseButton1Click:Connect(function()
@@ -101,7 +101,7 @@ labelButton2.BackgroundTransparency = 1
 labelButton2.TextStrokeTransparency = 0
 labelButton2.TextStrokeColor3 = Color3.new(0, 0, 0)
 labelButton2.FontSize = Enum.FontSize.Size24
-labelButton2.Text = "Button 2"
+labelButton2.Text = "Garou"
 labelButton2.Parent = frame
 
 labelButton2.MouseButton1Click:Connect(function()
