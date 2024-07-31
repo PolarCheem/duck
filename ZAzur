@@ -1,56 +1,43 @@
+local args = {
+    [1] = {
+        ["Mobile"] = true,
+        ["Goal"] = "LeftClick"
+    }
+}
 
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()local GUI = Mercury:Create{
-local Window = OrionLib:MakeWindow({Name = "RF24", HidePremium = false, SaveConfig = true, ConfigFolder = "ORIONTESTHUB"})
+game:GetService("Players").LocalPlayer.Character.Communicate:FireServer(unpack(args))
+wait(1)
+local args = {
+    [1] = {
+        ["Goal"] = "Record Jump"
+    }
+}
 
-local Tab = Window:MakeTab({
-	Name = "Main",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-})
+game:GetService("Players").LocalPlayer.Character.Communicate:FireServer(unpack(args))
+wait(0)
+local args = {
+    [1] = {
+        ["Goal"] = "KeyRelease",
+        ["Key"] = Enum.KeyCode.Space
+    }
+}
 
-local Section = Tab:AddSection({
-	Name = "Anti Cheat"
-})
+game:GetService("Players").LocalPlayer.Character.Communicate:FireServer(unpack(args))
+wait(0.3)
+local args = {
+    [1] = {
+        ["Mobile"] = true,
+        ["Goal"] = "LeftClick"
+    }
+}
 
-Tab:AddButton({
-	Name = "Bypass Anti Cheat",
-	Callback = function()
-      		while true do
-	game.ReplicatedStorage.KAIEvent:Destroy()
-		game.ReplicatedStorage.Shared:Destroy()
-		game.ReplicatedStorage.Network.NetworkBindableEvent:Destroy()
-		wait(0)
-	end
-  	end    
-})
+game:GetService("Players").LocalPlayer.Character.Communicate:FireServer(unpack(args))
+wait(0)
+local args = {
+    [1] = {
+        ["Goal"] = "LeftClickRelease",
+        ["Mobile"] = true
+    }
+}
 
-local Section2 = Tab:AddSection({
-	Name = "Reach"
-})
-
-Tab:AddDropdown({
-	Name = "Leg Reach",
-	Default = "5",
-	Options = {"5", "10", "15", "20", "25"},
-	Callback = function(Value)
-		local Size = Value
-
-character["RightBoot"].Size = Vector3.new(Size, Size, Size)
-character["LeftBoot"].Size = Vector3.new(Size, Size, Size)
-
-character["RightBoot"].CanCollide = false
-character["LeftBoot"].CanCollide = false
-
-character["RightBoot"].Massless = true
-character["LeftBoot"].Massless = true
-
-character["RightBoot"].Transparency = 1
-character["LeftBoot"].Transparency = 1
-	end    
-})
-
-local player = game.Players.LocalPlayer
-local character = player.Character or player.CharacterAdded:Wait()
-
-
-OrionLib:Init()
+game:GetService("Players").LocalPlayer.Character.Communicate:FireServer(unpack(args))
