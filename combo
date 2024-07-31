@@ -34,7 +34,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Communicate:FireServer(unpack(args))
-wait(0.5)
+wait(1)
 local args = {
     [1] = {
         ["Mobile"] = true,
