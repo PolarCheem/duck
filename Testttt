@@ -102,7 +102,7 @@ end
 
 
 performCombo()
-wait(0.1)
+wait(0.5)
 local args = {
     [1] = {
         ["Tool"] = game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Uppercut"),
@@ -111,7 +111,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Communicate:FireServer(unpack(args))
-wait(1.5)
+wait(2.2)
 local args = {
     [1] = {
         ["Dash"] = Enum.KeyCode.W,
@@ -121,7 +121,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Communicate:FireServer(unpack(args))
-wait(1)
+wait(1.5)
 local args = {
     [1] = {
         ["Mobile"] = true,
