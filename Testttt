@@ -39,7 +39,7 @@ local function performCombo()
     performJump()
     
     
-    wait(0.3)
+    wait(0.4)
 
     
     performLeftClick()
