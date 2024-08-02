@@ -3,14 +3,14 @@ local Window = OrionLib:MakeWindow({Name = "Fake Animation | Veux Hub", HidePrem
 loadstring(game:HttpGet("https://raw.githubusercontent.com/PolarCheem/duck/main/jujutsu%20shenanigans"))()
 
 OrionLib:MakeNotification({
-	Name = "dummy Says",
+	Name = "Thank You",
 	Content = "Made by @.ono101|@LocalGoodduck",
 	Image = "rbxassetid://4483345998",
 	Time = 10
 })
 
 local Tab1 = Window:MakeTab({
-	Name = "itadori 100% ",
+	Name = "itadori",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
@@ -749,7 +749,7 @@ if player.Character then
 })
 
 local Tab2 = Window:MakeTab({
-	Name = "Gojo 45%",
+	Name = "Gojo",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
@@ -862,6 +862,192 @@ if player.Character then
   	end    
 })
 
+Tab2:AddButton({
+	Name = "Teleport",
+	Callback = function()
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+local animationId = "rbxassetid://16028730554"
+local animation = Instance.new("Animation")
+animation.AnimationId = animationId
+
+local function playAnimation(character)
+    local humanoid = character:FindFirstChildOfClass("Humanoid")
+    if humanoid then
+        local animator = humanoid:FindFirstChildOfClass("Animator") or Instance.new("Animator", humanoid)
+        local animationTrack = animator:LoadAnimation(animation)
+        animationTrack:Play()
+    end
+end
+
+player.CharacterAdded:Connect(playAnimation)
+if player.Character then
+    playAnimation(player.Character)
+      end
+  	end    
+})
+
+local Section = Tab2:AddSection({
+	Name = "Ultimate"
+})
+
+Tab2:AddButton({
+	Name = "Ultimate",
+	Callback = function()
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+local animationId = "rbxassetid://14737876270"
+local animation = Instance.new("Animation")
+animation.AnimationId = animationId
+
+local function playAnimation(character)
+    local humanoid = character:FindFirstChildOfClass("Humanoid")
+    if humanoid then
+        local animator = humanoid:FindFirstChildOfClass("Animator") or Instance.new("Animator", humanoid)
+        local animationTrack = animator:LoadAnimation(animation)
+        animationTrack:Play()
+    end
+end
+
+player.CharacterAdded:Connect(playAnimation)
+if player.Character then
+    playAnimation(player.Character)
+      end
+  	end    
+})
+
+Tab2:AddButton({
+	Name = "DomainWarn",
+	Callback = function()
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+local animationId = "rbxassetid://15170309180"
+local animation = Instance.new("Animation")
+animation.AnimationId = animationId
+
+local function playAnimation(character)
+    local humanoid = character:FindFirstChildOfClass("Humanoid")
+    if humanoid then
+        local animator = humanoid:FindFirstChildOfClass("Animator") or Instance.new("Animator", humanoid)
+        local animationTrack = animator:LoadAnimation(animation)
+        animationTrack:Play()
+    end
+end
+
+player.CharacterAdded:Connect(playAnimation)
+if player.Character then
+    playAnimation(player.Character)
+      end
+  	end    
+})
+
+Tab2:AddButton({
+	Name = "Blue Max",
+	Callback = function()
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+local animationId = "rbxassetid://15290922156"
+local animation = Instance.new("Animation")
+animation.AnimationId = animationId
+
+local function playAnimation(character)
+    local humanoid = character:FindFirstChildOfClass("Humanoid")
+    if humanoid then
+        local animator = humanoid:FindFirstChildOfClass("Animator") or Instance.new("Animator", humanoid)
+        local animationTrack = animator:LoadAnimation(animation)
+        animationTrack:Play()
+    end
+end
+
+player.CharacterAdded:Connect(playAnimation)
+if player.Character then
+    playAnimation(player.Character)
+      end
+  	end    
+})
+
+Tab2:AddButton({
+	Name = "Red Max",
+	Callback = function()
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+local animationId = "rbxassetid://17283946287"
+local animation = Instance.new("Animation")
+animation.AnimationId = animationId
+
+local function playAnimation(character)
+    local humanoid = character:FindFirstChildOfClass("Humanoid")
+    if humanoid then
+        local animator = humanoid:FindFirstChildOfClass("Animator") or Instance.new("Animator", humanoid)
+        local animationTrack = animator:LoadAnimation(animation)
+        animationTrack:Play()
+    end
+end
+
+player.CharacterAdded:Connect(playAnimation)
+if player.Character then
+    playAnimation(player.Character)
+      end
+  	end    
+})
+
+Tab2:AddButton({
+	Name = "Purple",
+	Callback = function()
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+local animationId = "rbxassetid://14351933730"
+local animation = Instance.new("Animation")
+animation.AnimationId = animationId
+
+local function playAnimation(character)
+    local humanoid = character:FindFirstChildOfClass("Humanoid")
+    if humanoid then
+        local animator = humanoid:FindFirstChildOfClass("Animator") or Instance.new("Animator", humanoid)
+        local animationTrack = animator:LoadAnimation(animation)
+        animationTrack:Play()
+    end
+end
+
+player.CharacterAdded:Connect(playAnimation)
+if player.Character then
+    playAnimation(player.Character)
+      end
+  	end    
+})
+
+Tab2:AddButton({
+	Name = "Infinite Void",
+	Callback = function()
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+local animationId = "rbxassetid://14801008075"
+local animation = Instance.new("Animation")
+animation.AnimationId = animationId
+
+local function playAnimation(character)
+    local humanoid = character:FindFirstChildOfClass("Humanoid")
+    if humanoid then
+        local animator = humanoid:FindFirstChildOfClass("Animator") or Instance.new("Animator", humanoid)
+        local animationTrack = animator:LoadAnimation(animation)
+        animationTrack:Play()
+    end
+end
+
+player.CharacterAdded:Connect(playAnimation)
+if player.Character then
+    playAnimation(player.Character)
+      end
+  	end    
+})
+
 local Tab3 = Window:MakeTab({
 	Name = "updates",
 	Icon = "rbxassetid://4483345998",
@@ -870,7 +1056,7 @@ local Tab3 = Window:MakeTab({
 
 Tab3:AddParagraph("updates ?","GOJO AND MORE CHARACTERS ADDED WILL BE SOON")
 
-Tab3.AddParagraph("Megumi 70% | Gojo 45%")
+Tab3.AddParagraph("Megumi 70% | Gojo 100%")
 
 Tab3:AddParagraph("IMPORTANT","SAVE THIS SCRIPT ON YOUR EXECUTER ALL UPDATED WILL BE IN THIS SCRIPT")
 
