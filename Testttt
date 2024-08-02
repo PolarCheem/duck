@@ -35,7 +35,7 @@ local function performCombo()
     end
     
     
-    wait(0.15)
+    wait(0.1)
     performJump()
     
     
