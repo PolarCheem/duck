@@ -749,15 +749,32 @@ if player.Character then
 })
 
 local Tab2 = Window:MakeTab({
+	Name = "Gojo 0%",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Section = Tab2:AddSection({
+	Name = "Base"
+})
+
+Tab2:AddButton({
+	Name = "Lapis Blue",
+	Callback = function()
+      		print("button pressed")
+  	end    
+})
+
+local Tab3 = Window:MakeTab({
 	Name = "updates",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
 
-Tab2:AddParagraph("updates ?","GOJO AND MORE CHARACTERS ADDED WILL BE SOON")
+Tab3:AddParagraph("updates ?","GOJO AND MORE CHARACTERS ADDED WILL BE SOON")
 
-Tab2:AddParagraph("completed â","ITADORI|YUJI IS COMPLETED 100%,AND MEGUMI IS STILL ON PROCESSING AND IT'S 70% COMPLETED")
+Tab3.AddParagraph("Megumi 70% | Gojo being worked on")
 
-Tab2:AddParagraph("IMPORTANT","SAVE THIS SCRIPT ON YOUR EXECUTER ALL UPDATED WILL BE IN THIS SCRIPT")
+Tab3:AddParagraph("IMPORTANT","SAVE THIS SCRIPT ON YOUR EXECUTER ALL UPDATED WILL BE IN THIS SCRIPT")
 
-Tab2:AddParagraph("credits","made by @.ono101|@Localgoodduck")
+Tab3:AddParagraph("credits","made by @.ono101|@Localgoodduck")
