@@ -35,11 +35,11 @@ local function performCombo()
     end
     
     
-    wait(0.3)
+    wait(0.2)
     performJump()
     
     
-    wait(0.3)
+    wait(0.2)
 
     
     performLeftClick()
