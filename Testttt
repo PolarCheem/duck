@@ -29,17 +29,17 @@ local function performCombo()
     
     for i = 1, 3 do
         performLeftClick()
-        wait(0.1)
+        wait(0.3)
         releaseLeftClick()
-        wait(0.1)
+        wait(0.3)
     end
     
     
-    wait(0)
+    wait(0.3)
     performJump()
     
     
-    wait(0.1)
+    wait(0.3)
 
     
     performLeftClick()
@@ -86,14 +86,13 @@ local function performJump()
 end
 
 local function performCombo()
-   
     
     
-   
+    wait(0.3)
     performJump()
     
     
-    wait(0.15)
+    wait(0.4)
 
     
     performLeftClick()
