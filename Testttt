@@ -57,7 +57,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Communicate:FireServer(unpack(args))
-wait(1.1)
+wait(1.2)
 local function performLeftClick()
     local args = {
         [1] = {
@@ -86,13 +86,14 @@ local function performJump()
 end
 
 local function performCombo()
+   
     
     
-    wait(0.3)
+   
     performJump()
     
     
-    wait(0.4)
+    wait(0.15)
 
     
     performLeftClick()
