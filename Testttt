@@ -39,7 +39,7 @@ local function performCombo()
     performJump()
     
     
-    wait(0.4)
+    wait(0.3)
 
     
     performLeftClick()
@@ -48,7 +48,7 @@ end
 
 
 performCombo()
-wait(1.5)
+wait(1.2)
 local args = {
     [1] = {
         ["Tool"] = game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Consecutive Punches"),
@@ -57,7 +57,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Communicate:FireServer(unpack(args))
-wait(1.5)
+wait(1)
 local function performLeftClick()
     local args = {
         [1] = {
