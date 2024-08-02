@@ -761,7 +761,26 @@ local Section = Tab2:AddSection({
 Tab2:AddButton({
 	Name = "Lapis Blue",
 	Callback = function()
-      		print("button pressed")
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+local animationId = "rbxassetid://14702384584"
+local animation = Instance.new("Animation")
+animation.AnimationId = animationId
+
+local function playAnimation(character)
+    local humanoid = character:FindFirstChildOfClass("Humanoid")
+    if humanoid then
+        local animator = humanoid:FindFirstChildOfClass("Animator") or Instance.new("Animator", humanoid)
+        local animationTrack = animator:LoadAnimation(animation)
+        animationTrack:Play()
+    end
+end
+
+player.CharacterAdded:Connect(playAnimation)
+if player.Character then
+    playAnimation(player.Character)
+      end
   	end    
 })
 
