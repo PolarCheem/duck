@@ -57,7 +57,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Communicate:FireServer(unpack(args))
-wait(1.2)
+wait(1.5)
 local function performLeftClick()
     local args = {
         [1] = {
