@@ -1,26 +1,51 @@
-local objectsToSave = {
-"SetEquipped",
-"SetGraphic",
-"SetInformation",
-"SetKeybind",
-"SetMisc",
-"SetToolOrder",
-"Emote",
-}
-
-local function deleteRemovedObjects()
-for _, object in pairs(ReplicatedStorage.Remotes:GetChildren()) do
-local found = false
-for _, name in pairs(objectsToSave) do
-if object.Name == name then
-found = true
-break
-end
-end
-if not found then
-object:Destroy()
-end
-end
+local function performLeftClick()
+    local args = {
+        [1] = {
+            ["Goal"] = "LeftClick",
+            ["Mobile"] = true
+        }
+    }
+    game:GetService("Players").LocalPlayer.Character.Communicate:FireServer(unpack(args))
 end
 
-deleteRemovedObjects()
+local function releaseLeftClick()
+    local args = {
+        [1] = {
+            ["Goal"] = "LeftClickRelease",
+            ["Mobile"] = true
+        }
+    }
+    game:GetService("Players").LocalPlayer.Character.Communicate:FireServer(unpack(args))
+end
+
+local function performJump()
+    local humanoid = game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
+    if humanoid then
+        humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+    end
+end
+
+local function performCombo()
+    
+    for i = 1, 3 do
+        performLeftClick()
+        wait(0.3)
+        releaseLeftClick()
+        wait(0.3)
+    end
+    
+    
+    wait(0.3)
+    performJump()
+    
+    
+    wait(0.4)
+
+    
+    performLeftClick()
+    releaseLeftClick()
+end
+
+
+performCombo()
+wait(0.1)
