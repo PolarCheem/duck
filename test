@@ -1,11 +1,10 @@
-
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-
 local Window = OrionLib:MakeWindow({Name = "Fake Animation | Veux Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+loadstring(game:HttpGet("https://raw.githubusercontent.com/PolarCheem/duck/main/jujutsu%20shenanigans"))()
 
 OrionLib:MakeNotification({
 	Name = "dummy Says",
-	Content = "Made by @RedVeux|@LocalGoodduck",
+	Content = "Made by @.ono101|@LocalGoodduck",
 	Image = "rbxassetid://4483345998",
 	Time = 10
 })
@@ -761,4 +760,4 @@ Tab2:AddParagraph("completed â","ITADORI|YUJI IS COMPLETED 100%,AND MEGUMI 
 
 Tab2:AddParagraph("IMPORTANT","SAVE THIS SCRIPT ON YOUR EXECUTER ALL UPDATED WILL BE IN THIS SCRIPT")
 
-Tab2:AddParagraph("creditsð¤","made by @RedVeux|@Localgoodduck")
+Tab2:AddParagraph("credits","made by @.ono101|@Localgoodduck")
