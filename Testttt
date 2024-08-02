@@ -29,17 +29,17 @@ local function performCombo()
     
     for i = 1, 3 do
         performLeftClick()
-        wait(0.3)
+        wait(0.1)
         releaseLeftClick()
-        wait(0.3)
+        wait(0.1)
     end
     
     
-    wait(0.3)
+    wait(0.1)
     performJump()
     
     
-    wait(0.4)
+    wait(0.15)
 
     
     performLeftClick()
@@ -49,3 +49,56 @@ end
 
 performCombo()
 wait(0.1)
+local args = {
+    [1] = {
+        ["Tool"] = game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Consecutive Punches"),
+        ["Goal"] = "Console Move"
+    }
+}
+
+game:GetService("Players").LocalPlayer.Character.Communicate:FireServer(unpack(args))
+wait(1.5)
+local function performLeftClick()
+    local args = {
+        [1] = {
+            ["Goal"] = "LeftClick",
+            ["Mobile"] = true
+        }
+    }
+    game:GetService("Players").LocalPlayer.Character.Communicate:FireServer(unpack(args))
+end
+
+local function releaseLeftClick()
+    local args = {
+        [1] = {
+            ["Goal"] = "LeftClickRelease",
+            ["Mobile"] = true
+        }
+    }
+    game:GetService("Players").LocalPlayer.Character.Communicate:FireServer(unpack(args))
+end
+
+local function performJump()
+    local humanoid = game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
+    if humanoid then
+        humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+    end
+end
+
+local function performCombo()
+   
+    
+    
+   
+    performJump()
+    
+    
+    wait(0.15)
+
+    
+    performLeftClick()
+    releaseLeftClick()
+end
+
+
+performCombo()
