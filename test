@@ -1,13 +1,764 @@
-local args = {
-    [1] = false
-}
 
-game:GetService("ReplicatedStorage"):WaitForChild("Knit"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("DivergentFistService"):WaitForChild("RE"):WaitForChild("Activated"):FireServer(unpack(args))
-wait(0.30)
-local args = {
-    [1] = false
-}
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 
-game:GetService("ReplicatedStorage"):WaitForChild("Knit"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("DivergentFistService"):WaitForChild("RE"):WaitForChild("Activated"):FireServer(unpack(args))
+local Window = OrionLib:MakeWindow({Name = "Fake Animation | Veux Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
-																					
+OrionLib:MakeNotification({
+	Name = "dummy Says",
+	Content = "Made by @RedVeux|@LocalGoodduck",
+	Image = "rbxassetid://4483345998",
+	Time = 10
+})
+
+local Tab1 = Window:MakeTab({
+	Name = "itadori 100% ",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab1:AddButton({
+	Name = "cursed Strike|victim",
+	Callback = function()
+      		local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+local animationId = "rbxassetid://16872047350"
+local animation = Instance.new("Animation")
+animation.AnimationId = animationId
+
+local function playAnimation(character)
+    local humanoid = character:FindFirstChildOfClass("Humanoid")
+    if humanoid then
+        local animator = humanoid:FindFirstChildOfClass("Animator") or Instance.new("Animator", humanoid)
+        local animationTrack = animator:LoadAnimation(animation)
+        animationTrack:Play()
+    end
+end
+
+player.CharacterAdded:Connect(playAnimation)
+if player.Character then
+    playAnimation(player.Character)
+      end
+  	end    
+})
+
+Tab1:AddButton({
+	Name = "Crushing Blow",
+	Callback = function()
+      		local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+local animationId = "rbxassetid://15432272268"
+local animation = Instance.new("Animation")
+animation.AnimationId = animationId
+
+local function playAnimation(character)
+    local humanoid = character:FindFirstChildOfClass("Humanoid")
+    if humanoid then
+        local animator = humanoid:FindFirstChildOfClass("Animator") or Instance.new("Animator", humanoid)
+        local animationTrack = animator:LoadAnimation(animation)
+        animationTrack:Play()
+    end
+end
+
+player.CharacterAdded:Connect(playAnimation)
+if player.Character then
+    playAnimation(player.Character)
+      end
+  	end    
+})
+
+Tab1:AddButton({
+	Name = "Cursed strike",
+	Callback = function()
+      local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+local animationId = "rbxassetid://15434683426"
+local animation = Instance.new("Animation")
+animation.AnimationId = animationId
+
+local function playAnimation(character)
+    local humanoid = character:FindFirstChildOfClass("Humanoid")
+    if humanoid then
+        local animator = humanoid:FindFirstChildOfClass("Animator") or Instance.new("Animator", humanoid)
+        local animationTrack = animator:LoadAnimation(animation)
+        animationTrack:Play()
+    end
+end
+
+player.CharacterAdded:Connect(playAnimation)
+if player.Character then
+    playAnimation(player.Character)
+      end
+      end    
+})
+
+Tab1:AddButton({
+	Name = "Maji Kick",
+	Callback = function()
+      local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+local animationId = "rbxassetid://14841505475"
+local animation = Instance.new("Animation")
+animation.AnimationId = animationId
+
+local function playAnimation(character)
+    local humanoid = character:FindFirstChildOfClass("Humanoid")
+    if humanoid then
+        local animator = humanoid:FindFirstChildOfClass("Animator") or Instance.new("Animator", humanoid)
+        local animationTrack = animator:LoadAnimation(animation)
+        animationTrack:Play()
+    end
+end
+
+player.CharacterAdded:Connect(playAnimation)
+if player.Character then
+    playAnimation(player.Character)
+      end
+    end    
+})
+
+Tab1:AddButton({
+	Name = "ultimate",
+	Callback = function()
+      local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+local animationId = "rbxassetid://16663212523"
+local animation = Instance.new("Animation")
+animation.AnimationId = animationId
+
+local function playAnimation(character)
+    local humanoid = character:FindFirstChildOfClass("Humanoid")
+    if humanoid then
+        local animator = humanoid:FindFirstChildOfClass("Animator") or Instance.new("Animator", humanoid)
+        local animationTrack = animator:LoadAnimation(animation)
+        animationTrack:Play()
+    end
+end
+
+player.CharacterAdded:Connect(playAnimation)
+if player.Character then
+    playAnimation(player.Character)
+      end
+    end    
+})
+
+Tab1:AddButton({
+	Name = "DomainWarn",
+	Callback = function()
+      local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+local animationId = "rbxassetid://15488163846"
+local animation = Instance.new("Animation")
+animation.AnimationId = animationId
+
+local function playAnimation(character)
+    local humanoid = character:FindFirstChildOfClass("Humanoid")
+    if humanoid then
+        local animator = humanoid:FindFirstChildOfClass("Animator") or Instance.new("Animator", humanoid)
+        local animationTrack = animator:LoadAnimation(animation)
+        animationTrack:Play()
+    end
+end
+
+player.CharacterAdded:Connect(playAnimation)
+if player.Character then
+    playAnimation(player.Character)
+      end
+    end    
+})
+
+Tab1:AddButton({
+	Name = "Flame Arrow",
+	Callback = function()
+      local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+local animationId = "rbxassetid://15934318270"
+local animation = Instance.new("Animation")
+animation.AnimationId = animationId
+
+local function playAnimation(character)
+    local humanoid = character:FindFirstChildOfClass("Humanoid")
+    if humanoid then
+        local animator = humanoid:FindFirstChildOfClass("Animator") or Instance.new("Animator", humanoid)
+        local animationTrack = animator:LoadAnimation(animation)
+        animationTrack:Play()
+    end
+end
+
+player.CharacterAdded:Connect(playAnimation)
+if player.Character then
+    playAnimation(player.Character)
+      end
+    end    
+})
+
+Tab1:AddButton({
+	Name = "Rush",
+	Callback = function()
+      local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+local animationId = "rbxassetid://15984964491"
+local animation = Instance.new("Animation")
+animation.AnimationId = animationId
+
+local function playAnimation(character)
+    local humanoid = character:FindFirstChildOfClass("Humanoid")
+    if humanoid then
+        local animator = humanoid:FindFirstChildOfClass("Animator") or Instance.new("Animator", humanoid)
+        local animationTrack = animator:LoadAnimation(animation)
+        animationTrack:Play()
+    end
+end
+
+player.CharacterAdded:Connect(playAnimation)
+if player.Character then
+    playAnimation(player.Character)
+      end
+    end    
+})
+
+Tab1:AddButton({
+	Name = "Rush Hit",
+	Callback = function()
+      local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+local animationId = "rbxassetid://16827230331"
+local animation = Instance.new("Animation")
+animation.AnimationId = animationId
+
+local function playAnimation(character)
+    local humanoid = character:FindFirstChildOfClass("Humanoid")
+    if humanoid then
+        local animator = humanoid:FindFirstChildOfClass("Animator") or Instance.new("Animator", humanoid)
+        local animationTrack = animator:LoadAnimation(animation)
+        animationTrack:Play()
+    end
+end
+
+player.CharacterAdded:Connect(playAnimation)
+if player.Character then
+    playAnimation(player.Character)
+      end
+    end    
+})
+
+Tab1:AddButton({
+	Name = "cleave",
+	Callback = function()
+      local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+local animationId = "rbxassetid://16638412783"
+local animation = Instance.new("Animation")
+animation.AnimationId = animationId
+
+local function playAnimation(character)
+    local humanoid = character:FindFirstChildOfClass("Humanoid")
+    if humanoid then
+        local animator = humanoid:FindFirstChildOfClass("Animator") or Instance.new("Animator", humanoid)
+        local animationTrack = animator:LoadAnimation(animation)
+        animationTrack:Play()
+    end
+end
+
+player.CharacterAdded:Connect(playAnimation)
+if player.Character then
+    playAnimation(player.Character)
+      end
+    end    
+})
+
+Tab1:AddButton({
+	Name = "MalevolentShrine",
+	Callback = function()
+      local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+local animationId = "rbxassetid://15489784732"
+local animation = Instance.new("Animation")
+animation.AnimationId = animationId
+
+local function playAnimation(character)
+    local humanoid = character:FindFirstChildOfClass("Humanoid")
+    if humanoid then
+        local animator = humanoid:FindFirstChildOfClass("Animator") or Instance.new("Animator", humanoid)
+        local animationTrack = animator:LoadAnimation(animation)
+        animationTrack:Play()
+    end
+end
+
+player.CharacterAdded:Connect(playAnimation)
+if player.Character then
+    playAnimation(player.Character)
+      end
+    end    
+})
+
+Tab1:AddButton({
+	Name = "Dismantle",
+	Callback = function()
+      local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+local animationId = "rbxassetid://15292037778"
+local animation = Instance.new("Animation")
+animation.AnimationId = animationId
+
+local function playAnimation(character)
+    local humanoid = character:FindFirstChildOfClass("Humanoid")
+    if humanoid then
+        local animator = humanoid:FindFirstChildOfClass("Animator") or Instance.new("Animator", humanoid)
+        local animationTrack = animator:LoadAnimation(animation)
+        animationTrack:Play()
+    end
+end
+
+player.CharacterAdded:Connect(playAnimation)
+if player.Character then
+    playAnimation(player.Character)
+      end
+    end    
+})
+
+Tab1:AddButton({
+	Name = "DivergentFist",
+	Callback = function()
+      local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+local animationId = "rbxassetid://14771588355"
+local animation = Instance.new("Animation")
+animation.AnimationId = animationId
+
+local function playAnimation(character)
+    local humanoid = character:FindFirstChildOfClass("Humanoid")
+    if humanoid then
+        local animator = humanoid:FindFirstChildOfClass("Animator") or Instance.new("Animator", humanoid)
+        local animationTrack = animator:LoadAnimation(animation)
+        animationTrack:Play()
+    end
+end
+
+player.CharacterAdded:Connect(playAnimation)
+if player.Character then
+    playAnimation(player.Character)
+      end
+    end    
+})
+
+Tab1:AddButton({
+	Name = "SlaughterDemon",
+	Callback = function()
+      local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+local animationId = "rbxassetid://16735568688"
+local animation = Instance.new("Animation")
+animation.AnimationId = animationId
+
+local function playAnimation(character)
+    local humanoid = character:FindFirstChildOfClass("Humanoid")
+    if humanoid then
+        local animator = humanoid:FindFirstChildOfClass("Animator") or Instance.new("Animator", humanoid)
+        local animationTrack = animator:LoadAnimation(animation)
+        animationTrack:Play()
+    end
+end
+
+player.CharacterAdded:Connect(playAnimation)
+if player.Character then
+    playAnimation(player.Character)
+      end
+    end    
+})
+
+local Tab1 = Window:MakeTab({
+	Name = "megumi 70% ",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab1:AddButton({
+	Name = "Great serpent",
+	Callback = function()
+      		local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+local animationId = "rbxassetid://17656896351"
+local animation = Instance.new("Animation")
+animation.AnimationId = animationId
+
+local function playAnimation(character)
+    local humanoid = character:FindFirstChildOfClass("Humanoid")
+    if humanoid then
+        local animator = humanoid:FindFirstChildOfClass("Animator") or Instance.new("Animator", humanoid)
+        local animationTrack = animator:LoadAnimation(animation)
+        animationTrack:Play()
+    end
+end
+
+player.CharacterAdded:Connect(playAnimation)
+if player.Character then
+    playAnimation(player.Character)
+      end
+  	end    
+    })
+
+    Tab1:AddButton({
+	Name = "shadow Swarm Run",
+	Callback = function()
+      		local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+local animationId = "rbxassetid://17588190031"
+local animation = Instance.new("Animation")
+animation.AnimationId = animationId
+
+local function playAnimation(character)
+    local humanoid = character:FindFirstChildOfClass("Humanoid")
+    if humanoid then
+        local animator = humanoid:FindFirstChildOfClass("Animator") or Instance.new("Animator", humanoid)
+        local animationTrack = animator:LoadAnimation(animation)
+        animationTrack:Play()
+    end
+end
+
+player.CharacterAdded:Connect(playAnimation)
+if player.Character then
+    playAnimation(player.Character)
+      end
+  	end    
+    })
+
+Tab1:AddButton({
+	Name = "shadowSwarm 2",
+	Callback = function()
+      		local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+local animationId = "rbxassetid://17588171119"
+local animation = Instance.new("Animation")
+animation.AnimationId = animationId
+
+local function playAnimation(character)
+    local humanoid = character:FindFirstChildOfClass("Humanoid")
+    if humanoid then
+        local animator = humanoid:FindFirstChildOfClass("Animator") or Instance.new("Animator", humanoid)
+        local animationTrack = animator:LoadAnimation(animation)
+        animationTrack:Play()
+    end
+end
+
+player.CharacterAdded:Connect(playAnimation)
+if player.Character then
+    playAnimation(player.Character)
+      end
+  	end    
+    })
+
+Tab1:AddButton({
+	Name = "shadow Swarm 1",
+	Callback = function()
+      		local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+local animationId = "rbxassetid://17588168513"
+local animation = Instance.new("Animation")
+animation.AnimationId = animationId
+
+local function playAnimation(character)
+    local humanoid = character:FindFirstChildOfClass("Humanoid")
+    if humanoid then
+        local animator = humanoid:FindFirstChildOfClass("Animator") or Instance.new("Animator", humanoid)
+        local animationTrack = animator:LoadAnimation(animation)
+        animationTrack:Play()
+    end
+end
+
+player.CharacterAdded:Connect(playAnimation)
+if player.Character then
+    playAnimation(player.Character)
+      end
+  	end    
+    })
+
+Tab1:AddButton({
+	Name = "shadow Swarm Hit",
+	Callback = function()
+      		local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+local animationId = "rbxassetid://17588173341"
+local animation = Instance.new("Animation")
+animation.AnimationId = animationId
+
+local function playAnimation(character)
+    local humanoid = character:FindFirstChildOfClass("Humanoid")
+    if humanoid then
+        local animator = humanoid:FindFirstChildOfClass("Animator") or Instance.new("Animator", humanoid)
+        local animationTrack = animator:LoadAnimation(animation)
+        animationTrack:Play()
+    end
+end
+
+player.CharacterAdded:Connect(playAnimation)
+if player.Character then
+    playAnimation(player.Character)
+      end
+  	end    
+    })
+
+Tab1:AddButton({
+	Name = "Mahoraga Summon",
+	Callback = function()
+      local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+local animationId = "rbxassetid://17551479073"
+local animation = Instance.new("Animation")
+animation.AnimationId = animationId
+
+local function playAnimation(character)
+    local humanoid = character:FindFirstChildOfClass("Humanoid")
+    if humanoid then
+        local animator = humanoid:FindFirstChildOfClass("Animator") or Instance.new("Animator", humanoid)
+        local animationTrack = animator:LoadAnimation(animation)
+        animationTrack:Play()
+    end
+end
+
+player.CharacterAdded:Connect(playAnimation)
+if player.Character then
+    playAnimation(player.Character)
+      end
+    end    
+})
+Tab1:AddButton({
+	Name = "Mahoraga Use",
+	Callback = function()
+      local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+local animationId = "rbxassetid://17549011110"
+local animation = Instance.new("Animation")
+animation.AnimationId = animationId
+
+local function playAnimation(character)
+    local humanoid = character:FindFirstChildOfClass("Humanoid")
+    if humanoid then
+        local animator = humanoid:FindFirstChildOfClass("Animator") or Instance.new("Animator", humanoid)
+        local animationTrack = animator:LoadAnimation(animation)
+        animationTrack:Play()
+    end
+end
+
+player.CharacterAdded:Connect(playAnimation)
+if player.Character then
+    playAnimation(player.Character)
+      end
+    end    
+})
+
+Tab1:AddButton({
+	Name = "Divine Dog",
+	Callback = function()
+      local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+local animationId = "rbxassetid://17396322509"
+local animation = Instance.new("Animation")
+animation.AnimationId = animationId
+
+local function playAnimation(character)
+    local humanoid = character:FindFirstChildOfClass("Humanoid")
+    if humanoid then
+        local animator = humanoid:FindFirstChildOfClass("Animator") or Instance.new("Animator", humanoid)
+        local animationTrack = animator:LoadAnimation(animation)
+        animationTrack:Play()
+    end
+end
+
+player.CharacterAdded:Connect(playAnimation)
+if player.Character then
+    playAnimation(player.Character)
+      end
+    end    
+})
+
+Tab1:AddButton({
+	Name = "Domain Warn",
+	Callback = function()
+      local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+local animationId = "rbxassetid://17284846608"
+local animation = Instance.new("Animation")
+animation.AnimationId = animationId
+
+local function playAnimation(character)
+    local humanoid = character:FindFirstChildOfClass("Humanoid")
+    if humanoid then
+        local animator = humanoid:FindFirstChildOfClass("Animator") or Instance.new("Animator", humanoid)
+        local animationTrack = animator:LoadAnimation(animation)
+        animationTrack:Play()
+    end
+end
+
+player.CharacterAdded:Connect(playAnimation)
+if player.Character then
+    playAnimation(player.Character)
+      end
+    end    
+})
+
+Tab1:AddButton({
+	Name = "shadow Swarm",
+	Callback = function()
+      local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+local animationId = "rbxassetid://17588165564"
+local animation = Instance.new("Animation")
+animation.AnimationId = animationId
+
+local function playAnimation(character)
+    local humanoid = character:FindFirstChildOfClass("Humanoid")
+    if humanoid then
+        local animator = humanoid:FindFirstChildOfClass("Animator") or Instance.new("Animator", humanoid)
+        local animationTrack = animator:LoadAnimation(animation)
+        animationTrack:Play()
+    end
+end
+
+player.CharacterAdded:Connect(playAnimation)
+if player.Character then
+    playAnimation(player.Character)
+      end
+    end    
+})
+
+Tab1:AddButton({
+	Name = "ultimate",
+	Callback = function()
+      local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+local animationId = "rbxassetid://17243305851"
+local animation = Instance.new("Animation")
+animation.AnimationId = animationId
+
+local function playAnimation(character)
+    local humanoid = character:FindFirstChildOfClass("Humanoid")
+    if humanoid then
+        local animator = humanoid:FindFirstChildOfClass("Animator") or Instance.new("Animator", humanoid)
+        local animationTrack = animator:LoadAnimation(animation)
+        animationTrack:Play()
+    end
+end
+
+player.CharacterAdded:Connect(playAnimation)
+if player.Character then
+    playAnimation(player.Character)
+      end
+    end    
+})
+
+Tab1:AddButton({
+	Name = "Toad",
+	Callback = function()
+      local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+local animationId = "rbxassetid://17263623586"
+local animation = Instance.new("Animation")
+animation.AnimationId = animationId
+
+local function playAnimation(character)
+    local humanoid = character:FindFirstChildOfClass("Humanoid")
+    if humanoid then
+        local animator = humanoid:FindFirstChildOfClass("Animator") or Instance.new("Animator", humanoid)
+        local animationTrack = animator:LoadAnimation(animation)
+        animationTrack:Play()
+    end
+end
+
+player.CharacterAdded:Connect(playAnimation)
+if player.Character then
+    playAnimation(player.Character)
+      end
+    end    
+})
+
+Tab1:AddButton({
+	Name = "Nue",
+	Callback = function()
+      local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+local animationId = "rbxassetid://17324258817"
+local animation = Instance.new("Animation")
+animation.AnimationId = animationId
+
+local function playAnimation(character)
+    local humanoid = character:FindFirstChildOfClass("Humanoid")
+    if humanoid then
+        local animator = humanoid:FindFirstChildOfClass("Animator") or Instance.new("Animator", humanoid)
+        local animationTrack = animator:LoadAnimation(animation)
+        animationTrack:Play()
+    end
+end
+
+player.CharacterAdded:Connect(playAnimation)
+if player.Character then
+    playAnimation(player.Character)
+      end
+    end    
+})
+
+Tab1:AddButton({
+	Name = "shadow",
+	Callback = function()
+      local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+local animationId = "rbxassetid://17110997686"
+local animation = Instance.new("Animation")
+
+
+local function playAnimation(character)
+    local humanoid = character:FindFirstChildOfClass("Humanoid")
+    if humanoid then
+        local animator = humanoid:FindFirstChildOfClass("Animator") or Instance.new("Animator", humanoid)
+        local animationTrack = animator:LoadAnimation(animation)
+        animationTrack:Play()
+    end
+end
+
+player.CharacterAdded:Connect(playAnimation)
+if player.Character then
+    playAnimation(player.Character)
+      end
+    end    
+})
+
+local Tab2 = Window:MakeTab({
+	Name = "updates",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab2:AddParagraph("updates ?","GOJO AND MORE CHARACTERS ADDED WILL BE SOON")
+
+Tab2:AddParagraph("completed â","ITADORI|YUJI IS COMPLETED 100%,AND MEGUMI IS STILL ON PROCESSING AND IT'S 70% COMPLETED")
+
+Tab2:AddParagraph("IMPORTANT","SAVE THIS SCRIPT ON YOUR EXECUTER ALL UPDATED WILL BE IN THIS SCRIPT")
+
+Tab2:AddParagraph("creditsð¤","made by @RedVeux|@Localgoodduck")
