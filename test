@@ -3,8 +3,8 @@ local Window = OrionLib:MakeWindow({Name = "Fake Animation | Veux Hub", HidePrem
 loadstring(game:HttpGet("https://raw.githubusercontent.com/PolarCheem/duck/main/jujutsu%20shenanigans"))()
 
 OrionLib:MakeNotification({
-	Name = "Thank You",
-	Content = "Made by @.ono101|@LocalGoodduck",
+	Name = "Dummy says",
+	Content = "Made by @RedVeux | LocalGoodduck | @.ono101",
 	Image = "rbxassetid://4483345998",
 	Time = 10
 })
@@ -1060,4 +1060,4 @@ Tab3.AddParagraph("Megumi 70% | Gojo 100%")
 
 Tab3:AddParagraph("IMPORTANT","SAVE THIS SCRIPT ON YOUR EXECUTER ALL UPDATED WILL BE IN THIS SCRIPT")
 
-Tab3:AddParagraph("credits","made by @.ono101|@Localgoodduck")
+Tab3:AddParagraph("credits","Made by @RedVeux | LocalGoodduck | @.ono101")
