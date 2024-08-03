@@ -48,7 +48,7 @@ end
 
 
 performCombo()
-wait(0.7)
+wait(1)
 local args = {
     [1] = {
         ["Tool"] = game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Normal Punch"),
