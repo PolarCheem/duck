@@ -48,11 +48,11 @@ end
 
 
 performCombo()
-wait(1)
+wait(1.5)
 local args = {
     [1] = {
-        ["Tool"] = game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Normal Punch"),
-        ["Goal"] = "Hunter's Grasp"
+        ["Tool"] = game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Hunter's Grasp"),
+        ["Goal"] = "Console Move"
     }
 }
 
@@ -78,17 +78,17 @@ game:GetService("Players").LocalPlayer.Character.Communicate:FireServer(unpack(a
 wait(0.8)
 local args = {
     [1] = {
-        ["Tool"] = game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Normal Punch"),
-        ["Goal"] = "Lethal Whirlwind Stream"
+        ["Tool"] = game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Lethal Whirlwind Stream"),
+        ["Goal"] = "Console Move"
     }
 }
 
 game:GetService("Players").LocalPlayer.Character.Communicate:FireServer(unpack(args))
-wait(1.5)
+wait(2)
 local args = {
     [1] = {
-        ["Tool"] = game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Normal Punch"),
-        ["Goal"] = "Flowing Water"
+        ["Tool"] = game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Flowing Water"),
+        ["Goal"] = "Console Move"
     }
 }
 
