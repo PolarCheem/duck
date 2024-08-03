@@ -51,67 +51,13 @@ performCombo()
 wait(0.7)
 local args = {
     [1] = {
-        ["Tool"] = game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Consecutive Punches"),
-        ["Goal"] = "Console Move"
+        ["Tool"] = game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Normal Punch"),
+        ["Goal"] = "Hunter's Grasp"
     }
 }
 
 game:GetService("Players").LocalPlayer.Character.Communicate:FireServer(unpack(args))
-wait(1.5)
-local function performLeftClick()
-    local args = {
-        [1] = {
-            ["Goal"] = "LeftClick",
-            ["Mobile"] = true
-        }
-    }
-    game:GetService("Players").LocalPlayer.Character.Communicate:FireServer(unpack(args))
-end
-
-local function releaseLeftClick()
-    local args = {
-        [1] = {
-            ["Goal"] = "LeftClickRelease",
-            ["Mobile"] = true
-        }
-    }
-    game:GetService("Players").LocalPlayer.Character.Communicate:FireServer(unpack(args))
-end
-
-local function performJump()
-    local humanoid = game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
-    if humanoid then
-        humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
-    end
-end
-
-local function performCombo()
-   
-    
-    
-   
-    performJump()
-    
-    
-    wait(0.15)
-
-    
-    performLeftClick()
-    releaseLeftClick()
-end
-
-
-performCombo()
 wait(0.5)
-local args = {
-    [1] = {
-        ["Tool"] = game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Uppercut"),
-        ["Goal"] = "Console Move"
-    }
-}
-
-game:GetService("Players").LocalPlayer.Character.Communicate:FireServer(unpack(args))
-wait(2.35)
 local args = {
     [1] = {
         ["Dash"] = Enum.KeyCode.W,
@@ -121,11 +67,29 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Communicate:FireServer(unpack(args))
-wait(0.78)
+wait(0.5)
+local args = {
+        [1] = {
+            ["Goal"] = "LeftClick",
+            ["Mobile"] = true
+        }
+    }
+    game:GetService("Players").LocalPlayer.Character.Communicate:FireServer(unpack(args))
+end
+wait(0.8)
 local args = {
     [1] = {
         ["Tool"] = game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Normal Punch"),
-        ["Goal"] = "Console Move"
+        ["Goal"] = "Lethal Whirlwind Stream"
+    }
+}
+
+game:GetService("Players").LocalPlayer.Character.Communicate:FireServer(unpack(args))
+wait(1.2)
+local args = {
+    [1] = {
+        ["Tool"] = game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Normal Punch"),
+        ["Goal"] = "Flowing Water"
     }
 }
 
