@@ -77,6 +77,14 @@ local args = {
 game:GetService("Players").LocalPlayer.Character.Communicate:FireServer(unpack(args))
 wait(1.5)
 local args = {
+        [1] = {
+            ["Goal"] = "LeftClickRelease",
+            ["Mobile"] = true
+        }
+    }
+game:GetService("Players").LocalPlayer.Character.Communicate:FireServer(unpack(args))
+wait(0)
+local args = {
     [1] = {
         ["Tool"] = game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Lethal Whirlwind Stream"),
         ["Goal"] = "Console Move"
@@ -84,7 +92,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Communicate:FireServer(unpack(args))
-wait(3)
+wait(2.5)
 local args = {
     [1] = {
         ["Tool"] = game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Flowing Water"),
