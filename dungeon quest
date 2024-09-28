@@ -52,12 +52,8 @@ legreach = Value
 	end    
 })
 
-tab1:AddTextbox({
-	Name = "Distance",
-	Default = "default box input",
-	TextDisappear = true,
-	Callback = function(Value)
-local num = tonumber(Value)
+tab.newInput("Input", "Prints your input.", function(text)
+local num = tonumber(text)
     if num and num > 0 then LegdistanceThreshold = num end
-	end	  
-})
+	end
+end)
