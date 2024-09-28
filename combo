@@ -1,111 +1,482 @@
-local player = game:GetService("Players").LocalPlayer
-local gui = Instance.new("ScreenGui")
-gui.Parent = player.PlayerGui
+-- Classic soccer source
 
-local frame = Instance.new("Frame")
-frame.Size = UDim2.new(0, 200, 0, 100)
-frame.BackgroundColor3 = Color3.new(1, 1, 1) -- white background
-frame.Position = UDim2.new(0, 100, 0, 100) -- center the frame
-frame.AnchorPoint = Vector2.new(0.5, 0.5) -- anchor the frame to the center
-frame.Parent = gui
+if game.PlaceId == 13664698400 then
 
-local labelButton1 = Instance.new("TextLabel")
-labelButton1.Size = UDim2.new(0, 100, 0, 30)
-labelButton1.Position = UDim2.new(0, 0, 0, 10)
-labelButton1.BackgroundTransparency = 1
-labelButton1.TextStrokeTransparency = 0
-labelButton1.TextStrokeColor3 = Color3.new(0, 0, 0)
-labelButton1.FontSize = Enum.FontSize.Size24
-labelButton1.Text = "Saitama"
-labelButton1.Parent = frame
+local lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/laagginq/ui-libraries/main/shit-lib/src.lua"))()
+local player = game.Players.LocalPlayer
+local char = player.Character or player.CharacterAdded:Wait()
+local leftLeg = char:WaitForChild("Left Leg")
+local rightLeg = char:WaitForChild("Right Leg")
+local bigfoot = false
+local footSize = Vector3.new(2, 1, 2)
+local footTransparency = 0
+local footTrans = false
 
-labelButton1.MouseButton1Click:Connect(function()
-print("Button 1 clicked!")
-local args = {
-    [1] = {
-        ["Mobile"] = true,
-        ["Goal"] = "LeftClick"
-    }
-}
+local win = lib:Create("Freemium", "Classic Soccer")
+local tab1 = win:tab("Big Foot", true)
 
-game:GetService("Players").LocalPlayer.Character.Communicate:FireServer(unpack(args))
-wait(1)
-local args = {
-    [1] = {
-        ["Goal"] = "LeftClickRelease",
-        ["Mobile"] = true
-    }
-}
+local function disableAnti(anti)
+    if anti and anti:IsA("LocalScript") then
+        anti.Disabled = true
+    end
+end
 
-game:GetService("Players").LocalPlayer.Character.Communicate:FireServer(unpack(args))
-wait(0)
-local args = {
-    [1] = {
-        ["Tool"] = game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Shove"),
-        ["Goal"] = "Console Move"
-    }
-}
+local anti1 = char:FindFirstChild("Physics")
+local anti2 = player.Backpack:FindFirstChild("Client")
+local anti3 = player.Backpack:FindFirstChild("AntiExploitMod")
 
-game:GetService("Players").LocalPlayer.Character.Communicate:FireServer(unpack(args))
-wait(1.2)
-local args = {
-    [1] = {
-        ["Dash"] = Enum.KeyCode.W,
-        ["Key"] = Enum.KeyCode.Q,
-        ["Goal"] = "KeyPress"
-    }
-}
+disableAnti(anti1)
+disableAnti(anti2)
+disableAnti(anti3)
 
-game:GetService("Players").LocalPlayer.Character.Communicate:FireServer(unpack(args))
-wait(1)
-local args = {
-    [1] = {
-        ["Mobile"] = true,
-        ["Goal"] = "LeftClick"
-    }
-}
-
-game:GetService("Players").LocalPlayer.Character.Communicate:FireServer(unpack(args))
-wait(1)
-local args = {
-    [1] = {
-        ["Goal"] = "LeftClickRelease",
-        ["Mobile"] = true
-    }
-}
-
-game:GetService("Players").LocalPlayer.Character.Communicate:FireServer(unpack(args))
-wait(0)
-local args = {
-    [1] = {
-        ["Tool"] = game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Consecutive Punches"),
-        ["Goal"] = "Console Move"
-    }
-}
-
-game:GetService("Players").LocalPlayer.Character.Communicate:FireServer(unpack(args))
-wait(1.5)
-local args = {
-    [1] = {
-        ["Tool"] = game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Normal Punch"),
-        ["Goal"] = "Console Move"
-    }
-}
-
-game:GetService("Players").LocalPlayer.Character.Communicate:FireServer(unpack(args))end)
-
-local labelButton2 = Instance.new("TextLabel")
-labelButton2.Size = UDim2.new(0, 100, 0, 30)
-labelButton2.Position = UDim2.new(0, 0, 0, 50)
-labelButton2.BackgroundTransparency = 1
-labelButton2.TextStrokeTransparency = 0
-labelButton2.TextStrokeColor3 = Color3.new(0, 0, 0)
-labelButton2.FontSize = Enum.FontSize.Size24
-labelButton2.Text = "Garou"
-labelButton2.Parent = frame
-
-labelButton2.MouseButton1Click:Connect(function()
-print("Button 2 clicked!")
--- Add code here to handle the button click
+tab1:toggle("Bigfoot Toggle", false, function(v)
+    bigfoot = v
+    if bigfoot then
+        leftLeg.Size = footSize
+        leftLeg.Massless = true
+        rightLeg.Size = footSize
+        rightLeg.Massless = true
+    else
+        leftLeg.Size = Vector3.new(1, 2, 1)
+        rightLeg.Size = Vector3.new(1, 2, 1)
+    end
 end)
 
+tab1:toggle("Transparency Toggle", false, function(v)
+    footTrans = v
+    if footTrans then
+        leftLeg.Transparency = footTransparency
+        rightLeg.Transparency = footTransparency
+    else
+        leftLeg.Transparency = 0
+        rightLeg.Transparency = 0
+    end
+end)
+
+tab1:input("Foot Size", "Type Size Here ...", false, function(v)
+    local size = tonumber(v)
+    if size then
+        footSize = Vector3.new(size, 2, size)
+        if bigfoot then
+            leftLeg.Size = footSize
+            rightLeg.Size = footSize
+        end
+    end
+end)
+
+tab1:input("Foot Transparency", "0 - 1 ...", false, function(v)
+    local transparency = tonumber(v)
+    if transparency then
+        footTransparency = transparency
+        if footTrans then
+            leftLeg.Transparency = footTransparency
+            rightLeg.Transparency = footTransparency
+        end
+    end
+end)
+
+end
+
+-- MPS Classic
+
+if game.PlaceId == 18966446930 then
+
+local lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/laagginq/ui-libraries/main/shit-lib/src.lua"))()
+local player = game.Players.LocalPlayer
+local char = player.Character or player.CharacterAdded:Wait()
+local leftLeg = char:WaitForChild("Left Leg")
+local rightLeg = char:WaitForChild("Right Leg")
+local bigfoot = false
+local footSize = Vector3.new(2, 1, 2)
+local footTransparency = 0
+local footTrans = false
+local cheat = player.PlayerGui:WaitForChild("LocalScript")
+
+local win = lib:Create("Freemium", "MPS Classic")
+local tab1 = win:tab("Leg", true)
+
+tab1:toggle("Bigfoot Toggle", false, function(v)
+    bigfoot = v
+    if bigfoot then
+        leftLeg.Size = footSize
+        leftLeg.Massless = true
+        rightLeg.Size = footSize
+        rightLeg.Massless = true
+    else
+        leftLeg.Size = Vector3.new(1, 2, 1)
+        rightLeg.Size = Vector3.new(1, 2, 1)
+    end
+end)
+
+tab1:toggle("Transparency Toggle", false, function(v)
+    footTrans = v
+    if footTrans then
+        leftLeg.Transparency = footTransparency
+        rightLeg.Transparency = footTransparency
+    else
+        leftLeg.Transparency = 0
+        rightLeg.Transparency = 0
+    end
+end)
+
+tab1:input("Foot Size", "Type Size Here ...", false, function(v)
+    local size = tonumber(v)
+    if size then
+        footSize = Vector3.new(size, 2, size)
+        if bigfoot then
+            leftLeg.Size = footSize
+            rightLeg.Size = footSize
+        end
+    end
+end)
+
+tab1:input("Foot Transparency", "0 - 1 ...", false, function(v)
+    local transparency = tonumber(v)
+    if transparency then
+        footTransparency = transparency
+        if footTrans then
+            leftLeg.Transparency = footTransparency
+            rightLeg.Transparency = footTransparency
+        end
+    end
+end)
+
+cheat.Disabled = true
+
+end
+
+-- tps street soccer
+
+if game.PlaceId == 335760407 then
+
+local lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/laagginq/ui-libraries/main/shit-lib/src.lua"))()
+local win = lib:Create("Freemium", "TPS Street Soccer")
+local tab1 = win:tab("Leg", true)
+local tab2 = win:tab("Arm", false)
+local tab3 = win:tab("Head", false)
+local tab4 = win:tab("Chest", false)
+
+local player = game.Players.LocalPlayer
+local legreach = false
+local LegdistanceThreshold = 1
+local armreach = false
+local ArmdistanceThreshold = 1
+local headreach = false
+local HeaddistanceThreshold = 1
+local chestreach = false
+local ChestdistanceThreshold = 1
+local leftLeg, rightLeg, ball, head, chest, leftArm, rightArm
+
+local function setupCharacter()
+    local char = player.Character or player.CharacterAdded:Wait()
+    leftLeg = char:WaitForChild("Left Leg") or char:WaitForChild("LeftFoot")
+    rightLeg = char:WaitForChild("Right Leg") or char:WaitForChild("RightFoot")
+    ball = workspace.TPSSystem.TPS
+    rightArm = char:WaitForChild("Right Arm") or char:WaitForChild("RightHand")
+    leftArm = char:WaitForChild("Left Arm") or char:WaitForChild("LeftHand")
+    head = char:WaitForChild("Head")
+    chest = char:WaitForChild("Torso") or char:WaitForChild("UpperTorso")
+end
+
+local function checkLegs()
+    while legreach do
+        task.wait(0)
+        local distanceToLeftLeg = (ball.Position - leftLeg.Position).Magnitude
+        local distanceToRightLeg = (ball.Position - rightLeg.Position).Magnitude
+
+        if distanceToLeftLeg <= LegdistanceThreshold then
+            firetouchinterest(leftLeg, ball, 0) 
+            firetouchinterest(leftLeg, ball, 1) 
+        end
+        
+        if distanceToRightLeg <= LegdistanceThreshold then
+            firetouchinterest(rightLeg, ball, 0) 
+            firetouchinterest(rightLeg, ball, 1) 
+        end
+    end
+end
+
+local function checkArms()
+    while armreach do
+        task.wait(0)
+        local distanceToLeftArm = (ball.Position - leftArm.Position).Magnitude
+        local distanceToRightArm = (ball.Position - rightArm.Position).Magnitude
+
+        if distanceToLeftArm <= ArmdistanceThreshold then
+            firetouchinterest(leftArm, ball, 0) 
+            firetouchinterest(leftArm, ball, 1) 
+        end
+        
+        if distanceToRightArm <= ArmdistanceThreshold then
+            firetouchinterest(rightArm, ball, 0) 
+            firetouchinterest(rightArm, ball, 1) 
+        end
+    end
+end
+
+local function checkHead()
+    while headreach do
+        task.wait(0)
+        local distanceToHead = (ball.Position - head.Position).Magnitude
+   
+        if distanceToHead <= HeaddistanceThreshold then
+            firetouchinterest(head, ball, 0) 
+            firetouchinterest(head, ball, 1) 
+        end
+    end
+end
+
+local function checkChest()
+    while chestreach do
+        task.wait(0)
+        local distanceToChest = (ball.Position - chest.Position).Magnitude
+   
+        if distanceToChest <= ChestdistanceThreshold then
+            firetouchinterest(chest, ball, 0) 
+            firetouchinterest(chest, ball, 1) 
+        end
+    end
+end
+
+tab1:toggle("Leg Toggle", false, function(v)
+    legreach = v
+    if v then
+        checkLegs()
+    end
+end)
+
+tab1:input("Distance (Legs)", "Enter distance for legs here...", false, function(v)
+    local num = tonumber(v)
+    if num and num > 0 then
+        LegdistanceThreshold = num 
+    end
+end)
+
+tab2:toggle("Arms Toggle", false, function(v)
+    armreach = v
+    if v then
+        checkArms()
+    end
+end)
+
+tab2:input("Distance (Arms)", "Enter distance for arms here...", false, function(v)
+    local num = tonumber(v)
+    if num and num > 0 then
+        ArmdistanceThreshold = num 
+    end
+end)
+
+tab3:toggle("Head Toggle", false, function(v)
+    headreach = v
+    if v then
+        checkHead()
+    end
+end)
+
+tab3:input("Distance (Head)", "Enter distance for head here...", false, function(v)
+    local num = tonumber(v)
+    if num and num > 0 then
+        HeaddistanceThreshold = num 
+    end
+end)
+
+tab4:toggle("Chest Toggle", false, function(v)
+    chestreach = v
+    if v then
+        checkChest()
+    end
+end)
+
+tab4:input("Distance (Chest)", "Enter distance for chest here...", false, function(v)
+    local num = tonumber(v)
+    if num and num > 0 then
+        ChestdistanceThreshold = num 
+    end
+end)
+
+setupCharacter()
+player.CharacterAdded:Connect(function()
+    setupCharacter()
+    if legreach then
+        checkLegs()
+    end
+    if armreach then
+        checkArms()
+    end
+    if headreach then
+        checkHead()
+    end
+    if chestreach then
+        checkChest()
+    end
+end)
+
+end
+
+if game.PlaceId == 1597763879 then
+
+local lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/laagginq/ui-libraries/main/shit-lib/src.lua"))()
+local win = lib:Create("Freemium", "TPS Street Soccer")
+local tab1 = win:tab("Leg", true)
+local tab2 = win:tab("Arm", false)
+local tab3 = win:tab("Head", false)
+local tab4 = win:tab("Chest", false)
+
+local player = game.Players.LocalPlayer
+local legreach = false
+local LegdistanceThreshold = 1
+local armreach = false
+local ArmdistanceThreshold = 1
+local headreach = false
+local HeaddistanceThreshold = 1
+local chestreach = false
+local ChestdistanceThreshold = 1
+local leftLeg, rightLeg, ball, head, chest, leftArm, rightArm
+
+local function setupCharacter()
+    local char = player.Character or player.CharacterAdded:Wait()
+    leftLeg = char:WaitForChild("Left Leg") or char:WaitForChild("LeftFoot")
+    rightLeg = char:WaitForChild("Right Leg") or char:WaitForChild("RightFoot")
+    ball = workspace.TPSSystem.TPS
+    rightArm = char:WaitForChild("Right Arm") or char:WaitForChild("RightHand")
+    leftArm = char:WaitForChild("Left Arm") or char:WaitForChild("LeftHand")
+    head = char:WaitForChild("Head")
+    chest = char:WaitForChild("Torso") or char:WaitForChild("UpperTorso")
+end
+
+local function checkLegs()
+    while legreach do
+        task.wait(0)
+        local distanceToLeftLeg = (ball.Position - leftLeg.Position).Magnitude
+        local distanceToRightLeg = (ball.Position - rightLeg.Position).Magnitude
+
+        if distanceToLeftLeg <= LegdistanceThreshold then
+            firetouchinterest(leftLeg, ball, 0) 
+            firetouchinterest(leftLeg, ball, 1) 
+        end
+        
+        if distanceToRightLeg <= LegdistanceThreshold then
+            firetouchinterest(rightLeg, ball, 0) 
+            firetouchinterest(rightLeg, ball, 1) 
+        end
+    end
+end
+
+local function checkArms()
+    while armreach do
+        task.wait(0)
+        local distanceToLeftArm = (ball.Position - leftArm.Position).Magnitude
+        local distanceToRightArm = (ball.Position - rightArm.Position).Magnitude
+
+        if distanceToLeftArm <= ArmdistanceThreshold then
+            firetouchinterest(leftArm, ball, 0) 
+            firetouchinterest(leftArm, ball, 1) 
+        end
+        
+        if distanceToRightArm <= ArmdistanceThreshold then
+            firetouchinterest(rightArm, ball, 0) 
+            firetouchinterest(rightArm, ball, 1) 
+        end
+    end
+end
+
+local function checkHead()
+    while headreach do
+        task.wait(0)
+        local distanceToHead = (ball.Position - head.Position).Magnitude
+   
+        if distanceToHead <= HeaddistanceThreshold then
+            firetouchinterest(head, ball, 0) 
+            firetouchinterest(head, ball, 1) 
+        end
+    end
+end
+
+local function checkChest()
+    while chestreach do
+        task.wait(0)
+        local distanceToChest = (ball.Position - chest.Position).Magnitude
+   
+        if distanceToChest <= ChestdistanceThreshold then
+            firetouchinterest(chest, ball, 0) 
+            firetouchinterest(chest, ball, 1) 
+        end
+    end
+end
+
+tab1:toggle("Leg Toggle", false, function(v)
+    legreach = v
+    if v then
+        checkLegs()
+    end
+end)
+
+tab1:input("Distance (Legs)", "Enter distance for legs here...", false, function(v)
+    local num = tonumber(v)
+    if num and num > 0 then
+        LegdistanceThreshold = num 
+    end
+end)
+
+tab2:toggle("Arms Toggle", false, function(v)
+    armreach = v
+    if v then
+        checkArms()
+    end
+end)
+
+tab2:input("Distance (Arms)", "Enter distance for arms here...", false, function(v)
+    local num = tonumber(v)
+    if num and num > 0 then
+        ArmdistanceThreshold = num 
+    end
+end)
+
+tab3:toggle("Head Toggle", false, function(v)
+    headreach = v
+    if v then
+        checkHead()
+    end
+end)
+
+tab3:input("Distance (Head)", "Enter distance for head here...", false, function(v)
+    local num = tonumber(v)
+    if num and num > 0 then
+        HeaddistanceThreshold = num 
+    end
+end)
+
+tab4:toggle("Chest Toggle", false, function(v)
+    chestreach = v
+    if v then
+        checkChest()
+    end
+end)
+
+tab4:input("Distance (Chest)", "Enter distance for chest here...", false, function(v)
+    local num = tonumber(v)
+    if num and num > 0 then
+        ChestdistanceThreshold = num 
+    end
+end)
+
+setupCharacter()
+player.CharacterAdded:Connect(function()
+    setupCharacter()
+    if legreach then
+        checkLegs()
+    end
+    if armreach then
+        checkArms()
+    end
+    if headreach then
+        checkHead()
+    end
+    if chestreach then
+        checkChest()
+    end
+end)
+
+end
+
+—- futsal
