@@ -1,4 +1,63 @@
-local DrRayLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/DrRay-UI-Library/main/DrRay.lua"))()
-local window = DrRayLibrary:Load("DrRay", "Default")
+local DrRayLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/DrRay-UI-Library/main/DrRay.lua"))()local player = game.Players.LocalPlayer
+local char = player.Character or player.CharacterAdded:Wait(0)
+local legreach, armreach, headreach, chestreach = false, false, false, false
+local LegdistanceThreshold, ArmdistanceThreshold, HeaddistanceThreshold, ChestdistanceThreshold = 1, 1, 1, 1
+local leftLeg, rightLeg, ball, head, chest, leftArm, rightArm
 
+local window = DrRayLibrary:Load("DrRay", "Default")
 local tab = DrRayLibrary.newTab("My Tab", "ImageIdHere")
+
+function setupCharacter()
+		leftLeg = char:FindFirstChild("Left Leg") or char:FindFirstChild("LeftFoot")
+    rightLeg = char:FindFirstChild("Right Leg") or char:FindFirstChild("RightFoot")
+    rightArm = char:FindFirstChild("Right Arm") or char:FindFirstChild("RightHand")
+    leftArm = char:FindFirstChild("Left Arm") or char:FindFirstChild("LeftHand")
+    head = char:FindFirstChild("Head")
+    chest = char:FindFirstChild("Torso") or char:FindFirstChild("UpperTorso")
+end
+
+local function checkParts(part, distanceThreshold)
+    while task.wait(0) do
+        if not part then return end  
+        local distance = (ball.Position - part.Position).Magnitude
+        if distance <= distanceThreshold then
+            firetouchinterest(part, ball, 0)
+            firetouchinterest(part, ball, 1)
+        end
+    end
+end
+
+tab.newToggle("Toggle", "Toggle! (prints the state)", true, function(Value)
+    if Value then
+        legreach = Value
+    if Value then
+        checkParts(leftLeg, LegdistanceThreshold)
+        checkParts(rightLeg, LegdistanceThreshold)
+    end
+	end  
+    else
+        legreach = Value
+    end
+end)
+
+tab1:AddToggle({
+	Name = "toggle",
+	Default = false,
+	Callback = function(Value)
+legreach = Value
+    if Value then
+        checkParts(leftLeg, LegdistanceThreshold)
+        checkParts(rightLeg, LegdistanceThreshold)
+    end
+	end    
+})
+
+tab1:AddTextbox({
+	Name = "Distance",
+	Default = "default box input",
+	TextDisappear = true,
+	Callback = function(Value)
+local num = tonumber(Value)
+    if num and num > 0 then LegdistanceThreshold = num end
+	end	  
+})
