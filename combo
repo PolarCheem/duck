@@ -1,16 +1,20 @@
-local lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/laagginq/ui-libraries/main/shit-lib/src.lua"))()
-local ball = workspace.Balls:WaitForChild("TPS")
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()local ball = workspace.Balls:WaitForChild("TPS")
 local player = game.Players.LocalPlayer
 local char = player.Character or player.CharacterAdded:Wait(0)
 local legreach, armreach, headreach, chestreach = false, false, false, false
 local LegdistanceThreshold, ArmdistanceThreshold, HeaddistanceThreshold, ChestdistanceThreshold = 1, 1, 1, 1
 local leftLeg, rightLeg, ball, head, chest, leftArm, rightArm
 
-local win = lib:Create("Freemium","MPS Futsal")
-local tab1 = win:tab("Leg",true)
-local tab2 = win:tab("Arm",false)
-local tab3 = win:tab("Chest",false)
-local tab4 = win:tab("Head",false)
+local Window = OrionLib:MakeWindow({Name = "Test Futsal", HidePremium = false, SaveConfig = true, ConfigFolder = "Test"})
+local tab1 = Window:MakeTab({
+	Name = "Leg",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Section = tab1:AddSection({
+	Name = "Section"
+})
 
 function setupCharacter()
 		leftLeg = char:FindFirstChild("Left Leg") or char:FindFirstChild("LeftFoot")
@@ -32,15 +36,27 @@ local function checkParts(part, distanceThreshold)
     end
 end
 
-tab1:toggle("Leg Toggle", false, function(v)
-    legreach = v
-    if v then
+tab1:AddToggle({
+	Name = "toggle",
+	Default = false,
+	Callback = function(Value)
+legreach = Value
+    if Value then
         checkParts(leftLeg, LegdistanceThreshold)
         checkParts(rightLeg, LegdistanceThreshold)
     end
-end)
+	end    
+})
 
-tab1:input("Distance (Legs)", "Enter distance for legs here...", false, function(v)
-    local num = tonumber(v)
+tab1:AddTextbox({
+	Name = "Distance",
+	Default = "default box input",
+	TextDisappear = true,
+	Callback = function(Value)
+local num = tonumber(Value)
     if num and num > 0 then LegdistanceThreshold = num end
-end)
+	end	  
+})
+
+
+OrionLib:Init()
