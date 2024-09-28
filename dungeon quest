@@ -9,7 +9,7 @@ local LegdistanceThreshold = 25
 local legreach = false
 
 function setupCharacter()
-		leftLeg = char:FindFirstChild("Left Leg") or char:FindFirstChild("LeftFoot")
+    leftLeg = char:FindFirstChild("Left Leg") or char:FindFirstChild("LeftFoot")
     rightLeg = char:FindFirstChild("Right Leg") or char:FindFirstChild("RightFoot")
     rightArm = char:FindFirstChild("Right Arm") or char:FindFirstChild("RightHand")
     leftArm = char:FindFirstChild("Left Arm") or char:FindFirstChild("LeftHand")
@@ -18,8 +18,8 @@ function setupCharacter()
 end
 
 local function checkParts(part, distanceThreshold)
-    while task.wait(0) do
-        if not part then return end  
+    while legreach and task.wait(0) do
+        if not part then return end
         local distance = (ball.Position - part.Position).Magnitude
         if distance <= distanceThreshold then
             firetouchinterest(part, ball, 0)
@@ -29,14 +29,9 @@ local function checkParts(part, distanceThreshold)
 end
 
 tab.newToggle("Toggle", "Toggle! (prints the state)", true, function(Value)
-    if Value then
-        legreach = Value
+    legreach = Value
     if Value then
         checkParts(leftLeg, LegdistanceThreshold)
         checkParts(rightLeg, LegdistanceThreshold)
-    end
-	end  
-    else
-        legreach = false
     end
 end)
