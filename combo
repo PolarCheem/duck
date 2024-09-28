@@ -1,5 +1,5 @@
 local lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/laagginq/ui-libraries/main/shit-lib/src.lua"))()
-local ball = game.workspace.Balls:WaitForChild("TPS")
+local ball = workspace.Balls:WaitForChild("TPS")
 local player = game.Players.LocalPlayer
 local char = player.Character or player.CharacterAdded:Wait(0)
 local legreach, armreach, headreach, chestreach = false, false, false, false
