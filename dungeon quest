@@ -1,11 +1,12 @@
-local DrRayLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/DrRay-UI-Library/main/DrRay.lua"))()local player = game.Players.LocalPlayer
-local char = player.Character or player.CharacterAdded:Wait(0)
-local legreach, armreach, headreach, chestreach = false, false, false, false
-local LegdistanceThreshold, ArmdistanceThreshold, HeaddistanceThreshold, ChestdistanceThreshold = 1, 1, 1, 1
-local leftLeg, rightLeg, ball, head, chest, leftArm, rightArm
-
+local DrRayLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/DrRay-UI-Library/main/DrRay.lua"))()
 local window = DrRayLibrary:Load("DrRay", "Default")
 local tab = DrRayLibrary.newTab("My Tab", "ImageIdHere")
+
+local ball = workspace.Balls:WaitForChild("TPS")
+local leftLeg, rightLeg, rightArm, leftArm, head, chest
+local LegdistanceThreshold = 25
+
+local legreach = false
 
 function setupCharacter()
 		leftLeg = char:FindFirstChild("Left Leg") or char:FindFirstChild("LeftFoot")
@@ -36,24 +37,6 @@ tab.newToggle("Toggle", "Toggle! (prints the state)", true, function(Value)
     end
 	end  
     else
-        legreach = Value
+        legreach = false
     end
-end)
-
-tab1:AddToggle({
-	Name = "toggle",
-	Default = false,
-	Callback = function(Value)
-legreach = Value
-    if Value then
-        checkParts(leftLeg, LegdistanceThreshold)
-        checkParts(rightLeg, LegdistanceThreshold)
-    end
-	end    
-})
-
-tab.newInput("Input", "Prints your input.", function(text)
-local num = tonumber(text)
-    if num and num > 0 then LegdistanceThreshold = num end
-	end
 end)
