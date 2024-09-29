@@ -6,78 +6,22 @@ local win = lib:Create("Shit Lib", "ProjectMars [V1 BETA]")
 
 -- Configuration Table
 local Config = {
-    FireTouchRightEnabled = false,
-    FireTouchLeftEnabled = false,
+    FootballSizeEnabled = false,
+    FootballSize = 0,
     JumpBoostEnabled = false,
     JumpBoostAmount = 0,
     AngleEnhancerEnabled = false,
     AngleEnhancerValue = 0
 }
 
--- Tab for FireTouchInterest (Catch Right/Left)
-local magtab = win:tab("Mag", true)
-
-magtab:toggle("Catch Right Enabled", Config.FireTouchRightEnabled, function(value)
-    Config.FireTouchRightEnabled = value
-		Config.FireTouchLeftEnabled = value
-end)
-
-
--- Tab for Jump Boost
-local jumpBoostTab = win:tab("Jump Boost", false)
-
-jumpBoostTab:toggle("Jump Boost Enabled", Config.JumpBoostEnabled, function(value)
-    Config.JumpBoostEnabled = value
-end)
-
-jumpBoostTab:input("Jump Boost Amount", "Enter boost amount...", true, function(value)
-    Config.JumpBoostAmount = tonumber(value) or 0 -- Convert input to number
-end)
-
--- Tab for Angle Enhancer
-local angleEnhancerTab = win:tab("Angle Enhancer", false)
-
-angleEnhancerTab:toggle("Angle Enhancer Enabled", Config.AngleEnhancerEnabled, function(value)
-    Config.AngleEnhancerEnabled = value
-end)
-
-angleEnhancerTab:input("Angle Enhancer Amount", "Enter enhancer amount...", true, function(value)
-    Config.AngleEnhancerValue = tonumber(value) or 0 -- Convert input to number
-end)
-
--- Function to simulate FireTouchInterest for Catch Right
-local function catchRight()
+-- Function to Update Football Size
+local function updateFootballSize()
     local Workspace = game:GetService("Workspace")
     Workspace.ChildAdded:Connect(function(Child)
-        if Child:IsA("BasePart") and Config.FireTouchRightEnabled then
-            local player = game.Players.LocalPlayer
-            local character = player.Character or player.CharacterAdded:Wait()
-            local head = character:WaitForChild("Right Arm")
-
-            -- Simulate touch interest for objects on the right
-            if (Child.Position - head.Position).X > 0 then -- Check if the object is to the right
-                firetouchinterest(head, Child, 0) -- Start touching
-                task.wait(0) -- Small delay
-                firetouchinterest(head, Child, 1) -- Stop touching
-            end
-        end
-    end)
-end
-
--- Function to simulate FireTouchInterest for Catch Left
-local function catchLeft()
-    local Workspace = game:GetService("Workspace")
-    Workspace.ChildAdded:Connect(function(Child)
-        if Child:IsA("BasePart") and Config.FireTouchLeftEnabled then
-            local player = game.Players.LocalPlayer
-            local character = player.Character or player.CharacterAdded:Wait()
-            local head = character:WaitForChild("Left Arm")
-
-            -- Simulate touch interest for objects on the left
-            if (Child.Position - head.Position).X < 0 then -- Check if the object is to the left
-                firetouchinterest(head, Child, 0) -- Start touching
-                task.wait(0) -- Small delay
-                firetouchinterest(head, Child, 1) -- Stop touching
+        if Child:IsA("BasePart") and Child.Name == "Football" then
+            if Config.FootballSizeEnabled then
+                Child.CanCollide = false
+                Child.Size = Vector3.new(Config.FootballSize, Config.FootballSize, Config.FootballSize)
             end
         end
     end)
@@ -104,14 +48,49 @@ local function updateJumpBoost()
     end)
 end
 
+-- Tab for Football Size/Magnet
+local footballTab = win:tab("Football Size/Magnet", true)
+
+footballTab:toggle("Football Size Enabled", Config.FootballSizeEnabled, function(value)
+    Config.FootballSizeEnabled = value
+end)
+
+footballTab:input("Football Size", "Enter size (0-15)...", true, function(value)
+    local numValue = tonumber(value) or 0
+    Config.FootballSize = math.clamp(numValue, 0, 15) -- Clamp to range 0-15
+end)
+
+-- Tab for Jump Boost
+local jumpBoostTab = win:tab("Jump Boost", false)
+
+jumpBoostTab:toggle("Jump Boost Enabled", Config.JumpBoostEnabled, function(value)
+    Config.JumpBoostEnabled = value
+end)
+
+jumpBoostTab:input("Jump Boost Amount", "Enter boost amount (0-15)...", true, function(value)
+    local numValue = tonumber(value) or 0
+    Config.JumpBoostAmount = math.clamp(numValue, 0, 15) -- Clamp to range 0-15
+end)
+
+-- Tab for Angle Enhancer
+local angleEnhancerTab = win:tab("Angle Enhancer", false)
+
+angleEnhancerTab:toggle("Angle Enhancer Enabled", Config.AngleEnhancerEnabled, function(value)
+    Config.AngleEnhancerEnabled = value
+end)
+
+angleEnhancerTab:input("Angle Enhancer Amount", "Enter enhancer amount (0-15)...", true, function(value)
+    local numValue = tonumber(value) or 0
+    Config.AngleEnhancerValue = math.clamp(numValue, 0, 15) -- Clamp to range 0-15
+end)
+
 -- Unload Button
-magtab:button("Unload", function()
+footballTab:button("Unload", function()
     lib:Destroy() -- Unload UI
 end)
 
 -- Initialize Functions
-catchRight()
-catchLeft()
+updateFootballSize()
 
 -- Player Character Event Handling
 local Players = game:GetService("Players")
@@ -120,6 +99,6 @@ if player.Character then
     updateJumpBoost()
 end
 
-player.CharacterAdded:Connect(function()
+player.CharacterAdded:Connect(function(character)
     updateJumpBoost()
 end)
