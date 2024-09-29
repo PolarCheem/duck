@@ -252,6 +252,7 @@ UICorner_InputBox.Parent = Input_Box
 local dropdownframe = Instance.new("TextButton")
 local dropdownText = Instance.new("TextLabel")
 local dropdownArrow = Instance.new("TextLabel")
+local activedropdownframe = Instance.new("ScrollingFrame")
 
 dropdownframe.Name = "frame"
 dropdownframe.Parent = PageContainer
@@ -284,6 +285,15 @@ dropdownArrow.Text = "^"  -- Changed from "aa" to "Label Text"
 dropdownArrow.TextColor3 = Color3.fromRGB(255, 255, 255)
 dropdownArrow.TextSize = 20.000
 dropdownArrow.TextXAlignment = Enum.TextXAlignment.Left
+
+activedropdownframe.Name = "ActiveDropdowb"
+activedropdownframe.Parent = PageContainer
+activedropdownframe.Active = true
+activedropdownframe.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+activedropdownframe.BackgroundTransparency = 1.000
+activedropdownframe.BorderSizePixel = 0
+activedropdownframe.Size = UDim2.new(0, 435, 0, 250)
+activedropdownframe.ScrollBarThickness = 0
 
 -- Connect events for interactivity (optional)
 Button_2.MouseButton1Click:Connect(function()
