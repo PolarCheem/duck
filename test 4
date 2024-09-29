@@ -8,9 +8,9 @@ local Config = {
     AngleEnhancerEnabled = false,
     AngleEnhancerValue = 0,
     MagnetEnabled = false,
-    FootballDistanceCatch = 10
+    FootballDistanceCatch = 10,
 	AutoCatchEnabled = false,
-	autodist = 10,
+	autodist = 10
 }
 
 local function applyJumpBoost(character)
