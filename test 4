@@ -85,7 +85,7 @@ end)
 
 local MiscTab = win:tab("Misc", false)
 
-MiscTab:toggle("Anti Admin", true, function(v)
+MiscTab:toggle("Anti Admin", false, function(v)
 if v then
             local moderators = {
                 "2618937233503944727",
