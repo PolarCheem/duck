@@ -7,7 +7,9 @@ local Config = {
     AngleEnhancerEnabled = false,
     AngleEnhancerValue = 0,
     MagnetEnabled = false,
-    FootballDistanceCatch = 10
+    FootballDistanceCatch = 10,
+	  Pull_Vector = false,
+	  Football_Vector = 0
 }
 
 local function applyJumpBoost(character)
