@@ -304,7 +304,7 @@ local DropDownButton = Instance.new("Frame")
 local DropDownButton_2 = Instance.new("TextButton")
 
 DropDownButton.Name = "Button"
-DropDownButton.Parent = PageContainer
+DropDownButton.Parent = activedropdownframe
 DropDownButton.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
 DropDownButton.BorderSizePixel = 0
 DropDownButton.Size = UDim2.new(0, 435, 0, 32)
@@ -314,7 +314,7 @@ UICorner_DropButton.CornerRadius = UDim.new(0, 4)
 UICorner_DropButton.Parent = DropDownButton
 
 DropDownButton_2.Name = "Dropdown Button"
-DropDownButton_2.Parent = Button
+DropDownButton_2.Parent = DropDownButton
 DropDownButton_2.Text = "Button"  -- Changed from "yes" to "Button"
 DropDownButton_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 DropDownButton_2.BackgroundTransparency = 1.000
