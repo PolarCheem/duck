@@ -7,9 +7,7 @@ local Config = {
     AngleEnhancerEnabled = false,
     AngleEnhancerValue = 0,
     MagnetEnabled = false,
-    FootballDistanceCatch = 10,
-    AutoCatchEnabled = false,
-    autodist = 10
+    FootballDistanceCatch = 10
 }
 
 local function applyJumpBoost(character)
@@ -48,21 +46,6 @@ local function enableMagnet()
     end
 end
 
-local function autoCatch()
-    while Config.AutoCatchEnabled do
-        task.wait(0.1)
-        local ball = workspace:FindFirstChild("Football")
-        if ball and ball:IsA("BasePart") then
-            local player = game:GetService("Players").LocalPlayer
-            local distance = (ball.Position - player.Character.HumanoidRootPart.Position).Magnitude
-            if distance < Config.autodist then
-                game:GetService("ReplicatedStorage").Remotes.CharacterSoundEvent:fireServer("PlayerActions", "catch")
-                task.wait(0.1)
-            end
-        end
-    end
-end
-
 local magnetTab = win:tab("Catch", true)
 local jumpBoostTab = win:tab("Jump Boost", false)
 
@@ -96,18 +79,6 @@ end)
 magnetTab:input("Magnet Distance", "Enter catch distance...", false, function(value)
     local numValue = tonumber(value) or 10
     Config.FootballDistanceCatch = math.clamp(numValue, 0, 50)
-end)
-
-magnetTab:toggle("Auto Catch Enabled", Config.AutoCatchEnabled, function(value)
-    Config.AutoCatchEnabled = value
-    if Config.AutoCatchEnabled then
-        autoCatch()
-    end
-end)
-
-magnetTab:input("Auto Catch Distance", "Enter catch distance...", false, function(value)
-    local numValue = tonumber(value) or 10
-    Config.autodist = math.clamp(numValue, 0, 50)
 end)
 
 local Players = game:GetService("Players")
