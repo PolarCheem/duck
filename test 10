@@ -305,7 +305,7 @@ local DropDownButton_2 = Instance.new("TextButton")
 
 DropDownButton.Name = "Button"
 DropDownButton.Parent = activedropdownframe
-DropDownButton.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+DropDownButton.BackgroundColor3 = Color3.fromRGB(20,20,20)
 DropDownButton.BorderSizePixel = 0
 DropDownButton.Size = UDim2.new(0, 435, 0, 32)
 
