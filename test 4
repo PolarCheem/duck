@@ -66,7 +66,8 @@ end)
 
 -- some tabs
 local magnetTab = win:tab("Catch", true)
-local jumpBoostTab = win:tab("Jump Boost", false)
+local angleEnhancerTab = win:tab("Angle Enhancer", false)
+local jumpBoostTab = win:tab("Player", false)
 
 -- jump tab
 jumpBoostTab:toggle("Jump Boost Enabled", Config.JumpBoostEnabled, function(value)
@@ -79,7 +80,6 @@ jumpBoostTab:input("Jump Boost Amount", "Enter boost amount (0-15)...", false, f
 end)
 
 -- angle tab
-local angleEnhancerTab = win:tab("Angle Enhancer", false)
 
 angleEnhancerTab:toggle("Angle Enhancer Enabled", Config.AngleEnhancerEnabled, function(value)
     Config.AngleEnhancerEnabled = value
