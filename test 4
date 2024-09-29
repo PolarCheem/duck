@@ -1,5 +1,4 @@
 local lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/laagginq/ui-libraries/main/shit-lib/src.lua"))()
-local libdes = game.CoreGui:WaitForChild("Test")
 local win = lib:Create("Test", "FF2")
 
 local Config = {
@@ -9,8 +8,8 @@ local Config = {
     AngleEnhancerValue = 0,
     MagnetEnabled = false,
     FootballDistanceCatch = 10,
-	AutoCatchEnabled = false,
-	autodist = 10
+    AutoCatchEnabled = false,
+    autodist = 10
 }
 
 local function applyJumpBoost(character)
@@ -50,21 +49,21 @@ local function enableMagnet()
 end
 
 local function autoCatch()
-    while true do
-        task.wait()
+    while Config.AutoCatchEnabled do
+        task.wait(0.1)
         local ball = workspace:FindFirstChild("Football")
-        if ball and ball.ClassName == "BasePart" then
-            local distance = (ball.Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
-            if distance < autodist then
+        if ball and ball:IsA("BasePart") then
+            local player = game:GetService("Players").LocalPlayer
+            local distance = (ball.Position - player.Character.HumanoidRootPart.Position).Magnitude
+            if distance < Config.autodist then
                 game:GetService("ReplicatedStorage").Remotes.CharacterSoundEvent:fireServer("PlayerActions", "catch")
-                task.wait(0)
+                task.wait(0.1)
             end
         end
     end
 end
 
 local magnetTab = win:tab("Catch", true)
-
 local jumpBoostTab = win:tab("Jump Boost", false)
 
 jumpBoostTab:toggle("Jump Boost Enabled", Config.JumpBoostEnabled, function(value)
@@ -87,19 +86,19 @@ angleEnhancerTab:input("Angle Enhancer Amount", "Enter enhancer amount (0-15)...
     Config.AngleEnhancerValue = math.clamp(numValue, 0, 15)
 end)
 
-magnetTab:toggle("Mag Toggle", Config.MagnetEnabled, function(value)
+magnetTab:toggle("Magnet Enabled", Config.MagnetEnabled, function(value)
     Config.MagnetEnabled = value
     if Config.MagnetEnabled then
         enableMagnet()
     end
 end)
 
-magnetTab:input("Mag Distance", "Enter catch distance...", false, function(value)
+magnetTab:input("Magnet Distance", "Enter catch distance...", false, function(value)
     local numValue = tonumber(value) or 10
     Config.FootballDistanceCatch = math.clamp(numValue, 0, 50)
 end)
 
-magnetTab:toggle("Auto Catch Toggle", Config.MagnetEnabled, function(value)
+magnetTab:toggle("Auto Catch Enabled", Config.AutoCatchEnabled, function(value)
     Config.AutoCatchEnabled = value
     if Config.AutoCatchEnabled then
         autoCatch()
@@ -109,10 +108,6 @@ end)
 magnetTab:input("Auto Catch Distance", "Enter catch distance...", false, function(value)
     local numValue = tonumber(value) or 10
     Config.autodist = math.clamp(numValue, 0, 50)
-end)
-
-angleEnhancerTab:button("Unload", function()
-libdes:Destroy()
 end)
 
 local Players = game:GetService("Players")
