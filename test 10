@@ -257,6 +257,7 @@ dropdownframe.Name = "frame"
 dropdownframe.Parent = PageContainer
 dropdownframe.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
 dropdownframe.Text = "."
+dropdownframe.BorderSizePixel = 0
 dropdownframe.TextColor3 = Color3.fromRGB(25,25,25)
 dropdownframe.Size = UDim2.new(0, 435, 0, 32)
 
@@ -281,7 +282,7 @@ dropdownArrow.Size = UDim2.new(0, 423, 0, 32)
 dropdownArrow.Font = Enum.Font.Gotham
 dropdownArrow.Text = "^"  -- Changed from "aa" to "Label Text"
 dropdownArrow.TextColor3 = Color3.fromRGB(255, 255, 255)
-dropdownArrow.TextSize = 14.000
+dropdownArrow.TextSize = 20.000
 dropdownArrow.TextXAlignment = Enum.TextXAlignment.Left
 
 -- Connect events for interactivity (optional)
