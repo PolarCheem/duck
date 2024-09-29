@@ -7,6 +7,8 @@ local UIListLayout = Instance.new("UIListLayout")
 local PageHolder = Instance.new("Frame")
 local UICorner = Instance.new("UICorner")
 local UICorner_2 = Instance.new("UICorner")
+local Player = game:GetService("Players").LocalPlayer
+local TS, UIS, mouse = game:GetService("TweenService"), game:GetService("UserInputService"), Player:GetMouse()
 
 xz.Name = "yes"
 xz.Parent = game.CoreGui
@@ -272,3 +274,47 @@ end)
 
 -- You can add more tabs and pages as needed by repeating the creation process above.
 
+function dragify(Frame)
+		dragToggle = nil
+		local dragSpeed = 0
+		dragInput = nil
+		dragStart = nil
+		local dragPos = nil
+		function updateInput(input)
+			local Delta = input.Position - dragStart
+			local Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + Delta.X, startPos.Y.Scale, startPos.Y.Offset + Delta.Y)
+			game:GetService("TweenService"):Create(Frame, TweenInfo.new(0.25), {Position = Position}):Play()
+		end
+		Frame.InputBegan:Connect(function(input)
+			if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) and UIS:GetFocusedTextBox() == nil then
+				dragToggle = true
+				dragStart = input.Position
+				startPos = Frame.Position
+				input.Changed:Connect(function()
+					if input.UserInputState == Enum.UserInputState.End then
+						dragToggle = false
+					end
+				end)
+			end
+		end)
+		Frame.InputChanged:Connect(function(input)
+			if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+				dragInput = input
+			end
+		end)
+		game:GetService("UserInputService").InputChanged:Connect(function(input)
+			if input == dragInput and dragToggle then
+				updateInput(input)
+			end
+		end)
+	end
+	
+	dragify(Main)
+	UIS.InputBegan:Connect(function(key,gp)
+		if not gp then
+			if key == Enum.KeyCode.RightShift then
+				Main.Visible = not Main.Visible
+			end
+		end
+	end)
+	
