@@ -86,21 +86,6 @@ UICorner.Parent = PageHolder
 UICorner_2.CornerRadius = UDim.new(0, 4)
 UICorner_2.Parent = Main
 
--- Connect events for interactivity (optional)
-Button_2.MouseButton1Click:Connect(function()
-    print("Button clicked!")
-end)
-
-Toggle_Button.MouseButton1Click:Connect(function()
-    Toggle_Image.ImageTransparency = Toggle_Image.ImageTransparency == 1 and 0 or 1  -- Toggle visibility
-end)
-
-Input_Box.FocusLost:Connect(function(enterPressed)
-    if enterPressed then
-        print("Input: " .. Input_Box.Text)
-    end
-end)
-
 -- You can add more tabs and pages as needed by repeating the creation process above.
 
 function dragify(Frame)
