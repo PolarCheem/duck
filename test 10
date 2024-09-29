@@ -313,94 +313,79 @@ function Library:Create(name, subname, keybind)
 			ToggleButton.BackgroundColor3 = default and Color3.fromRGB(76, 175, 80) or Color3.fromRGB(211, 47, 47)
 		end
 
-local dropdownOptions = {}  -- Table to hold the dropdown options
-
--- Create a dropdown function
-function pageitems:dropdown(text, options, callback)
+-- Create dropdown
+function pageItems:dropdown(text, options, callback)
     local Dropdown = Instance.new("Frame")
     local UICorner = Instance.new("UICorner")
     local DropdownButton = Instance.new("TextButton")
-    local DropdownLabel = Instance.new("TextLabel")
-    local DropdownArrow = Instance.new("TextLabel")
-    local OptionsFrame = Instance.new("Frame")
-    local UIListLayout = Instance.new("UIListLayout")
-    
-    Dropdown.Name = text
+    local DropdownList = Instance.new("Frame")
+    local ListLayout = Instance.new("UIListLayout")
+    local Open = false
+
+    Dropdown.Name = "Dropdown"
     Dropdown.Parent = PageContainer
-    Dropdown.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+    Dropdown.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
     Dropdown.BorderSizePixel = 0
-    Dropdown.Size = UDim2.new(0, 435, 0, 32)
-    
+    Dropdown.Size = UDim2.new(1, 0, 0, 30)
+
     UICorner.CornerRadius = UDim.new(0, 4)
     UICorner.Parent = Dropdown
-    
+
     DropdownButton.Name = "DropdownButton"
     DropdownButton.Parent = Dropdown
-    DropdownButton.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+    DropdownButton.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+    DropdownButton.BorderSizePixel = 0
     DropdownButton.Size = UDim2.new(1, 0, 1, 0)
-    DropdownButton.Text = ""
-    
-    DropdownLabel.Name = "DropdownLabel"
-    DropdownLabel.Parent = DropdownButton
-    DropdownLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-    DropdownLabel.BackgroundTransparency = 1.000
-    DropdownLabel.Position = UDim2.new(0.01, 0, 0, 0)
-    DropdownLabel.Size = UDim2.new(0, 400, 0, 32)
-    DropdownLabel.Font = Enum.Font.Gotham
-    DropdownLabel.Text = text
-    DropdownLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-    DropdownLabel.TextSize = 14.000
-    
-    DropdownArrow.Name = "DropdownArrow"
-    DropdownArrow.Parent = DropdownButton
-    DropdownArrow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-    DropdownArrow.BackgroundTransparency = 1.000
-    DropdownArrow.Position = UDim2.new(0.9, 0, 0.2, 0)
-    DropdownArrow.Size = UDim2.new(0, 20, 0, 20)
-    DropdownArrow.Font = Enum.Font.Gotham
-    DropdownArrow.Text = "▼"
-    DropdownArrow.TextColor3 = Color3.fromRGB(255, 255, 255)
-    DropdownArrow.TextSize = 20.000
-    
-    OptionsFrame.Name = "OptionsFrame"
-    OptionsFrame.Parent = Dropdown
-    OptionsFrame.Active = true
-    OptionsFrame.Visible = false
-    OptionsFrame.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
-    OptionsFrame.BorderSizePixel = 0
-    OptionsFrame.Size = UDim2.new(1, 0, 0, 0)
-    OptionsFrame.Position = UDim2.new(0, 0, 1, 0)
-    
-    UIListLayout.Parent = OptionsFrame
-    UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
-    UIListLayout.Padding = UDim.new(0, 4)
+    DropdownButton.Font = Enum.Font.Gotham
+    DropdownButton.Text = text
+    DropdownButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+    DropdownButton.TextSize = 14.000
 
-    -- Create dropdown options
+    DropdownList.Name = "DropdownList"
+    DropdownList.Parent = Dropdown
+    DropdownList.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+    DropdownList.BorderSizePixel = 0
+    DropdownList.Size = UDim2.new(1, 0, 0, 0)
+    DropdownList.Visible = false
+
+    ListLayout.Parent = DropdownList
+    ListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+
+    -- Function to update the dropdown button text
+    local function updateDropdown(text)
+        DropdownButton.Text = text
+        if callback then
+            callback(text)
+        end
+    end
+
+    -- Create list items
     for _, option in ipairs(options) do
-        local OptionButton = Instance.new("TextButton")
-        OptionButton.Name = option
-        OptionButton.Parent = OptionsFrame
-        OptionButton.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
-        OptionButton.BorderSizePixel = 0
-        OptionButton.Size = UDim2.new(1, 0, 0, 32)
-        OptionButton.Font = Enum.Font.Gotham
-        OptionButton.Text = option
-        OptionButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-        OptionButton.TextSize = 14.000
-        
-        OptionButton.MouseButton1Click:Connect(function()
-            callback(option)
-            DropdownLabel.Text = option -- Update the label with selected option
-            OptionsFrame.Visible = false -- Hide options when an option is selected
+        local ListItem = Instance.new("TextButton")
+        ListItem.Name = option
+        ListItem.Parent = DropdownList
+        ListItem.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+        ListItem.BorderSizePixel = 0
+        ListItem.Size = UDim2.new(1, 0, 0, 30)
+        ListItem.Font = Enum.Font.Gotham
+        ListItem.Text = option
+        ListItem.TextColor3 = Color3.fromRGB(255, 255, 255)
+        ListItem.TextSize = 14.000
+
+        ListItem.MouseButton1Click:Connect(function()
+            updateDropdown(option)
+            DropdownList.Visible = false
+            Open = false
         end)
     end
 
-    -- Dropdown toggle functionality
     DropdownButton.MouseButton1Click:Connect(function()
-        OptionsFrame.Visible = not OptionsFrame.Visible
-        DropdownArrow.Text = OptionsFrame.Visible and "▲" or "▼" -- Change arrow direction
+        Open = not Open
+        DropdownList.Visible = Open
+        DropdownList.Size = Open and UDim2.new(1, 0, 0, #options * 30) or UDim2.new(1, 0, 0, 0)
     end)
 end
+
 
 
 		return pageItems
