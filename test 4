@@ -1,5 +1,5 @@
 local lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/laagginq/ui-libraries/main/shit-lib/src.lua"))()
-
+local libdes = game.CoreGui:WaitForChild("Test")
 local win = lib:Create("Test", "FF2")
 
 local Config = {
@@ -47,7 +47,9 @@ local function enableMagnet()
     end
 end
 
-local jumpBoostTab = win:tab("Jump Boost", true)
+local magnetTab = win:tab("Catch", true)
+
+local jumpBoostTab = win:tab("Jump Boost", false)
 
 jumpBoostTab:toggle("Jump Boost Enabled", Config.JumpBoostEnabled, function(value)
     Config.JumpBoostEnabled = value
@@ -69,8 +71,6 @@ angleEnhancerTab:input("Angle Enhancer Amount", "Enter enhancer amount (0-15)...
     Config.AngleEnhancerValue = math.clamp(numValue, 0, 15)
 end)
 
-local magnetTab = win:tab("Magnet Feature", false)
-
 magnetTab:toggle("Magnet Enabled", Config.MagnetEnabled, function(value)
     Config.MagnetEnabled = value
     if Config.MagnetEnabled then
@@ -83,8 +83,8 @@ magnetTab:input("Football Distance Catch", "Enter catch distance...", true, func
     Config.FootballDistanceCatch = math.clamp(numValue, 0, 50)
 end)
 
-jumpBoostTab:button("Unload", function()
-    lib:Destroy()
+angleEnhancerTab:button("Unload", function()
+libdes:Destroy()
 end)
 
 local Players = game:GetService("Players")
