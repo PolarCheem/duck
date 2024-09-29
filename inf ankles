@@ -156,7 +156,7 @@ tab3:toggle("Blue Flames", false, function(v)
     blue = v
     while blue do
         task.wait(0)
-        player.Backpack.FValue.Value = 2
+        player.Backpack.FValue.Value = 10
     end
 end)
 
