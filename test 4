@@ -1,7 +1,99 @@
-local TSize = 20
-local football = game:GetService("Players").LocalPlayer.Character
+local lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/laagginq/ui-libraries/main/shit-lib/src.lua"))()
 
-while true do
-football.GAMEOBJECTS.b97f62e5-6d39-4796-9710-05581827b8e5 = Vector3.new(TSize, TSize, TSize)
-football.GAMEOBJECTS.b97f62e5-6d39-4796-9710-05581827b8e5 = 0.8
+local win = lib:Create("Shit Lib", "ProjectMars [V1 BETA]")
+
+local Config = {
+    JumpBoostEnabled = false,
+    JumpBoostAmount = 0,
+    AngleEnhancerEnabled = false,
+    AngleEnhancerValue = 0,
+    MagnetEnabled = false,
+    FootballDistanceCatch = 10
+}
+
+local function applyJumpBoost(character)
+    local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+    local humanoid = character:WaitForChild("Humanoid")
+
+    humanoidRootPart.Touched:Connect(function(hit)
+        if Config.JumpBoostEnabled and hit:IsA("BasePart") and humanoid:GetState() == Enum.HumanoidStateType.Jumping then
+            task.wait(0.01)
+            humanoidRootPart.Velocity = Vector3.new(
+                humanoidRootPart.Velocity.X,
+                humanoidRootPart.Velocity.Y + Config.JumpBoostAmount,
+                humanoidRootPart.Velocity.Z
+            )
+        end
+    end)
 end
+
+local function enableMagnet()
+    local player = game:GetService("Players").LocalPlayer
+
+    while Config.MagnetEnabled do
+        task.wait(0.1)
+        for _, value in pairs(workspace:GetChildren()) do
+            if value.Name == "Football" and value:IsA("BasePart") then
+                local catchRight = player.Character:FindFirstChild("CatchRight")
+                if catchRight and (catchRight.Position - value.Position).Magnitude <= Config.FootballDistanceCatch then
+                    firetouchinterest(catchRight, value, 0)
+                    firetouchinterest(catchRight, value, 1)
+                    task.wait()
+                    firetouchinterest(catchRight, value, 0)
+                    firetouchinterest(catchRight, value, 1)
+                end
+            end
+        end
+    end
+end
+
+local jumpBoostTab = win:tab("Jump Boost", true)
+
+jumpBoostTab:toggle("Jump Boost Enabled", Config.JumpBoostEnabled, function(value)
+    Config.JumpBoostEnabled = value
+end)
+
+jumpBoostTab:input("Jump Boost Amount", "Enter boost amount (0-15)...", true, function(value)
+    local numValue = tonumber(value) or 0
+    Config.JumpBoostAmount = math.clamp(numValue, 0, 15)
+end)
+
+local angleEnhancerTab = win:tab("Angle Enhancer", false)
+
+angleEnhancerTab:toggle("Angle Enhancer Enabled", Config.AngleEnhancerEnabled, function(value)
+    Config.AngleEnhancerEnabled = value
+end)
+
+angleEnhancerTab:input("Angle Enhancer Amount", "Enter enhancer amount (0-15)...", true, function(value)
+    local numValue = tonumber(value) or 0
+    Config.AngleEnhancerValue = math.clamp(numValue, 0, 15)
+end)
+
+local magnetTab = win:tab("Magnet Feature", false)
+
+magnetTab:toggle("Magnet Enabled", Config.MagnetEnabled, function(value)
+    Config.MagnetEnabled = value
+    if Config.MagnetEnabled then
+        enableMagnet()
+    end
+end)
+
+magnetTab:input("Football Distance Catch", "Enter catch distance...", true, function(value)
+    local numValue = tonumber(value) or 10
+    Config.FootballDistanceCatch = math.clamp(numValue, 0, 50)
+end)
+
+jumpBoostTab:button("Unload", function()
+    lib:Destroy()
+end)
+
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+if player.Character then
+    applyJumpBoost(player.Character)
+end
+
+player.CharacterAdded:Connect(function(character)
+    applyJumpBoost(character)
+end)
