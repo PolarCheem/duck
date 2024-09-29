@@ -17,7 +17,7 @@ local function applyJumpBoost(character)
 
     humanoidRootPart.Touched:Connect(function(hit)
         if Config.JumpBoostEnabled and hit:IsA("BasePart") and humanoid:GetState() == Enum.HumanoidStateType.Jumping then
-            task.wait(0.01)
+            task.wait(0)
             humanoidRootPart.Velocity = Vector3.new(
                 humanoidRootPart.Velocity.X,
                 humanoidRootPart.Velocity.Y + Config.JumpBoostAmount,
@@ -31,7 +31,7 @@ local function enableMagnet()
     local player = game:GetService("Players").LocalPlayer
 
     while Config.MagnetEnabled do
-        task.wait(0.1)
+        task.wait(0)
         for _, value in pairs(workspace:GetChildren()) do
             if value.Name == "Football" and value:IsA("BasePart") then
                 local catchRight = player.Character:FindFirstChild("CatchRight")
