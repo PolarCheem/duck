@@ -59,7 +59,6 @@ xz.Name = "yes"
 	UICorner_2.CornerRadius = UDim.new(0, 4)
 	UICorner_2.Parent = Main
 		local Tab = Instance.new("TextButton")
-		local UICorner = Instance.new("UICorner")
 		Tab.Name = "Tab"
 		Tab.Parent = TabsHolder
 		Tab.BackgroundColor3 = Color3.fromRGB(22, 22, 22)
@@ -73,9 +72,7 @@ xz.Name = "yes"
 		UICorner.Parent = Tab
 		
 		local Page = Instance.new("Frame")
-		local UICorner = Instance.new("UICorner")
 		local PageContainer = Instance.new("ScrollingFrame")
-		local UIListLayout = Instance.new("UIListLayout")
 		Page.Name = "es"
 		Page.Parent = PageHolder
 		Page.BackgroundColor3 = Color3.fromRGB(22, 22, 22)
@@ -97,7 +94,6 @@ xz.Name = "yes"
 		UIListLayout.Padding = UDim.new(0, 8)
 		
 			local Label = Instance.new("Frame")
-			local UICorner = Instance.new("UICorner")
 			local LabelText = Instance.new("TextLabel")
 			Label.Name = "yes"
 			Label.Parent = PageContainer
@@ -119,7 +115,6 @@ xz.Name = "yes"
 			LabelText.TextXAlignment = Enum.TextXAlignment.Left
 					
 			local Button = Instance.new("Frame")
-			local UICorner = Instance.new("UICorner")
 			local Button_2 = Instance.new("TextButton")
 			Button.Name = "yes"
 			Button.Parent = PageContainer
@@ -141,10 +136,8 @@ xz.Name = "yes"
 			Button_2.TextXAlignment = Enum.TextXAlignment.Left
 					
 			local Toggle = Instance.new("Frame")
-			local UICorner = Instance.new("UICorner")
 			local Button = Instance.new("TextButton")
 			local Toggle_2 = Instance.new("ImageLabel")
-			local UICorner_2 = Instance.new("UICorner")
 			Toggle.Name = "yes"
 			Toggle.Parent = PageContainer
 			Toggle.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
@@ -174,10 +167,8 @@ xz.Name = "yes"
 			UICorner_2.Parent = Toggle_2
 
 			local Input = Instance.new("Frame")
-			local UICorner = Instance.new("UICorner")
 			local LabelText = Instance.new("TextLabel")
 			local Input_2 = Instance.new("TextBox")
-			local UICorner_2 = Instance.new("UICorner")
 			Input.Name = "yes"
 			Input.Parent = PageContainer
 			Input.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
