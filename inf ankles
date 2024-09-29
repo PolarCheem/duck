@@ -1,3 +1,5 @@
+if game.PlaceId == 1597763879 or game.PlaceId == 335760407
+
 local lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/laagginq/ui-libraries/main/shit-lib/src.lua"))()
 local win = lib:Create("Freemium", "TPS Mobile Server")
 local tab1 = win:tab("Arm and Leg", true)
@@ -88,6 +90,27 @@ local function checkChest()
     end
 end
 
+local function blueFlamesLoop()
+    while true do
+        if blue then
+            player.Backpack.FValue.Value = 10
+        end
+        task.wait(0.1)
+    end
+end
+
+local function powerShotLoop()
+    while true do
+        if power then
+            player.Backpack.PowerActive.Value = true
+        end
+        task.wait(0.1)
+    end
+end
+
+task.spawn(blueFlamesLoop)
+task.spawn(powerShotLoop)
+
 tab1:toggle("Leg Toggle", false, function(v)
     legreach = v
     if v then
@@ -146,18 +169,10 @@ end)
 
 tab3:toggle("Power Shot", false, function(v)
     power = v
-    while power do
-        task.wait(0)
-        player.Backpack.PowerActive.Value = true
-    end
 end)
 
 tab3:toggle("Blue Flames", false, function(v)
     blue = v
-    while blue do
-        task.wait(0)
-        player.Backpack.FValue.Value = 10
-    end
 end)
 
 setupCharacter()
@@ -168,3 +183,6 @@ player.CharacterAdded:Connect(function()
     if headreach then checkHead() end
     if chestreach then checkChest() end
 end)
+
+
+end
