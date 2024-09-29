@@ -86,83 +86,6 @@ UICorner.Parent = PageHolder
 UICorner_2.CornerRadius = UDim.new(0, 4)
 UICorner_2.Parent = Main
 
-local dropdownframe = Instance.new("TextButton")
-local dropdownText = Instance.new("TextLabel")
-local dropdownArrow = Instance.new("TextLabel")
-local activedropdownframe = Instance.new("ScrollingFrame")
-
-dropdownframe.Name = "frame"
-dropdownframe.Parent = PageContainer
-dropdownframe.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
-dropdownframe.Text = "."
-dropdownframe.BorderSizePixel = 0
-dropdownframe.TextColor3 = Color3.fromRGB(25,25,25)
-dropdownframe.Size = UDim2.new(0, 435, 0, 32)
-
-dropdownText.Name = "DropDownText"
-dropdownText.Parent = dropdownframe
-dropdownText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-dropdownText.BackgroundTransparency = 1.000
-dropdownText.Position = UDim2.new(0.0138, 0, 0, 0)
-dropdownText.Size = UDim2.new(0, 423, 0, 32)
-dropdownText.Font = Enum.Font.Gotham
-dropdownText.Text = "Drop Down"  -- Changed from "aa" to "Label Text"
-dropdownText.TextColor3 = Color3.fromRGB(255, 255, 255)
-dropdownText.TextSize = 14.000
-dropdownText.TextXAlignment = Enum.TextXAlignment.Left
-
-dropdownArrow.Name = "DropDownArrow"
-dropdownArrow.Parent = dropdownframe
-dropdownArrow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-dropdownArrow.BackgroundTransparency = 1.000
-dropdownArrow.Position = UDim2.new(0.935, 0, 0.09, 0)
-dropdownArrow.Size = UDim2.new(0, 423, 0, 32)
-dropdownArrow.Font = Enum.Font.Gotham
-dropdownArrow.Text = "^"  -- Changed from "aa" to "Label Text"
-dropdownArrow.TextColor3 = Color3.fromRGB(255, 255, 255)
-dropdownArrow.TextSize = 20.000
-dropdownArrow.TextXAlignment = Enum.TextXAlignment.Left
-
-activedropdownframe.Name = "ActiveDropdowb"
-activedropdownframe.Parent = PageContainer
-activedropdownframe.Active = true
-activedropdownframe.Visible = false
-activedropdownframe.BackgroundColor3 = Color3.fromRGB(25,25,25)
-activedropdownframe.BorderSizePixel = 0
-activedropdownframe.Size = UDim2.new(0, 435, 0, 200)
-activedropdownframe.ScrollBarThickness = 0
-
-local UIListLayout_dropdown = Instance.new("UIListLayout")
-UIListLayout_dropdown.Parent = activedropdownframe
-UIListLayout_dropdown.SortOrder = Enum.SortOrder.LayoutOrder
-UIListLayout_dropdown.Padding = UDim.new(0, 8)
-
-local DropDownButton = Instance.new("Frame")
-local DropDownButton_2 = Instance.new("TextButton")
-
-DropDownButton.Name = "Button"
-DropDownButton.Parent = activedropdownframe
-DropDownButton.BackgroundColor3 = Color3.fromRGB(20,20,20)
-DropDownButton.BorderSizePixel = 0
-DropDownButton.Size = UDim2.new(0, 435, 0, 32)
-
-local UICorner_DropButton = Instance.new("UICorner")
-UICorner_DropButton.CornerRadius = UDim.new(0, 4)
-UICorner_DropButton.Parent = DropDownButton
-
-DropDownButton_2.Name = "Dropdown Button"
-DropDownButton_2.Parent = DropDownButton
-DropDownButton_2.Text = "Button"  -- Changed from "yes" to "Button"
-DropDownButton_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-DropDownButton_2.BackgroundTransparency = 1.000
-DropDownButton_2.Position = UDim2.new(0.0140, 0, 0, 0)
-DropDownButton_2.Size = UDim2.new(0, 423, 0, 32)
-DropDownButton_2.Font = Enum.Font.Gotham
-DropDownButton_2.TextColor3 = Color3.fromRGB(255, 255, 255)
-DropDownButton_2.TextSize = 14.000
-DropDownButton_2.TextXAlignment = Enum.TextXAlignment.Left
-
-
 -- Connect events for interactivity (optional)
 Button_2.MouseButton1Click:Connect(function()
     print("Button clicked!")
@@ -447,6 +370,95 @@ function pageitems:input(text,placeholder,clearonreturn,callback)
 					Input_2.Text = ""
 				end
 			end)
+local dropdownOptions = {}  -- Table to hold the dropdown options
+
+-- Create a dropdown function
+function pageitems:dropdown(text, options, callback)
+    local Dropdown = Instance.new("Frame")
+    local UICorner = Instance.new("UICorner")
+    local DropdownButton = Instance.new("TextButton")
+    local DropdownLabel = Instance.new("TextLabel")
+    local DropdownArrow = Instance.new("TextLabel")
+    local OptionsFrame = Instance.new("Frame")
+    local UIListLayout = Instance.new("UIListLayout")
+    
+    Dropdown.Name = text
+    Dropdown.Parent = PageContainer
+    Dropdown.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+    Dropdown.BorderSizePixel = 0
+    Dropdown.Size = UDim2.new(0, 435, 0, 32)
+    
+    UICorner.CornerRadius = UDim.new(0, 4)
+    UICorner.Parent = Dropdown
+    
+    DropdownButton.Name = "DropdownButton"
+    DropdownButton.Parent = Dropdown
+    DropdownButton.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+    DropdownButton.Size = UDim2.new(1, 0, 1, 0)
+    DropdownButton.Text = ""
+    
+    DropdownLabel.Name = "DropdownLabel"
+    DropdownLabel.Parent = DropdownButton
+    DropdownLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    DropdownLabel.BackgroundTransparency = 1.000
+    DropdownLabel.Position = UDim2.new(0.01, 0, 0, 0)
+    DropdownLabel.Size = UDim2.new(0, 400, 0, 32)
+    DropdownLabel.Font = Enum.Font.Gotham
+    DropdownLabel.Text = text
+    DropdownLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+    DropdownLabel.TextSize = 14.000
+    
+    DropdownArrow.Name = "DropdownArrow"
+    DropdownArrow.Parent = DropdownButton
+    DropdownArrow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    DropdownArrow.BackgroundTransparency = 1.000
+    DropdownArrow.Position = UDim2.new(0.9, 0, 0.2, 0)
+    DropdownArrow.Size = UDim2.new(0, 20, 0, 20)
+    DropdownArrow.Font = Enum.Font.Gotham
+    DropdownArrow.Text = "▼"
+    DropdownArrow.TextColor3 = Color3.fromRGB(255, 255, 255)
+    DropdownArrow.TextSize = 20.000
+    
+    OptionsFrame.Name = "OptionsFrame"
+    OptionsFrame.Parent = Dropdown
+    OptionsFrame.Active = true
+    OptionsFrame.Visible = false
+    OptionsFrame.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+    OptionsFrame.BorderSizePixel = 0
+    OptionsFrame.Size = UDim2.new(1, 0, 0, 0)
+    OptionsFrame.Position = UDim2.new(0, 0, 1, 0)
+    
+    UIListLayout.Parent = OptionsFrame
+    UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+    UIListLayout.Padding = UDim.new(0, 4)
+
+    -- Create dropdown options
+    for _, option in ipairs(options) do
+        local OptionButton = Instance.new("TextButton")
+        OptionButton.Name = option
+        OptionButton.Parent = OptionsFrame
+        OptionButton.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+        OptionButton.BorderSizePixel = 0
+        OptionButton.Size = UDim2.new(1, 0, 0, 32)
+        OptionButton.Font = Enum.Font.Gotham
+        OptionButton.Text = option
+        OptionButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+        OptionButton.TextSize = 14.000
+        
+        OptionButton.MouseButton1Click:Connect(function()
+            callback(option)
+            DropdownLabel.Text = option -- Update the label with selected option
+            OptionsFrame.Visible = false -- Hide options when an option is selected
+        end)
+    end
+
+    -- Dropdown toggle functionality
+    DropdownButton.MouseButton1Click:Connect(function()
+        OptionsFrame.Visible = not OptionsFrame.Visible
+        DropdownArrow.Text = OptionsFrame.Visible and "▲" or "▼" -- Change arrow direction
+    end)
+end
+
 end
 		return pageitems
 
