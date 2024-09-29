@@ -116,6 +116,30 @@ if v then
 print("anti admin loaded")
 end)
 
+task.spawn(function()
+    game:GetService("RunService").Heartbeat:Connect(function()
+        for _, Value in pairs(workspace:GetChildren()) do
+            if Value.Name == "Football" and Value:IsA("BasePart") then
+                local Direction = (Value.Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Unit
+
+                if game:GetService("Players").LocalPlayer:DistanceFromCharacter(Value.Position) <= Config.Football_Vector and Config.Pull_Vector then
+                    game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Velocity = Direction * (Config.Football_Vector)
+                end
+            end
+        end
+    end)
+end)
+
+magnetTab:toggle("Vector Toggle", false, function(value)
+    Config.Pull_Vector = value
+end)
+
+magnetTab:input("Vector Distance", "Enter catch distance...", false, function(value)
+if Config.Pull_Vector then
+Config.Football_Vector = value
+end
+end)
+
 local Players = game:GetService("Players")
 local player = Players.LocalPlayer
 
