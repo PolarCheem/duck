@@ -292,7 +292,7 @@ activedropdownframe.Active = true
 activedropdownframe.Visible = true
 activedropdownframe.BackgroundColor3 = Color3.fromRGB(25,25,25)
 activedropdownframe.BorderSizePixel = 0
-activedropdownframe.Size = UDim2.new(0, 435, 0, 250)
+activedropdownframe.Size = UDim2.new(0, 435, 0, 200)
 activedropdownframe.ScrollBarThickness = 0
 
 -- Connect events for interactivity (optional)
