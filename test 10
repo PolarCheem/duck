@@ -249,13 +249,40 @@ local UICorner_InputBox = Instance.new("UICorner")
 UICorner_InputBox.CornerRadius = UDim.new(0, 4)
 UICorner_InputBox.Parent = Input_Box
 
-local dropdownframe = Instance.new("Frame")
+local dropdownframe = Instance.new("TextButton")
+local dropdownText = Instance.new("TextLabel")
+local dropdownArrow = Instance.new("TextLabel")
 
 dropdownframe.Name = "frame"
 dropdownframe.Parent = PageContainer
 dropdownframe.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
-dropdownframe.BorderSizePixel = 0
+dropdownframe.Text = "."
+dropdownframe.TextColor3 = Color3.fromRGB(25,25,25)
 dropdownframe.Size = UDim2.new(0, 435, 0, 32)
+
+dropdownText.Name = "DropDownText"
+dropdownText.Parent = dropdownframe
+dropdownText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+dropdownText.BackgroundTransparency = 1.000
+dropdownText.Position = UDim2.new(0.0138, 0, 0, 0)
+dropdownText.Size = UDim2.new(0, 423, 0, 32)
+dropdownText.Font = Enum.Font.Gotham
+dropdownText.Text = "Drop Down"  -- Changed from "aa" to "Label Text"
+dropdownText.TextColor3 = Color3.fromRGB(255, 255, 255)
+dropdownText.TextSize = 14.000
+dropdownText.TextXAlignment = Enum.TextXAlignment.Left
+
+dropdownArrow.Name = "DropDownArrow"
+dropdownArrow.Parent = dropdownframe
+dropdownArrow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+dropdownArrow.BackgroundTransparency = 1.000
+dropdownArrow.Position = UDim2.new(0.935, 0, 0.125, 0)
+dropdownArrow.Size = UDim2.new(0, 423, 0, 32)
+dropdownArrow.Font = Enum.Font.Gotham
+dropdownArrow.Text = "^"  -- Changed from "aa" to "Label Text"
+dropdownArrow.TextColor3 = Color3.fromRGB(255, 255, 255)
+dropdownArrow.TextSize = 14.000
+dropdownArrow.TextXAlignment = Enum.TextXAlignment.Left
 
 -- Connect events for interactivity (optional)
 Button_2.MouseButton1Click:Connect(function()
