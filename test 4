@@ -148,6 +148,20 @@ MiscTab:toggle("Anti Admin", true, function(v)
     print("Anti Admin loaded")
 end)
 
+local fullbright = false
+
+magnetTab:toggle("Fullbright Toggle", false, function(value)
+fullbright = v
+while fullbright do
+	Lighting.Brightness = 2
+	Lighting.ClockTime = 14
+	Lighting.FogEnd = 100000
+	Lighting.GlobalShadows = false
+	Lighting.OutdoorAmbient = Color3.fromRGB(128, 128, 128)
+wait(0)
+end
+end)
+
 local Players = game:GetService("Players")
 local player = Players.LocalPlayer
 
