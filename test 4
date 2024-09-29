@@ -8,10 +8,11 @@ local Config = {
     AngleEnhancerValue = 0,
     MagnetEnabled = false,
     FootballDistanceCatch = 10,
-	  Pull_Vector = false,
-	  Football_Vector = 0
+    Pull_Vector = false,
+    Football_Vector = 0
 }
 
+-- functions
 local function applyJumpBoost(character)
     local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
     local humanoid = character:WaitForChild("Humanoid")
@@ -48,9 +49,26 @@ local function enableMagnet()
     end
 end
 
+task.spawn(function()
+    game:GetService("RunService").Heartbeat:Connect(function()
+        for _, value in pairs(workspace:GetChildren()) do
+            if value.Name == "Football" and value:IsA("BasePart") then
+                local player = game:GetService("Players").LocalPlayer
+                local direction = (value.Position - player.Character.HumanoidRootPart.Position).Unit
+
+                if player:DistanceFromCharacter(value.Position) <= Config.Football_Vector and Config.Pull_Vector then
+                    player.Character.HumanoidRootPart.Velocity = direction * Config.Football_Vector
+                end
+            end
+        end
+    end)
+end)
+
+-- some tabs
 local magnetTab = win:tab("Catch", true)
 local jumpBoostTab = win:tab("Jump Boost", false)
 
+-- jump tab
 jumpBoostTab:toggle("Jump Boost Enabled", Config.JumpBoostEnabled, function(value)
     Config.JumpBoostEnabled = value
 end)
@@ -60,6 +78,7 @@ jumpBoostTab:input("Jump Boost Amount", "Enter boost amount (0-15)...", false, f
     Config.JumpBoostAmount = math.clamp(numValue, 0, 15)
 end)
 
+-- angle tab
 local angleEnhancerTab = win:tab("Angle Enhancer", false)
 
 angleEnhancerTab:toggle("Angle Enhancer Enabled", Config.AngleEnhancerEnabled, function(value)
@@ -70,6 +89,8 @@ angleEnhancerTab:input("Angle Enhancer Amount", "Enter enhancer amount (0-15)...
     local numValue = tonumber(value) or 0
     Config.AngleEnhancerValue = math.clamp(numValue, 0, 15)
 end)
+
+-- mag tab
 
 magnetTab:toggle("Magnet Enabled", Config.MagnetEnabled, function(value)
     Config.MagnetEnabled = value
@@ -83,61 +104,48 @@ magnetTab:input("Magnet Distance", "Enter catch distance...", false, function(va
     Config.FootballDistanceCatch = math.clamp(numValue, 0, 50)
 end)
 
-local MiscTab = win:tab("Misc", false)
-
-MiscTab:toggle("Anti Admin", true, function(v)
-if v then
-            local moderators = {
-                "2618937233503944727",
-                "209187780079648778",
-                "265544447129812992",
-                "677964655821324329",
-                "469043698110562304",
-                "792145568586792979",
-                "490537796940070915",
-                "678699048844132362",
-                "837514415480897607",
-                "417141199564963840",
-                "580140563295109148",
-                "231225289718497281",
-                "719258236930228346",
-                "345362950380322829",
-                "513196564236468226",
-                "241945212463742986",
-                "153379470164623360",
-              }
-
-             for index, value in pairs(game:GetService("Players"):GetPlayers()) do
-                if table.find(moderators, value.UserId) then
-                    game:GetService("Players").LocalPlayer:kick("An Admin has joined! Make sure to keep this enabled for extra caution next time!")
-                end
-            end
-        end
-print("anti admin loaded")
-end)
-
-task.spawn(function()
-    game:GetService("RunService").Heartbeat:Connect(function()
-        for _, Value in pairs(workspace:GetChildren()) do
-            if Value.Name == "Football" and Value:IsA("BasePart") then
-                local Direction = (Value.Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Unit
-
-                if game:GetService("Players").LocalPlayer:DistanceFromCharacter(Value.Position) <= Config.Football_Vector and Config.Pull_Vector then
-                    game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Velocity = Direction * (Config.Football_Vector)
-                end
-            end
-        end
-    end)
-end)
-
 magnetTab:toggle("Vector Toggle", false, function(value)
     Config.Pull_Vector = value
 end)
 
 magnetTab:input("Vector Distance", "Enter catch distance...", false, function(value)
-if Config.Pull_Vector then
-Config.Football_Vector = value
-end
+    local numValue = tonumber(value) or 0
+    Config.Football_Vector = math.clamp(numValue, 0, 100) -- Set a max value for clarity
+end)
+
+-- misc tab
+
+local MiscTab = win:tab("Misc", false)
+
+MiscTab:toggle("Anti Admin", true, function(v)
+    if v then
+        local moderators = {
+            "2618937233503944727",
+            "209187780079648778",
+            "265544447129812992",
+            "677964655821324329",
+            "469043698110562304",
+            "792145568586792979",
+            "490537796940070915",
+            "678699048844132362",
+            "837514415480897607",
+            "417141199564963840",
+            "580140563295109148",
+            "231225289718497281",
+            "719258236930228346",
+            "345362950380322829",
+            "513196564236468226",
+            "241945212463742986",
+            "153379470164623360",
+        }
+
+        for _, player in pairs(game:GetService("Players"):GetPlayers()) do
+            if table.find(moderators, player.UserId) then
+                game:GetService("Players").LocalPlayer:Kick("An Admin has joined! Make sure to keep this enabled for extra caution next time!")
+            end
+        end
+    end
+    print("Anti Admin loaded")
 end)
 
 local Players = game:GetService("Players")
