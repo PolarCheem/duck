@@ -1,20 +1,40 @@
 local lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/laagginq/ui-libraries/main/shit-lib/src.lua"))()
 local win = lib:Create("NotPaki","Teleportation")
-local tab1 = win:tab("Spawn",true)
+local tab1 = win:tab("Parts",true)
 
 local player = game.Players.LocalPlayer
 local character = player.Character or player.CharacterAdded:Wait()
-local position = character.HumanoidRootPart.Position
-
+local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+local parts = {} 
 
 tab1:input("Part name","Part name here",true,function(v)
     print(v)
-local v = Instance.new("Part")
+    local newPart = Instance.new("Part")
+    newPart.Anchored = true 
+    table.insert(parts, newPart) 
 end)
 
-tab1:button("Test Button",function()
-v.Size = Vector3.new(5, 1, 5)
-v.CanCollide = false
-v.Position = position
-v.Parent = workspace
+tab1:button("Create Part",function()
+    local part = parts[#parts] 
+    if part then
+        part.Size = Vector3.new(5, 1, 5)
+        part.CanCollide = false
+        part.Position = humanoidRootPart.Position + Vector3.new(0, 5, 0)
+        part.Parent = workspace
+    end
+end)
+
+tab1:input("Teleport to part (1, 2, ect)", "Enter part number", true, function(v)
+    local index = tonumber(v) 
+    if index and parts[index] then
+        humanoidRootPart.CFrame = parts[index].CFrame + Vector3.new(0, 3, 0) -- Teleport to the selected part
+    else
+        warn("Invalid part number")
+    end
+end)
+
+tab1:button("Print All Parts", function()
+    for i, part in ipairs(parts) do
+        print("Part " .. i .. ": " .. tostring(part))
+    end
 end)
