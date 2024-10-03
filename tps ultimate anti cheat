@@ -2,7 +2,7 @@ local lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/PolarChee
 local win = lib:Create("Key System")
 local tab1 = win:tab("Key System", true)
 local key_sf = "lmaoo"
-local input = "string"
+getgenv.KeyInput = "string"
 local dc = "https://discord.gg/T5BsXUmqye"
 
 function Destroy()
@@ -20,8 +20,8 @@ game.Players.LocalPlayer:Kick("Incorrect key")
 end
 end
 
-tab1:input("Check Key", ". .", function(v)
-input = v
+tab1:input("Input Key", ". .", false, function(v)
+KeyInput = v
 end)
 
 tab1:button("Check Key", function()
