@@ -14,7 +14,7 @@ function CheckKey()
 if KeyInput == key_sf then
 Destroy()
 wait(1.5)
-print("worked")
+loadstring(game:HttpGet("https://raw.githubusercontent.com/PolarCheem/Duck-UI/refs/heads/main/tuff2"))()
 else
 game.Players.LocalPlayer:Kick("Incorrect key")
 end
