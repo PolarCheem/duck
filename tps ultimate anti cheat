@@ -14,7 +14,7 @@ function CheckKey()
 if input == key_sf then
 Destroy()
 wait(1.5)
-loadstring(game:HttpGet("https://pastebin.com/raw/jrVdTE7E"))()
+print("worked")
 else
 game.Players.LocalPlayer:Kick("Incorrect key")
 end
