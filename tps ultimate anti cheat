@@ -11,7 +11,7 @@ keys:Destroy()
 end
 
 function CheckKey()
-if input == key_sf then
+if KeyInput == key_sf then
 Destroy()
 wait(1.5)
 print("worked")
