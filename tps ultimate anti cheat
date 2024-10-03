@@ -2,7 +2,7 @@ local lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/PolarChee
 local win = lib:Create("Key System")
 local tab1 = win:tab("Key System", true)
 local key_sf = "lmaoo"
-getgenv.KeyInput = "string"
+local KeyInput = "string"
 local dc = "https://discord.gg/T5BsXUmqye"
 
 function Destroy()
