@@ -317,3 +317,45 @@ InputName.TextXAlignment = Enum.TextXAlignment.Left
         Main.Visible = true
     end)
 
+--drop down
+
+local DropDown = Instance.new("TextButton")
+DropDown.Name = "Button"
+DropDown.Parent = Content
+DropDown.BackgroundColor3 = Color3.fromRGB(25, 27, 30)
+DropDown.BorderSizePixel = 0
+DropDown.Size = UDim2.new(0.9, 0, 0.05, 0)
+DropDown.TextTransparency = 1
+
+local dropName = Instance.new("TextLabel")
+dropName.Size = UDim2.new(0.1, 0, 0.1, 0)
+dropName.Position = UDim2.new(0.03, 0, 0.45, 0)
+dropName.BackgroundColor3 = Color3.new(0, 0, 0)
+dropName.BorderColor3 = Color3.new(0, 0, 0)
+dropName.BorderSizePixel = 0
+dropName.Text = "Dropdown"
+dropName.BackgroundTransparency = 1 
+dropName.TextColor3 = Color3.fromRGB(255, 255, 255)
+dropName.Font = Enum.Font.Gotham
+dropName.Parent = DropDown
+dropName.TextSize = 14
+dropName.TextXAlignment = Enum.TextXAlignment.Left 
+
+local UICorner_DropDown = Instance.new("UICorner")
+UICorner_DropDown.CornerRadius = UDim.new(0, 10)
+UICorner_DropDown.Parent = DropDown
+
+local dropframe = Instance.new("Frame")
+dropframe.Size = UDim2.new(1, 0, 5, 0)
+dropframe.Position = UDim2.new(0, 0, 0.3, 0)  
+dropframe.AnchorPoint = Vector2.new(0.5, 0.5)
+dropframe.BackgroundColor3 = Color3.fromRGB(17, 19, 22)
+dropframe.BorderColor3 = Color3.new(0, 0, 0)
+dropframe.BorderSizePixel = 0
+dropframe.Active = true
+dropframe.BackgroundTransparency = 0
+dropframe.Parent = DropDown
+
+local UICorner_DropFrame = Instance.new("UICorner")
+UICorner_DropFrame.CornerRadius = UDim.new(0, 10)
+UICorner_DropFrame.Parent = dropframe
