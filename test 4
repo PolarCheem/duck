@@ -345,17 +345,16 @@ dropName.TextXAlignment = Enum.TextXAlignment.Left
 
 local dropIcon = Instance.new("TextLabel")
 dropIcon.Size = UDim2.new(0.1, 0, 0.1, 0)
-dropIcon.Position = UDim2.new(0.03, 0, 0.45, 0)
+dropIcon.Position = UDim2.new(0.95, 0, 0.45, 0)
 dropIcon.BackgroundColor3 = Color3.new(0, 0, 0)
 dropIcon.BorderColor3 = Color3.new(0, 0, 0)
 dropIcon.BorderSizePixel = 0
-dropIcon.Text = "Dropdown"
+dropIcon.Text = "^"
 dropIcon.BackgroundTransparency = 1 
 dropIcon.TextColor3 = Color3.fromRGB(255, 255, 255)
 dropIcon.Font = Enum.Font.Gotham
 dropIcon.Parent = DropDown
-dropIcon.TextSize = 14
-dropIcon.TextXAlignment = Enum.TextXAlignment.Right 
+dropIcon.TextSize = 14 
 
 local UICorner_DropDown = Instance.new("UICorner")
 UICorner_DropDown.CornerRadius = UDim.new(0, 10)
