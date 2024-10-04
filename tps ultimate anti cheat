@@ -1,5 +1,5 @@
 local lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/PolarCheem/Duck-UI/refs/heads/main/aaa"))()
-local win = lib:Create("Key System")
+local win = lib:Create("KeySystem")
 local tab1 = win:tab("Key System", true)
 local dc = "https://discord.gg/T5BsXUmqye"
 
@@ -7,7 +7,7 @@ sf_key = "oop"
 getgenv().KeyInput = "string"
 
 function Destroy()
-    game:GetService("CoreGui"):Orion:Destroy()
+    game:GetService("CoreGui"):KeySystem:Destroy()
 end
 
 function CheckKey()
