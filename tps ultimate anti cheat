@@ -1,23 +1,20 @@
 local lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/PolarCheem/Duck-UI/refs/heads/main/aaa"))()
 local win = lib:Create("Key System")
 local tab1 = win:tab("Key System", true)
-local key_sf = "lmaoo"
-local KeyInput = "string"
 local dc = "https://discord.gg/T5BsXUmqye"
 
+sf_key = "oop"
+getgenv().KeyInput = "string"
+
 function Destroy()
-local keys = game.CoreGui:FindFirstChild("Key System")
-keys:Destroy()
+    game:GetService("CoreGui"):Orion:Destroy()
 end
 
 function CheckKey()
-if KeyInput == key_sf then
-Destroy()
-wait(1.5)
-loadstring(game:HttpGet("https://raw.githubusercontent.com/PolarCheem/Duck-UI/refs/heads/main/tuff2"))()
-else
-game.Players.LocalPlayer:Kick("Incorrect key")
-end
+    if sf_key == KeyInput then
+        Destroy()
+         print("ok")
+    end
 end
 
 tab1:input("Input Key", ". .", false, function(v)
