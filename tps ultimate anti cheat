@@ -4,4 +4,4 @@ local tab = UI:tab("Main Tab", true) -- Create a tab
 
 tab:dropdown("Select Option", {"Option 1", "Option 2", "Option 3"}, function(selectedOption)
     print("Selected option:", selectedOption)
-end)
+end, "Option 1")
