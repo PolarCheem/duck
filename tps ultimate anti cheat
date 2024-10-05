@@ -1,32 +1,7 @@
-local lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/PolarCheem/Duck-UI/refs/heads/main/aaa"))()
-local win = lib:Create("KeySystem")
-local tab1 = win:tab("Key System", true)
-local dc = "https://discord.gg/T5BsXUmqye"
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/PolarCheem/Duck-UI/refs/heads/main/aaa"))()
+local UI = Library:Create("My UI", Enum.KeyCode.F) -- Create the UI
+local tab = UI:tab("Main Tab", true) -- Create a tab
 
-sf_key = "oop"
-getgenv().KeyInput = "string"
-
-function Destroy()
-    game:GetService("CoreGui"):KeySystem:Destroy()
-end
-
-function CheckKey()
-    if sf_key == KeyInput then
-        Destroy()
-         print("ok")
-    end
-end
-
-tab1:input("Input Key", ". .", false, function(v)
-KeyInput = v
-end)
-
-tab1:button("Check Key", function()
-CheckKey()
-end)
-
-tab1:button("Get Key", function()
-setclipboard(dc)
-wait(1)
-game.Players.LocalPlayer:Kick("Copied to clipboard")
+tab:dropdown("Select Option", {"Option 1", "Option 2", "Option 3"}, function(selectedOption)
+    print("Selected option:", selectedOption)
 end)
