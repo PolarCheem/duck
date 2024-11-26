@@ -87,23 +87,3 @@ local args = {
 }
 
 game:GetService("ReplicatedStorage").ClientFolder.CoreRemote:FireServer(unpack(args))
-
-local args = {
-    [1] = {
-        ["Scope"] = "OCModule",
-        ["Info"] = {
-            ["ID"] = "85692809890825",
-            ["Choice"] = "Add",
-            ["FormCustomising"] = {
-                ["FormInfo"] = {},
-                ["FormName"] = "",
-                ["Active"] = false
-            }
-        },
-        ["Funct"] = "CheckCustomAccessory"
-    }
-}
-
-game:GetService("ReplicatedStorage").ClientFolder.CoreRemote:FireServer(unpack(args))
-
-
