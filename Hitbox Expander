@@ -1,394 +1,114 @@
-if game.PlaceId == 16440734455 then
-
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window1 = OrionLib:MakeWindow({Name = "13 - Fortline", HidePremium = false, SaveConfig = true, ConfigFolder = "13Hub"})
-
-
-
-local Tab = Window1:MakeTab({
-    Name = "Main",
-    Icon = "rbxassetid://4483345998",
-    PremiumOnly = false
-})
-
-
-local Tab1 = Window1:MakeTab({
-    Name = "Player",
-    Icon = "rbxassetid://4483345998",
-    PremiumOnly = false
-})
-
-local Section1 = Tab1:AddSection({
-    Name = "Universal"
-})
-
---[[
-Name = <string> - The name of the section.
-]]
-
-local Section = Tab:AddSection({
-	Name = "Mods"
-})
-
-
-Tab:AddButton({
-	Name = "Crossbow Mod",
-	Callback = function()
-      		while true do
-		    game.Players.LocalPlayer.Crossbow.Configuration.ShotCooldown = 0
-wait()
-game.Players.LocalPlayer.Crossbow.Configuration.GravityFactor = 0
-wait()
-game.Players.LocalPlayer.Crossbow.Configuration.BulletSpeed = 1000
-wait()
-game.Players.LocalPlayer.Crossbow.CurrentAmmo = 100
-				end
-  	end    
-})
-
-Tab1:AddButton({
-	Name = "Hitbox Expander",
-	Callback = function()
-      		loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-Update-script-hitbox-9326"))()
-  	end    
-})
-
-Tab1:AddButton({
-    Name = "InfiniteYield",
-    Callback = function()
-              loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
-      end    
-})
-
-Tab1:AddSlider({
-	Name = "Walkspeed",
-	Min = 0,
-	Max = 500,
-	Default = 24,
-	Color = Color3.fromRGB(255,255,255),
-	Increment = 1,
-	ValueName = "speed",
-	Callback = function(Value)
-game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
-	end    
-})
-
-
-Tab1:AddSlider({
-	Name = "JumpPower",
-	Min = 0,
-	Max = 500,
-	Default = 20,
-	Color = Color3.fromRGB(255,255,255),
-	Increment = 1,
-	ValueName = "power",
-	Callback = function(Value)
-game.Players.LocaPlayer.Character.Humanoid.JumpPower = Value
-	end    
-})
-
-OrionLib:Init()
-
-end
-
-if game.PlaceId == 12781634259 then
-
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "13 - Head Tap", HidePremium = false, SaveConfig = true, ConfigFolder = "13Hub"})
-
-local Tab = Window:MakeTab({
-	Name = "Main",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-})
-
-local Tab1 = Window:MakeTab({
-	Name = "Player",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-})
-
-local Section = Tab:AddSection({
-	Name = "Main"
-})
-
-local Section1 = Tab1:AddSection({
-	Name = "Universal"
-})
-
-Tab:AddButton({
-	Name = "Football hitbox",
-	Callback = function()
-			while fb do
-			Football.Size = Vector3.new(30, 30, 30)
-		wait()
-			PFootball.Size = Vector3.new(30, 30, 30)
-		wait()
-		Football.Transparency = 0.7
-		wait()
-		PFootball.Transparency = 0.7
-		wait()
-			end
-  	end    
-})
-
-
-local fb = true
-local Football = Workspace.Football.Football
-local PFootball = Workspace.PracticeFootball.Football
-
-OrionLib:Init()
-
-end
-
-if game.PlaceId == 15479868981 then
-
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "13 - TouchDown Sim", HidePremium = false, SaveConfig = true, ConfigFolder = "13Hub"})
-
-local Tab = Window:MakeTab({
-	Name = "Main",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-})
-
-local Tab1 = Window:MakeTab({
-	Name = "Player",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-})
-
-local Section = Tab:AddSection({
-	Name = "Main"
-})
-
-local Section1 = Tab1:AddSection({
-	Name = "Universal"
-})
-
-local Wins1 = false
-
-Tab:AddToggle({
-	Name = "1 Defender Inf Wins",
-	Default = false,
-	Callback = function(Value)
-		local Wins1 = Value
-		
-		while Wins1 do
-		local args = {
-    [1] = game:GetService("ReplicatedStorage"):WaitForChild("Defenders"):WaitForChild("Defender1"),
-    [2] = game:GetService("ReplicatedStorage"):WaitForChild("Fields"):WaitForChild("Field_01"),
-    [3] = false
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("PushHandler_AddNpcFunc"):InvokeServer(unpack(args))
-	wait()
-		local args = {
-    [1] = 1272790022
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("PushHandler_TouchdownFunc"):InvokeServer(unpack(args))
-		end
-	end    
-})
-
-Tab1:AddButton({
-    Name = "InfiniteYield",
-    Callback = function()
-              loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
-      end    
-})
-
-Tab1:AddSlider({
-	Name = "Walkspeed",
-	Min = 0,
-	Max = 500,
-	Default = 24,
-	Color = Color3.fromRGB(255,255,255),
-	Increment = 1,
-	ValueName = "speed",
-	Callback = function(Value)
-game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
-	end    
-})
-
-Tab1:AddSlider({
-	Name = "JumpPower",
-	Min = 0,
-	Max = 500,
-	Default = 20,
-	Color = Color3.fromRGB(255,255,255),
-	Increment = 1,
-	ValueName = "power",
-	Callback = function(Value)
-game.Players.LocaPlayer.Character.Humanoid.JumpPower = Value
-	end    
-})
-
-
-OrionLib:Init()
-
-end
-
-if game.PlaceId == 3101667897 then
-
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "13 - Legends Of Speed ⚡", HidePremium = false, SaveConfig = true, ConfigFolder = "13Hub"})
-
-local Tab = Window:MakeTab({
-	Name = "Main",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-})
-
-local Section = Tab:AddSection({
-	Name = "Main"
-})
-
-local RedOrb = false
-local GemOrb = false
-local Crystal = true
-
-Tab:AddToggle({
-	Name = "Auto Red Orb",
-	Default = false,
-	Callback = function(Value)
-		RedOrb = Value
-		while RedOrb do
-		local args = {
-    [1] = "collectOrb",
-    [2] = "Red Orb",
-    [3] = "City"
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer(unpack(args))
-wait()
-			local args = {
-    [1] = "collectOrb",
-    [2] = "Red Orb",
-    [3] = "Snow City"
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer(unpack(args))
-wait()
-			local args = {
-    [1] = "collectOrb",
-    [2] = "Red Orb",
-    [3] = "Magma City"
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer(unpack(args))
-			wait()
-		end
-	end    
-})
-
-Tab:AddToggle({
-	Name = "Auto Gem Orb",
-	Default = false,
-	Callback = function(Value)
-		GemOrb = Value
-		while GemOrb do
-		local args = {
-    [1] = "collectOrb",
-    [2] = "Gem",
-    [3] = "City"
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer(unpack(args))
-wait()
-			local args = {
-    [1] = "collectOrb",
-    [2] = "Gem",
-    [3] = "Snow City"
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer(unpack(args))
-wait()
-			local args = {
-    [1] = "collectOrb",
-    [2] = "Gem",
-    [3] = "Magma City"
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer(unpack(args))
-wait()
-		end
-	end    
-})
-
-Tab:AddDropdown({
-	Name = "Auto Open Crystals",
-	Default = "none",
-	Options = {"none", "Inferno Crystal"},
-	Callback = function(Value)
-		while Crystal do
-		local args = {
-    [1] = "openCrystal",
-    [2] = Value
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("openCrystalRemote"):InvokeServer(unpack(args))
-wait()
-		end
-	end    
-})
-
-
-
-
-
-OrionLib:Init()
-
-end
-
-if game.PlaceId == 155615604 then
-
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "13 - TOH", HidePremium = false, SaveConfig = true, ConfigFolder = "13Hub"})
-
-local Tab = Window:MakeTab({
-	Name = "Farm",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-})
-
-local Section = Tab:AddSection({
-	Name = "Main"
-})
-
-Tab:AddToggle({
-	Name = "Anti Death",
-	Default = false,
-	Callback = function(Value)
-		while anti do
-		wait()
-	local function destroyKillScript()
-  local player = game.Players.LocalPlayer
-  local character = player.Character
-  
-  if character then
-    local killScript = character:FindFirstChild("KillScript")
-    if killScript then
-      killScript:Destroy()
-      print("Destroyed KillScript in character.") -- Optional message
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local UserInputService = game:GetService("UserInputService")
+local localPlayer = Players.LocalPlayer
+local camera = workspace.CurrentCamera
+
+-- Configuration
+local MAX_ANGLE = 30 -- Degrees from center to consider "in view"
+local MAX_DISTANCE = 100 -- Max distance to consider
+local SMOOTHNESS = 0.2 -- Lower is smoother (0.1-0.5 recommended)
+local TEAM_CHECK = true -- Set to false to look at any player
+
+-- State variables
+local isLookingActive = false
+local lastTarget = nil
+
+-- Create the UI (using your original button setup)
+local screenGui = Instance.new("ScreenGui")
+screenGui.Parent = localPlayer.PlayerGui
+
+-- Create the toggle button (similar to your original style)
+local toggleButton = Instance.new("TextButton")
+toggleButton.Name = "LookToggleButton"
+toggleButton.Size = UDim2.new(0, 100, 0, 40)
+toggleButton.Position = UDim2.new(0.5, 0, 0.3, 0)
+toggleButton.Text = "Enable Look"
+toggleButton.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+toggleButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+toggleButton.Parent = screenGui
+toggleButton.Draggable = true
+
+-- Function to find the closest teammate in view
+local function getClosestTeammateInView()
+    if not camera then return nil end
+    
+    local cameraCFrame = camera.CFrame
+    local cameraLookVector = cameraCFrame.LookVector
+    local cameraPosition = cameraCFrame.Position
+    
+    local closestPlayer = nil
+    local closestDistance = MAX_DISTANCE
+    local smallestAngle = MAX_ANGLE
+    
+    for _, player in ipairs(Players:GetPlayers()) do
+        -- Skip if it's the local player or not same team (when team check is enabled)
+        if player == localPlayer then continue end
+        if TEAM_CHECK and player.Team ~= localPlayer.Team then continue end
+        
+        if player.Character then
+            local targetHead = player.Character:FindFirstChild("Head")
+            local humanoid = player.Character:FindFirstChildOfClass("Humanoid")
+            
+            if targetHead and humanoid and humanoid.Health > 0 then
+                local distance = (targetHead.Position - cameraPosition).Magnitude
+                if distance <= MAX_DISTANCE then
+                    local direction = (targetHead.Position - cameraPosition).Unit
+                    local angle = math.deg(math.acos(direction:Dot(cameraLookVector)))
+                    
+                    -- Prioritize players that are both close and centered in view
+                    if angle < smallestAngle or (angle == smallestAngle and distance < closestDistance) then
+                        smallestAngle = angle
+                        closestDistance = distance
+                        closestPlayer = player
+                    end
+                end
+            end
+        end
     end
-  end
+    
+    return closestPlayer
 end
 
-destroyKillScript() -- Call the function immediately
-			end
-	end    
-})
-
-
-
-
-
-
-
-
-getgenv().anti = Value
-
-OrionLib:Init()
+-- Toggle the look functionality
+local function toggleLookFunction()
+    isLookingActive = not isLookingActive
+    
+    if isLookingActive then
+        toggleButton.Text = "Disable Look"
+        toggleButton.BackgroundColor3 = Color3.fromRGB(200, 50, 50)
+    else
+        toggleButton.Text = "Enable Look"
+        toggleButton.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+        lastTarget = nil
+    end
 end
+
+-- Connect the button click event
+toggleButton.MouseButton1Click:Connect(toggleLookFunction)
+
+-- Optional: Add keybind support (T key to toggle)
+UserInputService.InputBegan:Connect(function(input, gameProcessed)
+    if gameProcessed then return end
+    if input.KeyCode == Enum.KeyCode.T then
+        toggleLookFunction()
+    end
+end)
+
+-- Main update loop
+RunService.Heartbeat:Connect(function()
+    if not isLookingActive then return end
+
+    if not lastTarget or not lastTarget.Character or not lastTarget.Character:FindFirstChild("Head") then
+        lastTarget = getClosestTeammateInView()
+    end
+
+    if lastTarget and lastTarget.Character then
+        local head = lastTarget.Character:FindFirstChild("Head")
+        if head then
+            local currentCFrame = camera.CFrame
+            local targetCFrame = CFrame.new(currentCFrame.Position, head.Position)
+            camera.CFrame = currentCFrame:Lerp(targetCFrame, SMOOTHNESS)
+        end
+    end
+end)
