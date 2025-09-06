@@ -1,88 +1,1744 @@
---decompiler is slow, removed right now :(
+-- Sat Sep  6 00:58:49 2025
 -- USED GLOBALS: script.
-[003] :001:GETIMPORT      v2 = script
-[005] :001:GETTABLEKS     v1 = v2.Parent
-[007] :001:GETTABLEKS     v0 = v1.Parent
-[008] :002:LOADK          v3 = "Torso"
-[009] :002:LOADN          v4 = 10
-[012] :002:CALL           v1 = v1:WaitForChild(v3, v4)
-[013] :003:LOADK          v4 = "Humanoid"
-[016] :003:CALL           v2 = v2:WaitForChild(v4)
-[017] :004:LOADK          v5 = "IsRagdoll"
-[020] :004:CALL           v3 = v3:WaitForChild(v5)
-[021] :006:DUPCLOSURE     
-local function push()
+[003] :001:GETIMPORT      v0 = game
+[004] :001:LOADK          v2 = "ReplicatedStorage"
+[007] :001:CALL           v0 = v0:GetService(v2)
+[009] :002:GETIMPORT      v1 = game
+[010] :002:LOADK          v3 = "UserInputService"
+[013] :002:CALL           v1 = v1:GetService(v3)
+[015] :003:GETIMPORT      v2 = game
+[016] :003:LOADK          v4 = "PathfindingService"
+[019] :003:CALL           v2 = v2:GetService(v4)
+[021] :004:GETIMPORT      v3 = game
+[022] :004:LOADK          v5 = "Players"
+[025] :004:CALL           v3 = v3:GetService(v5)
+[027] :005:GETIMPORT      v4 = game
+[028] :005:LOADK          v6 = "RunService"
+[031] :005:CALL           v4 = v4:GetService(v6)
+[033] :006:GETIMPORT      v5 = game
+[034] :006:LOADK          v7 = "TweenService"
+[037] :006:CALL           v5 = v5:GetService(v7)
+[039] :007:GETIMPORT      v6 = game
+[040] :007:LOADK          v8 = "ReplicatedStorage"
+[043] :007:CALL           v6 = v6:GetService(v8)
+[045] :009:GETIMPORT      v7 = require
+[047] :009:GETTABLEKS     v9 = v0.Packages
+[049] :009:GETTABLEKS     v8 = v9.Knit
+[050] :009:CALL           v7 = v7(v8)
+[052] :010:GETIMPORT      v8 = require
+[054] :010:GETTABLEKS     v10 = v0.Shared
+[056] :010:GETTABLEKS     v9 = v10.Essentials
+[057] :010:CALL           v8 = v8(v9)
+[059] :011:GETIMPORT      v9 = require
+[061] :011:GETTABLEKS     v11 = v0.Shared
+[063] :011:GETTABLEKS     v10 = v11.Trove
+[064] :011:CALL           v9 = v9(v10)
+[066] :012:GETIMPORT      v10 = require
+[068] :012:GETTABLEKS     v12 = v0.Shared
+[070] :012:GETTABLEKS     v11 = v12.Popup
+[071] :012:CALL           v10 = v10(v11)
+[073] :013:GETIMPORT      v11 = require
+[075] :013:GETTABLEKS     v13 = v0.Shared
+[077] :013:GETTABLEKS     v12 = v13.SoundManager
+[078] :013:CALL           v11 = v11(v12)
+[080] :014:GETIMPORT      v12 = require
+[082] :014:GETTABLEKS     v14 = v0.Shared
+[084] :014:GETTABLEKS     v13 = v14.VfxManager
+[085] :014:CALL           v12 = v12(v13)
+[087] :015:GETIMPORT      v13 = require
+[089] :015:GETTABLEKS     v16 = v6.Shared
+[091] :015:GETTABLEKS     v15 = v16.utils
+[093] :015:GETTABLEKS     v14 = v15.getActiveFlowStats
+[094] :015:CALL           v13 = v13(v14)
+[096] :017:GETIMPORT      v16 = game
+[098] :017:GETTABLEKS     v15 = v16.Players
+[100] :017:GETTABLEKS     v14 = v15.LocalPlayer
+[102] :019:GETTABLEKS     v15 = v14.Character
+[103] :019:JUMPIF         if not v15 then -- goto #108
+[105] :019:GETTABLEKS     v15 = v14.CharacterAdded
+[108] :019:CALL           v15 = v15:Wait()
+[109] :020:LOADK          v18 = "Humanoid"
+[112] :020:CALL           v16 = v16:WaitForChild(v18)
+[113] :021:LOADK          v19 = "HumanoidRootPart"
+[116] :021:CALL           v17 = v17:WaitForChild(v19)
+[117] :023:DUPTABLE       v18 = {} -- {"Running", "StandingUp", "Bicycle", "Ability", "TimeSpentRunning"}
+[118] :024:LOADB          v19 = false
+[120] :024:SETTABLEKS     v18.Running = v19
+[121] :025:LOADB          v19 = false
+[123] :025:SETTABLEKS     v18.StandingUp = v19
+[124] :026:LOADB          v19 = false
+[126] :026:SETTABLEKS     v18.Bicycle = v19
+[127] :027:LOADB          v19 = false
+[129] :027:SETTABLEKS     v18.Ability = v19
+[130] :028:LOADN          v19 = 0
+[132] :028:SETTABLEKS     v18.TimeSpentRunning = v19
+[134] :031:GETTABLEKS     v19 = v7.CreateController
+[135] :031:DUPTABLE       v20 = {} -- {"Name"}
+[136] :032:LOADK          v21 = "StatesController"
+[138] :032:SETTABLEKS     v20.Name = v21
+[139] :031:CALL           v19 = v19(v20)
+[140] :035:NEWCLOSURE     
+local function RespawnChecks(p1)
+-- proto pool id: 2
+-- num upvalues: 2
+-- num inner protos: 1
+-- size instructions: 32
+-- size constants: 8
+-- lineinfo gap: 24
+-- max stack size: 6
+-- is typed: false
+[002] :036:GETTABLEKS     v0 = p1.NewTrove
+[003] :036:JUMPIFNOT      if v0 then -- goto #8
+[005] :036:GETTABLEKS     v0 = p1.NewTrove
+[008] :036:CALL           v0:Destroy()
+[009] :037:GETUPVAL       v1 = u_v9
+[011] :037:GETTABLEKS     v0 = v1.new
+[012] :037:CALL           v0 = v0()
+[014] :037:SETTABLEKS     p1.NewTrove = v0
+[016] :039:GETTABLEKS     v0 = p1.NewTrove
+[017] :039:GETUPVAL       v2 = u_v15
+[018] :039:LOADK          v4 = "IsRagdoll"
+[021] :039:CALL           v2 = v2:WaitForChild(v4)
+[022] :039:LOADK          v4 = "Value"
+[025] :039:CALL           v2 = v2:GetPropertyChangedSignal(v4)
+[026] :039:NEWCLOSURE     v3 = function()
+-- proto pool id: 1
+-- num upvalues: 2
+-- num inner protos: 1
+-- size instructions: 47
+-- size constants: 18
+-- lineinfo gap: 24
+-- max stack size: 4
+-- is typed: false
+[001] :040:GETUPVAL       v2 = u_v15
+[003] :040:GETTABLEKS     v1 = v2.IsRagdoll
+[005] :040:GETTABLEKS     v0 = v1.Value
+[007] :040:JUMPXEQKB      if v0 == false then -- goto #47
+[008] :041:GETUPVAL       v1 = u_v0
+[010] :041:GETTABLEKS     v0 = v1.States
+[011] :041:LOADB          v1 = true
+[013] :041:SETTABLEKS     v0.StandingUp = v1
+[014] :043:GETUPVAL       v1 = u_v0
+[016] :043:GETTABLEKS     v0 = v1.Animations
+[019] :043:CALL           v0:StopAnims()
+[020] :044:GETUPVAL       v3 = u_v0
+[022] :044:GETTABLEKS     v2 = v3.Animations
+[024] :044:GETTABLEKS     v1 = v2.Movement
+[026] :044:GETTABLEKS     v0 = v1.StandUp
+[028] :044:GETIMPORT      v1 = Enum.AnimationPriority.Action4
+[030] :044:SETTABLEKS     v0.Priority = v1
+[031] :045:GETUPVAL       v3 = u_v0
+[033] :045:GETTABLEKS     v2 = v3.Animations
+[035] :045:GETTABLEKS     v1 = v2.Movement
+[037] :045:GETTABLEKS     v0 = v1.StandUp
+[040] :045:CALL           v0:Play()
+[042] :047:GETIMPORT      v0 = task.delay
+[043] :047:LOADK          v1 = 0.65
+[044] :047:NEWCLOSURE     v2 = function()
 -- proto pool id: 0
 -- num upvalues: 1
 -- num inner protos: 0
--- size instructions: 11
--- size constants: 4
+-- size instructions: 7
+-- size constants: 2
 -- lineinfo gap: 24
--- max stack size: 6
+-- max stack size: 2
 -- is typed: false
-[001] :007:GETUPVAL       v0 = u_v1
-[002] :007:GETUPVAL       v5 = u_v1
-[004] :007:GETTABLEKS     v4 = v5.CFrame
-[006] :007:GETTABLEKS     v3 = v4.LookVector
-[007] :007:MULK           v2 = v3 * 100
-[010] :007:CALL           v0:ApplyImpulse(v2)
-[011] :008:RETURN         return
+[001] :048:GETUPVAL       v1 = u_v0
+[003] :048:GETTABLEKS     v0 = v1.States
+[004] :048:LOADB          v1 = false
+[006] :048:SETTABLEKS     v0.StandingUp = v1
+[007] :049:RETURN         return
 end
-v4 = push
-[023] :010:LOADK          v7 = "Value"
-[026] :010:CALL           v5 = v5:GetPropertyChangedSignal(v7)
-[027] :010:DUPCLOSURE     v7 = function()
--- proto pool id: 1
--- num upvalues: 3
+[046] :047:CALL           v0(v1, v2)
+end
+[047] :051:RETURN         return
+end
+[031] :039:CALL           v0:Connect(v2, v3)
+[032] :052:RETURN         return
+end
+v20 = RespawnChecks
+[144] :035:SETTABLEKS     v19.RespawnChecks = v20
+[145] :054:NEWCLOSURE     
+local function KnitStart(p2)
+-- proto pool id: 7
+-- num upvalues: 12
+-- num inner protos: 3
+-- size instructions: 106
+-- size constants: 19
+-- lineinfo gap: 5
+-- max stack size: 10
+-- is typed: false
+[001] :055:GETUPVAL       v1 = u_v7
+[003] :055:GETTABLEKS     v0 = v1.GetController
+[004] :055:LOADK          v1 = "CameraController"
+[005] :055:CALL           v0 = v0(v1)
+[007] :055:SETTABLEKS     p2.Camera = v0
+[008] :056:GETUPVAL       v1 = u_v7
+[010] :056:GETTABLEKS     v0 = v1.GetController
+[011] :056:LOADK          v1 = "SpectatorController"
+[012] :056:CALL           v0 = v0(v1)
+[014] :056:SETTABLEKS     p2.Spectator = v0
+[015] :058:GETUPVAL       v1 = u_v9
+[017] :058:GETTABLEKS     v0 = v1.new
+[018] :058:CALL           v0 = v0()
+[020] :058:SETTABLEKS     p2.BaseTrove = v0
+[021] :060:GETUPVAL       v1 = u_v7
+[023] :060:GETTABLEKS     v0 = v1.GetService
+[024] :060:LOADK          v1 = "AbilityService"
+[025] :060:CALL           v0 = v0(v1)
+[027] :060:SETTABLEKS     p2.AbilityService = v0
+[029] :062:NEWTABLE       v0 = {}
+[030] :063:LOADN          v1 = 30
+[032] :063:SETTABLEKS     v0.true = v1
+[033] :064:LOADN          v1 = 33
+[035] :064:SETTABLEKS     v0.false = v1
+[037] :067:NEWTABLE       v1 = {}
+[038] :068:LOADN          v2 = 20
+[040] :068:SETTABLEKS     v1.true = v2
+[041] :069:LOADN          v2 = 23
+[043] :069:SETTABLEKS     v1.false = v2
+[044] :072:LOADN          v2 = 0
+[046] :072:SETTABLEKS     p2.SpeedBoost = v2
+[047] :073:LOADN          v2 = 0
+[049] :073:SETTABLEKS     p2.SpeedBoost2 = v2
+[050] :074:LOADN          v2 = 1
+[052] :074:SETTABLEKS     p2.SpeedMultiplier = v2
+[053] :075:LOADB          v2 = false
+[055] :075:SETTABLEKS     p2.OwnWalkState = v2
+[057] :077:GETTABLEKS     v2 = p2.BaseTrove
+[059] :077:GETTABLEKS     v5 = p2.AbilityService
+[061] :077:GETTABLEKS     v4 = v5.StateChange
+[062] :077:NEWCLOSURE     v5 = function(p3, p4)
+-- proto pool id: 3
+-- num upvalues: 1
 -- num inner protos: 0
--- size instructions: 62
--- size constants: 15
+-- size instructions: 5
+-- size constants: 1
+-- lineinfo gap: 24
+-- max stack size: 4
+-- is typed: false
+[001] :078:GETUPVAL       v1 = u_v0
+[003] :078:GETTABLEKS     v0 = v1.States
+[004] :078:SETTABLE       v0[p3] = p4
+[005] :079:RETURN         return
+end
+[066] :077:CALL           v2:Connect(v4, v5)
+[068] :081:GETTABLEKS     v2 = p4.BaseTrove
+[070] :081:GETTABLEKS     v5 = p4.AbilityService
+[072] :081:GETTABLEKS     v4 = v5.ChangeSpeed
+[073] :081:NEWCLOSURE     v5 = function(p5, p6)
+-- proto pool id: 5
+-- num upvalues: 1
+-- num inner protos: 1
+-- size instructions: 23
+-- size constants: 7
+-- lineinfo gap: 24
+-- max stack size: 7
+-- is typed: false
+[002] :082:GETIMPORT      v0 = print
+[003] :082:LOADK          v1 = "fire client change speed: "
+[004] :082:MOVE           v2 = p5
+[005] :082:GETUPVAL       v4 = u_v0
+[007] :082:GETTABLEKS     v3 = v4.SpeedBoost2
+[008] :082:CALL           v0(v1, v2, v3)
+[009] :083:GETUPVAL       v0 = u_v0
+[011] :083:GETTABLEKS     v1 = v0.SpeedBoost2
+[012] :083:ADD            v1 = v1 + p5
+[014] :083:SETTABLEKS     v0.SpeedBoost2 = v1
+[015] :084:JUMPIFNOT      if p6 then -- goto #22
+[017] :085:GETIMPORT      v0 = task.delay
+[018] :085:MOVE           v1 = p6
+[019] :085:NEWCLOSURE     v2 = function()
+-- proto pool id: 4
+-- num upvalues: 2
+-- num inner protos: 0
+-- size instructions: 8
+-- size constants: 1
+-- lineinfo gap: 24
+-- max stack size: 3
+-- is typed: false
+[001] :086:GETUPVAL       v0 = u_v0
+[003] :086:GETTABLEKS     v1 = v0.SpeedBoost2
+[004] :086:GETUPVAL       v2 = u_v0
+[005] :086:SUB            v1 = v1 - v2
+[007] :086:SETTABLEKS     v0.SpeedBoost2 = v1
+[008] :087:RETURN         return
+end
+[022] :085:CALL           v0(v1, v2)
+[023] :089:RETURN         return
+end
+[077] :081:CALL           v2:Connect(v4, v5)
+[078] :100:LOADNIL        v2 = nil
+[079] :101:LOADNIL        v3 = nil
+[080] :103:LOADB          v4 = false
+[082] :105:GETTABLEKS     v5 = p6.BaseTrove
+[083] :105:GETUPVAL       v8 = u_v4
+[085] :105:GETTABLEKS     v7 = v8.Heartbeat
+[086] :105:NEWCLOSURE     v8 = function(p7)
+-- proto pool id: 6
+-- num upvalues: 15
+-- num inner protos: 0
+-- size instructions: 1883
+-- size constants: 133
+-- lineinfo gap: 24
+-- max stack size: 21
+-- is typed: false
+[001] :106:GETUPVAL       v0 = u_v15
+[003] :106:JUMPXEQKNIL    if v0 == nil then -- goto #5
+[004] :106:RETURN         return
+end
+[005] :107:GETUPVAL       v0 = u_v17
+[007] :107:JUMPXEQKNIL    if v0 == nil then -- goto #9
+[008] :107:RETURN         return
+end
+[009] :108:GETUPVAL       v2 = u_v0
+[011] :108:GETTABLEKS     v1 = v2.States
+[013] :108:GETTABLEKS     v0 = v1.Running
+[014] :108:JUMPIFNOT      if v0 then -- goto #30
+[015] :108:GETUPVAL       v3 = u_v14
+[017] :108:GETTABLEKS     v2 = v3.PlayerStats
+[019] :108:GETTABLEKS     v1 = v2.Stamina
+[021] :108:GETTABLEKS     v0 = v1.Value
+[022] :108:LOADN          v1 = 0
+[024] :108:JUMPIFNOTLE    if v0 <= v1 then -- goto #31
+[025] :108:GETUPVAL       v1 = u_v0
+[027] :108:GETTABLEKS     v0 = v1.States
+[028] :108:LOADB          v1 = false
+[030] :108:SETTABLEKS     v0.Running = v1
+end
+[031] :111:GETUPVAL       v0 = u_v15
+[032] :111:LOADK          v2 = "Values"
+[035] :111:CALL           v0 = v0:FindFirstChild(v2)
+[036] :112:JUMPIF         if not v0 then -- goto #37
+end
+[037] :113:RETURN         return
+[039] :116:GETTABLEKS     v2 = v0.HasBall
+[041] :116:GETTABLEKS     v1 = v2.Value
+[042] :117:JUMPIFNOT      if v1 then -- goto #283
+[043] :118:GETUPVAL       v2 = u_v5
+[044] :118:JUMPIF         if not v2 then -- goto #285
+[045] :119:LOADB          v2 = true
+[046] :119:SETUPVAL       u_v5 = v2
+[047] :120:GETUPVAL       v5 = u_v14
+[049] :120:GETTABLEKS     v4 = v5.PlayerStats
+[051] :120:GETTABLEKS     v3 = v4.Flow
+[053] :120:GETTABLEKS     v2 = v3.Value
+[055] :120:JUMPXEQKS      if v2 == "Singularity" then -- goto #130
+[056] :120:GETUPVAL       v5 = u_v14
+[058] :120:GETTABLEKS     v4 = v5.PlayerStats
+[060] :120:GETTABLEKS     v3 = v4.InFlow
+[062] :120:GETTABLEKS     v2 = v3.Value
+[063] :120:JUMPIFNOT      if v2 then -- goto #129
+[064] :121:JUMPIFNOT      if v1 then -- goto #285
+[065] :121:GETUPVAL       v2 = u_v4
+[066] :121:JUMPIFNOT      if v2 then -- goto #285
+[067] :121:GETUPVAL       v2 = u_v4
+[068] :121:GETUPVAL       v3 = u_v14
+[070] :121:JUMPIFEQ       if v2 == v3 then -- goto #286
+[071] :121:GETUPVAL       v3 = u_v4
+[073] :121:GETTABLEKS     v2 = v3.Team
+[074] :121:GETUPVAL       v4 = u_v14
+[076] :121:GETTABLEKS     v3 = v4.Team
+[078] :121:JUMPIFNOTEQ    if v2 ~= v3 then -- goto #286
+[080] :122:GETIMPORT      v3 = workspace
+[083] :122:CALL           v3 = v3:GetServerTimeNow()
+[084] :122:ADDK           v2 = v3 + 1.5
+[085] :122:SETUPVAL       u_v3 = v2
+[086] :123:GETUPVAL       v3 = u_v11
+[088] :123:GETTABLEKS     v2 = v3.SpawnSound
+[089] :123:LOADK          v3 = "TrapPassActivate"
+[090] :123:LOADK          v4 = 0.5
+[091] :123:CALL           v2(v3, v4)
+[092] :124:GETUPVAL       v6 = u_v0
+[094] :124:GETTABLEKS     v5 = v6.Assets
+[096] :124:GETTABLEKS     v4 = v5.Vfx
+[098] :124:GETTABLEKS     v3 = v4.TrapPassActivate
+[100] :124:GETTABLEKS     v2 = v3.Emit2
+[103] :124:CALL           v2 = v2:Clone()
+[104] :125:GETUPVAL       v3 = u_v15
+[105] :125:LOADK          v5 = "HumanoidRootPart"
+[108] :125:CALL           v3 = v3:FindFirstChild(v5)
+[110] :125:SETTABLEKS     v2.Parent = v3
+[111] :126:GETUPVAL       v4 = u_v12
+[113] :126:GETTABLEKS     v3 = v4.Emit
+[114] :126:MOVE           v4 = v2
+[115] :126:CALL           v3(v4)
+[117] :127:GETIMPORT      v3 = task.delay
+[118] :127:LOADN          v4 = 2
+[120] :127:GETTABLEKS     v5 = v2.Destroy
+[121] :127:MOVE           v6 = v2
+[122] :127:CALL           v3(v4, v5, v6)
+[123] :128:GETUPVAL       v4 = u_v6
+[125] :128:GETTABLEKS     v3 = v4.TrapBoostsActivated
+[128] :128:CALL           v3:FireServer()
+end
+[129] :128:JUMP           -- jump to #285
+end
+[130] :130:GETUPVAL       v5 = u_v14
+[132] :130:GETTABLEKS     v4 = v5.PlayerStats
+[134] :130:GETTABLEKS     v3 = v4.Flow
+[136] :130:GETTABLEKS     v2 = v3.Value
+[138] :130:JUMPXEQKS      if v2 == "Trap" then -- goto #207
+[139] :130:GETUPVAL       v5 = u_v14
+[141] :130:GETTABLEKS     v4 = v5.PlayerStats
+[143] :130:GETTABLEKS     v3 = v4.InFlow
+[145] :130:GETTABLEKS     v2 = v3.Value
+[146] :130:JUMPIFNOT      if v2 then -- goto #206
+[147] :131:JUMPIFNOT      if v1 then -- goto #285
+[148] :131:GETUPVAL       v2 = u_v4
+[149] :131:JUMPIFNOT      if v2 then -- goto #285
+[150] :131:GETUPVAL       v2 = u_v4
+[151] :131:GETUPVAL       v3 = u_v14
+[153] :131:JUMPIFEQ       if v2 == v3 then -- goto #286
+[154] :131:GETUPVAL       v3 = u_v4
+[156] :131:GETTABLEKS     v2 = v3.Team
+[157] :131:GETUPVAL       v4 = u_v14
+[159] :131:GETTABLEKS     v3 = v4.Team
+[161] :131:JUMPIFNOTEQ    if v2 ~= v3 then -- goto #286
+[163] :132:GETIMPORT      v3 = workspace
+[166] :132:CALL           v3 = v3:GetServerTimeNow()
+[167] :132:ADDK           v2 = v3 + 3
+[168] :132:SETUPVAL       u_v3 = v2
+[169] :133:GETUPVAL       v3 = u_v11
+[171] :133:GETTABLEKS     v2 = v3.SpawnSound
+[172] :133:LOADK          v3 = "TrapPassActivate"
+[173] :133:LOADK          v4 = 0.5
+[174] :133:CALL           v2(v3, v4)
+[175] :134:GETUPVAL       v6 = u_v0
+[177] :134:GETTABLEKS     v5 = v6.Assets
+[179] :134:GETTABLEKS     v4 = v5.Vfx
+[181] :134:GETTABLEKS     v3 = v4.TrapPassActivate
+[183] :134:GETTABLEKS     v2 = v3.Emit2
+[186] :134:CALL           v2 = v2:Clone()
+[187] :135:GETUPVAL       v3 = u_v15
+[188] :135:LOADK          v5 = "HumanoidRootPart"
+[191] :135:CALL           v3 = v3:FindFirstChild(v5)
+[193] :135:SETTABLEKS     v2.Parent = v3
+[194] :136:GETUPVAL       v4 = u_v12
+[196] :136:GETTABLEKS     v3 = v4.Emit
+[197] :136:MOVE           v4 = v2
+[198] :136:CALL           v3(v4)
+[200] :137:GETIMPORT      v3 = task.delay
+[201] :137:LOADN          v4 = 2
+[203] :137:GETTABLEKS     v5 = v2.Destroy
+[204] :137:MOVE           v6 = v2
+[205] :137:CALL           v3(v4, v5, v6)
+end
+[206] :137:JUMP           -- jump to #285
+end
+[207] :139:GETUPVAL       v5 = u_v14
+[209] :139:GETTABLEKS     v4 = v5.PlayerStats
+[211] :139:GETTABLEKS     v3 = v4.Flow
+[213] :139:GETTABLEKS     v2 = v3.Value
+[215] :139:JUMPXEQKS      if v2 == "Ice" then -- goto #286
+[216] :139:GETUPVAL       v5 = u_v14
+[218] :139:GETTABLEKS     v4 = v5.PlayerStats
+[220] :139:GETTABLEKS     v3 = v4.InFlow
+[222] :139:GETTABLEKS     v2 = v3.Value
+[223] :139:JUMPIFNOT      if v2 then -- goto #285
+[224] :140:JUMPIFNOT      if v1 then -- goto #285
+[225] :140:GETUPVAL       v2 = u_v4
+[226] :140:JUMPIFNOT      if v2 then -- goto #285
+[227] :140:GETUPVAL       v2 = u_v4
+[228] :140:GETUPVAL       v3 = u_v14
+[230] :140:JUMPIFEQ       if v2 == v3 then -- goto #286
+[231] :140:GETUPVAL       v3 = u_v4
+[233] :140:GETTABLEKS     v2 = v3.Team
+[234] :140:GETUPVAL       v4 = u_v14
+[236] :140:GETTABLEKS     v3 = v4.Team
+[238] :140:JUMPIFNOTEQ    if v2 ~= v3 then -- goto #286
+[240] :141:GETIMPORT      v3 = workspace
+[243] :141:CALL           v3 = v3:GetServerTimeNow()
+[244] :141:ADDK           v2 = v3 + 3
+[245] :141:SETUPVAL       u_v3 = v2
+[246] :142:GETUPVAL       v3 = u_v11
+[248] :142:GETTABLEKS     v2 = v3.SpawnSound
+[249] :142:LOADK          v3 = "TrapPassActivate"
+[250] :142:LOADK          v4 = 0.5
+[251] :142:CALL           v2(v3, v4)
+[252] :143:GETUPVAL       v6 = u_v0
+[254] :143:GETTABLEKS     v5 = v6.Assets
+[256] :143:GETTABLEKS     v4 = v5.Vfx
+[258] :143:GETTABLEKS     v3 = v4.IcePassActivate
+[260] :143:GETTABLEKS     v2 = v3.Emit2
+[263] :143:CALL           v2 = v2:Clone()
+[264] :144:GETUPVAL       v3 = u_v15
+[265] :144:LOADK          v5 = "HumanoidRootPart"
+[268] :144:CALL           v3 = v3:FindFirstChild(v5)
+[270] :144:SETTABLEKS     v2.Parent = v3
+[271] :145:GETUPVAL       v4 = u_v12
+[273] :145:GETTABLEKS     v3 = v4.Emit
+[274] :145:MOVE           v4 = v2
+[275] :145:CALL           v3(v4)
+[277] :146:GETIMPORT      v3 = task.delay
+[278] :146:LOADN          v4 = 2
+[280] :146:GETTABLEKS     v5 = v2.Destroy
+[281] :146:MOVE           v6 = v2
+[282] :146:CALL           v3(v4, v5, v6)
+end
+[283] :146:JUMP           -- jump to #285
+[284] :151:LOADB          v2 = false
+end
+end
+end
+end
+end
+end
+end
+end
+[285] :151:SETUPVAL       u_v5 = v2
+end
+end
+end
+end
+end
+end
+end
+[286] :155:GETUPVAL       v2 = u_v3
+[287] :155:JUMPIFNOT      if v2 then -- goto #297
+[289] :155:GETIMPORT      v2 = workspace
+[292] :155:CALL           v2 = v2:GetServerTimeNow()
+[293] :155:GETUPVAL       v3 = u_v3
+[295] :155:JUMPIFNOTLT    if v3 < v2 then -- goto #298
+[296] :156:LOADNIL        v2 = nil
+end
+[297] :156:SETUPVAL       u_v3 = v2
+end
+[298] :160:GETUPVAL       v4 = u_v0
+[300] :160:GETTABLEKS     v3 = v4.Football
+[302] :160:GETTABLEKS     v2 = v3.Value
+[303] :161:LOADNIL        v3 = nil
+[304] :161:SETUPVAL       u_v4 = v3
+[305] :162:JUMPIFNOT      if v2 then -- goto #326
+[307] :162:GETIMPORT      v5 = workspace
+[310] :162:CALL           v3 = v3:IsDescendantOf(v5)
+[311] :162:JUMPIFNOT      if v3 then -- goto #326
+[312] :163:LOADK          v5 = "Before"
+[315] :163:CALL           v3 = v3:FindFirstChild(v5)
+[316] :164:JUMPIFNOT      if v3 then -- goto #326
+[318] :165:GETIMPORT      v5 = game
+[320] :165:GETTABLEKS     v4 = v5.Players
+[322] :165:GETTABLEKS     v6 = v3.Value
+[325] :165:CALL           v4 = v4:GetPlayerFromCharacter(v6)
+end
+end
+end
+[326] :165:SETUPVAL       u_v4 = v4
+[327] :170:GETUPVAL       v5 = u_v0
+[329] :170:GETTABLEKS     v4 = v5.SpeedBoost
+[330] :170:GETUPVAL       v6 = u_v0
+[332] :170:GETTABLEKS     v5 = v6.SpeedBoost2
+[333] :170:ADD            v3 = v4 + v5
+[334] :171:GETUPVAL       v4 = u_v0
+[335] :171:LOADN          v5 = 1
+[337] :171:SETTABLEKS     v4.ShotPowerMultiplier = v5
+[338] :173:GETUPVAL       v4 = u_v16
+[339] :173:LOADK          v5 = 8.15
+[341] :173:SETTABLEKS     v4.JumpHeight = v5
+[342] :176:GETUPVAL       v4 = u_v13
+[343] :176:GETUPVAL       v5 = u_v14
+[344] :176:CALL           v4, v5 = v4(v5)
+[345] :177:JUMPIFNOT      if v5 then -- goto #348
+[347] :177:GETTABLEKS     v6 = v5.Stats
+end
+[348] :177:JUMPIF         if not v6 then -- goto #350
+[350] :177:NEWTABLE       v6 = {}
+[351] :179:GETUPVAL       v10 = u_v0
+[353] :179:GETTABLEKS     v9 = v10.GameValues
+[355] :179:GETTABLEKS     v8 = v9.State
+[357] :179:GETTABLEKS     v7 = v8.Value
+[359] :179:JUMPXEQKS      if v7 ~= "Ending" then -- goto #470
+[360] :179:GETUPVAL       v10 = u_v0
+[362] :179:GETTABLEKS     v9 = v10.GameValues
+[364] :179:GETTABLEKS     v8 = v9.State
+[366] :179:GETTABLEKS     v7 = v8.Value
+[368] :179:JUMPXEQKS      if v7 ~= "StartingCutscene" then -- goto #470
+[369] :180:GETUPVAL       v8 = u_v14
+[371] :180:GETTABLEKS     v7 = v8.Team
+[373] :180:GETIMPORT      v10 = game
+[375] :180:GETTABLEKS     v9 = v10.Teams
+[377] :180:GETTABLEKS     v8 = v9.Visitor
+[379] :180:JUMPIFNOTEQ    if v7 ~= v8 then -- goto #386
+[380] :180:GETUPVAL       v9 = u_v0
+[382] :180:GETTABLEKS     v8 = v9.Spectator
+[384] :180:GETTABLEKS     v7 = v8.IsSpectating
+[385] :180:JUMPIFNOT      if v7 then -- goto #427
+end
+[387] :181:GETIMPORT      v10 = game
+[389] :181:GETTABLEKS     v9 = v10.SoundService
+[391] :181:GETTABLEKS     v8 = v9.SoundGroup
+[393] :181:GETTABLEKS     v7 = v8.OST
+[394] :181:LOADK          v8 = 0.035
+[396] :181:SETTABLEKS     v7.Volume = v8
+[398] :182:GETIMPORT      v7 = workspace
+[399] :182:LOADK          v9 = "SoccerMap1"
+[402] :182:CALL           v7 = v7:FindFirstChild(v9)
+[403] :182:JUMPIFNOT      if v7 then -- goto #415
+[405] :183:GETIMPORT      v10 = game
+[407] :183:GETTABLEKS     v9 = v10.SoundService
+[409] :183:GETTABLEKS     v8 = v9.SoundGroup
+[411] :183:GETTABLEKS     v7 = v8.Stadium
+[412] :183:LOADK          v8 = 0.25
+[414] :183:SETTABLEKS     v7.Volume = v8
+end
+[415] :183:JUMP           -- jump to #449
+[417] :185:GETIMPORT      v10 = game
+[419] :185:GETTABLEKS     v9 = v10.SoundService
+[421] :185:GETTABLEKS     v8 = v9.SoundGroup
+[423] :185:GETTABLEKS     v7 = v8.Stadium
+[424] :185:LOADN          v8 = 0
+[426] :185:SETTABLEKS     v7.Volume = v8
+end
+[427] :185:JUMP           -- jump to #449
+[429] :188:GETIMPORT      v10 = game
+[431] :188:GETTABLEKS     v9 = v10.SoundService
+[433] :188:GETTABLEKS     v8 = v9.SoundGroup
+[435] :188:GETTABLEKS     v7 = v8.Stadium
+[436] :188:LOADN          v8 = 0
+[438] :188:SETTABLEKS     v7.Volume = v8
+[440] :189:GETIMPORT      v10 = game
+[442] :189:GETTABLEKS     v9 = v10.SoundService
+[444] :189:GETTABLEKS     v8 = v9.SoundGroup
+[446] :189:GETTABLEKS     v7 = v8.OST
+[447] :189:LOADK          v8 = 0.15
+[449] :189:SETTABLEKS     v7.Volume = v8
+[450] :192:GETUPVAL       v10 = u_v0
+[452] :192:GETTABLEKS     v9 = v10.GameValues
+[454] :192:GETTABLEKS     v8 = v9.Awakened
+[456] :192:GETTABLEKS     v7 = v8.Value
+[457] :192:JUMPIFNOT      if v7 then -- goto #506
+[459] :193:GETIMPORT      v10 = game
+[461] :193:GETTABLEKS     v9 = v10.SoundService
+[463] :193:GETTABLEKS     v8 = v9.SoundGroup
+[465] :193:GETTABLEKS     v7 = v8.OST
+[466] :193:LOADN          v8 = 0
+[468] :193:SETTABLEKS     v7.Volume = v8
+[469] :193:JUMP           -- jump to #506
+end
+end
+[470] :195:GETUPVAL       v10 = u_v0
+[472] :195:GETTABLEKS     v9 = v10.GameValues
+[474] :195:GETTABLEKS     v8 = v9.State
+[476] :195:GETTABLEKS     v7 = v8.Value
+[478] :195:JUMPXEQKS      if v7 == "StartingCutscene" then -- goto #507
+[479] :195:GETUPVAL       v8 = u_v14
+[481] :195:GETTABLEKS     v7 = v8.Team
+[483] :195:GETIMPORT      v10 = game
+[485] :195:GETTABLEKS     v9 = v10.Teams
+[487] :195:GETTABLEKS     v8 = v9.Visitor
+[489] :195:JUMPIFNOTEQ    if v7 ~= v8 then -- goto #496
+[490] :195:GETUPVAL       v9 = u_v0
+[492] :195:GETTABLEKS     v8 = v9.Spectator
+[494] :195:GETTABLEKS     v7 = v8.IsSpectating
+[495] :195:JUMPIFNOT      if v7 then -- goto #506
+end
+[497] :196:GETIMPORT      v10 = game
+[499] :196:GETTABLEKS     v9 = v10.SoundService
+[501] :196:GETTABLEKS     v8 = v9.SoundGroup
+[503] :196:GETTABLEKS     v7 = v8.OST
+[504] :196:LOADK          v8 = 0.45
+[506] :196:SETTABLEKS     v7.Volume = v8
+end
+[507] :206:GETUPVAL       v9 = u_v0
+[509] :206:GETTABLEKS     v8 = v9.States
+[511] :206:GETTABLEKS     v7 = v8.StandingUp
+[512] :206:JUMPIF         if not v7 then -- goto #538
+[513] :206:GETUPVAL       v9 = u_v0
+[515] :206:GETTABLEKS     v8 = v9.States
+[517] :206:GETTABLEKS     v7 = v8.Bicycle
+[518] :206:JUMPIF         if not v7 then -- goto #538
+[519] :206:GETUPVAL       v9 = u_v0
+[521] :206:GETTABLEKS     v8 = v9.States
+[523] :206:GETTABLEKS     v7 = v8.Ability
+[524] :206:JUMPIF         if not v7 then -- goto #538
+[525] :206:GETUPVAL       v9 = u_v0
+[527] :206:GETTABLEKS     v8 = v9.Camera
+[529] :206:GETTABLEKS     v7 = v8.Cutscene
+[530] :206:JUMPIF         if not v7 then -- goto #538
+[531] :206:GETUPVAL       v10 = u_v14
+[533] :206:GETTABLEKS     v9 = v10.PlayerGui
+[535] :206:GETTABLEKS     v8 = v9.PostMatch
+[537] :206:GETTABLEKS     v7 = v8.Enabled
+end
+end
+end
+end
+[538] :206:JUMPIFNOT      if v7 then -- goto #564
+[539] :207:GETUPVAL       v8 = u_v0
+[541] :207:GETTABLEKS     v7 = v8.OwnWalkState
+[543] :207:JUMPXEQKB      if v7 == false then -- goto #555
+[544] :208:GETUPVAL       v7 = u_v16
+[545] :208:LOADN          v8 = 0
+[547] :208:SETTABLEKS     v7.WalkSpeed = v8
+[548] :209:GETUPVAL       v8 = u_v0
+[550] :209:GETTABLEKS     v7 = v8.States
+[551] :209:LOADN          v8 = 0
+[553] :209:SETTABLEKS     v7.TimeSpentRunning = v8
+[554] :209:JUMP           -- jump to #559
+end
+[555] :211:GETUPVAL       v7 = u_v16
+[556] :211:LOADN          v9 = 25
+[557] :211:ADD            v8 = v9 + v3
+[559] :211:SETTABLEKS     v7.WalkSpeed = v8
+[560] :213:GETUPVAL       v7 = u_v16
+[561] :213:LOADN          v8 = 0
+[563] :213:SETTABLEKS     v7.JumpHeight = v8
+end
+[564] :213:JUMP           -- jump to #1667
+[565] :214:GETUPVAL       v9 = u_v0
+[567] :214:GETTABLEKS     v8 = v9.States
+[569] :214:GETTABLEKS     v7 = v8.Running
+[570] :214:JUMPIFNOT      if v7 then -- goto #1211
+[571] :215:GETUPVAL       v9 = u_v16
+[573] :215:GETTABLEKS     v8 = v9.MoveDirection
+[575] :215:GETTABLEKS     v7 = v8.Magnitude
+[576] :215:LOADN          v8 = 0
+[578] :215:JUMPIFNOTLT    if v8 < v7 then -- goto #588
+[579] :216:GETUPVAL       v8 = u_v0
+[581] :216:GETTABLEKS     v7 = v8.States
+[583] :216:GETTABLEKS     v8 = v7.TimeSpentRunning
+[584] :216:ADD            v8 = v8 + p7
+[586] :216:SETTABLEKS     v7.TimeSpentRunning = v8
+[587] :216:JUMP           -- jump to #596
+end
+[588] :218:GETUPVAL       v8 = u_v0
+[590] :218:GETTABLEKS     v7 = v8.States
+[592] :218:GETTABLEKS     v8 = v7.TimeSpentRunning
+[593] :218:MULK           v9 = p7 * 4
+[594] :218:SUB            v8 = v8 - v9
+[596] :218:SETTABLEKS     v7.TimeSpentRunning = v8
+[597] :222:GETUPVAL       v10 = u_v14
+[599] :222:GETTABLEKS     v9 = v10.PlayerStats
+[601] :222:GETTABLEKS     v8 = v9.InFlow
+[603] :222:GETTABLEKS     v7 = v8.Value
+[604] :222:JUMPIFNOT      if v7 then -- goto #618
+[605] :222:GETUPVAL       v10 = u_v14
+[607] :222:GETTABLEKS     v9 = v10.PlayerStats
+[609] :222:GETTABLEKS     v8 = v9.Flow
+[611] :222:GETTABLEKS     v7 = v8.Value
+[613] :222:JUMPXEQKS      if v7 == "Demon Wings" then -- goto #619
+[614] :223:GETUPVAL       v7 = u_v16
+[615] :223:LOADK          v8 = 11.3
+[617] :223:SETTABLEKS     v7.JumpHeight = v8
+end
+[618] :223:JUMP           -- jump to #667
+end
+[619] :224:GETUPVAL       v10 = u_v14
+[621] :224:GETTABLEKS     v9 = v10.PlayerStats
+[623] :224:GETTABLEKS     v8 = v9.Style
+[625] :224:GETTABLEKS     v7 = v8.Value
+[627] :224:JUMPXEQKS      if v7 == "NEL Reo" then -- goto #641
+[628] :224:GETUPVAL       v8 = u_v14
+[630] :224:GETTABLEKS     v7 = v8.Character
+[631] :224:LOADK          v9 = "StrikeMode"
+[634] :224:CALL           v7 = v7:GetAttribute(v9)
+[635] :224:JUMPIF         if not v7 then -- goto #640
+[636] :225:GETUPVAL       v7 = u_v16
+[637] :225:LOADN          v8 = 10
+[639] :225:SETTABLEKS     v7.JumpHeight = v8
+end
+[640] :225:JUMP           -- jump to #667
+end
+[641] :226:GETUPVAL       v10 = u_v14
+[643] :226:GETTABLEKS     v9 = v10.PlayerStats
+[645] :226:GETTABLEKS     v8 = v9.Style
+[647] :226:GETTABLEKS     v7 = v8.Value
+[649] :226:JUMPXEQKS      if v7 ~= "NEL Nagi" then -- goto #659
+[650] :226:GETUPVAL       v10 = u_v14
+[652] :226:GETTABLEKS     v9 = v10.PlayerStats
+[654] :226:GETTABLEKS     v8 = v9.Style
+[656] :226:GETTABLEKS     v7 = v8.Value
+[658] :226:JUMPXEQKS      if v7 == "McNagi Fryshiro" then -- goto #664
+end
+[659] :227:GETUPVAL       v7 = u_v16
+[660] :227:LOADK          v8 = 9.5
+[662] :227:SETTABLEKS     v7.JumpHeight = v8
+[663] :227:JUMP           -- jump to #667
+end
+[664] :229:GETUPVAL       v7 = u_v16
+[665] :229:LOADK          v8 = 8.15
+[667] :229:SETTABLEKS     v7.JumpHeight = v8
+[668] :232:GETUPVAL       v10 = u_v14
+[670] :232:GETTABLEKS     v9 = v10.PlayerStats
+[672] :232:GETTABLEKS     v8 = v9.Style
+[674] :232:GETTABLEKS     v7 = v8.Value
+[676] :232:JUMPXEQKS      if v7 == "NEL Reo" then -- goto #686
+[677] :232:GETUPVAL       v8 = u_v14
+[679] :232:GETTABLEKS     v7 = v8.Character
+[680] :232:LOADK          v9 = "StrikeMode"
+[683] :232:CALL           v7 = v7:GetAttribute(v9)
+[684] :232:JUMPIFNOT      if v7 then -- goto #685
+end
+[685] :233:ADDK           v3 = v3 + 1
+end
+[687] :237:GETTABLEKS     v7 = v6.SpeedAddition
+[688] :237:JUMPIFNOT      if v7 then -- goto #721
+[690] :238:GETTABLEKS     v7 = v6.NoBallSpeedReduction
+[691] :238:JUMPIFNOT      if v7 then -- goto #701
+[692] :239:GETUPVAL       v7 = u_v16
+[693] :239:GETUPVAL       v10 = u_v1
+[695] :239:GETTABLEKS     v9 = v10.false
+[697] :239:GETTABLEKS     v10 = v6.SpeedAddition
+[698] :239:ADD            v8 = v9 + v10
+[700] :239:SETTABLEKS     v7.WalkSpeed = v8
+end
+[701] :239:JUMP           -- jump to #1667
+[702] :241:GETUPVAL       v7 = u_v16
+[703] :241:GETUPVAL       v10 = u_v1
+[704] :241:GETUPVAL       v15 = u_v15
+[706] :241:GETTABLEKS     v14 = v15.Values
+[708] :241:GETTABLEKS     v13 = v14.HasBall
+[710] :241:GETTABLEKS     v12 = v13.Value
+[713] :241:GETIMPORT      v11 = tostring
+[714] :241:CALL           v11 = v11(v12)
+[715] :241:GETTABLE       v9 = v10[v11]
+[717] :241:GETTABLEKS     v10 = v6.SpeedAddition
+[718] :241:ADD            v8 = v9 + v10
+[720] :241:SETTABLEKS     v7.WalkSpeed = v8
+end
+[721] :241:JUMP           -- jump to #1667
+[722] :243:GETUPVAL       v10 = u_v14
+[724] :243:GETTABLEKS     v9 = v10.PlayerStats
+[726] :243:GETTABLEKS     v8 = v9.Flow
+[728] :243:GETTABLEKS     v7 = v8.Value
+[730] :243:JUMPXEQKS      if v7 == "Monster" then -- goto #747
+[731] :243:GETUPVAL       v10 = u_v14
+[733] :243:GETTABLEKS     v9 = v10.PlayerStats
+[735] :243:GETTABLEKS     v8 = v9.InFlow
+[737] :243:GETTABLEKS     v7 = v8.Value
+[738] :243:JUMPIFNOT      if v7 then -- goto #746
+[739] :244:GETUPVAL       v7 = u_v16
+[740] :244:GETUPVAL       v10 = u_v1
+[742] :244:GETTABLEKS     v9 = v10.false
+[743] :244:ADD            v8 = v9 + v3
+[745] :244:SETTABLEKS     v7.WalkSpeed = v8
+end
+[746] :244:JUMP           -- jump to #1667
+end
+[747] :245:GETUPVAL       v7 = u_v3
+[748] :245:JUMPIFNOT      if v7 then -- goto #799
+[749] :246:GETUPVAL       v10 = u_v14
+[751] :246:GETTABLEKS     v9 = v10.PlayerStats
+[753] :246:GETTABLEKS     v8 = v9.Flow
+[755] :246:GETTABLEKS     v7 = v8.Value
+[757] :246:JUMPXEQKS      if v7 == "Singularity" then -- goto #777
+[758] :247:GETUPVAL       v7 = u_v16
+[759] :247:GETUPVAL       v11 = u_v1
+[760] :247:GETUPVAL       v16 = u_v15
+[762] :247:GETTABLEKS     v15 = v16.Values
+[764] :247:GETTABLEKS     v14 = v15.HasBall
+[766] :247:GETTABLEKS     v13 = v14.Value
+[769] :247:GETIMPORT      v12 = tostring
+[770] :247:CALL           v12 = v12(v13)
+[771] :247:GETTABLE       v10 = v11[v12]
+[772] :247:ADD            v9 = v10 + v3
+[773] :247:ADDK           v8 = v9 + 6
+[775] :247:SETTABLEKS     v7.WalkSpeed = v8
+[776] :247:JUMP           -- jump to #794
+end
+[777] :249:GETUPVAL       v7 = u_v16
+[778] :249:GETUPVAL       v11 = u_v1
+[779] :249:GETUPVAL       v16 = u_v15
+[781] :249:GETTABLEKS     v15 = v16.Values
+[783] :249:GETTABLEKS     v14 = v15.HasBall
+[785] :249:GETTABLEKS     v13 = v14.Value
+[788] :249:GETIMPORT      v12 = tostring
+[789] :249:CALL           v12 = v12(v13)
+[790] :249:GETTABLE       v10 = v11[v12]
+[791] :249:ADD            v9 = v10 + v3
+[792] :249:ADDK           v8 = v9 + 2
+[794] :249:SETTABLEKS     v7.WalkSpeed = v8
+[795] :251:GETUPVAL       v7 = u_v0
+[796] :251:LOADK          v8 = 1.2
+[798] :251:SETTABLEKS     v7.ShotPowerMultiplier = v8
+end
+[799] :251:JUMP           -- jump to #1667
+[800] :252:GETUPVAL       v10 = u_v14
+[802] :252:GETTABLEKS     v9 = v10.PlayerStats
+[804] :252:GETTABLEKS     v8 = v9.Flow
+[806] :252:GETTABLEKS     v7 = v8.Value
+[808] :252:JUMPXEQKS      if v7 == "Bee Freestyle" then -- goto #826
+[809] :252:GETUPVAL       v10 = u_v14
+[811] :252:GETTABLEKS     v9 = v10.PlayerStats
+[813] :252:GETTABLEKS     v8 = v9.InFlow
+[815] :252:GETTABLEKS     v7 = v8.Value
+[816] :252:JUMPIFNOT      if v7 then -- goto #825
+[817] :253:GETUPVAL       v7 = u_v16
+[818] :253:GETUPVAL       v11 = u_v1
+[820] :253:GETTABLEKS     v10 = v11.false
+[821] :253:ADD            v9 = v10 + v3
+[822] :253:ADDK           v8 = v9 + 3.5
+[824] :253:SETTABLEKS     v7.WalkSpeed = v8
+end
+[825] :253:JUMP           -- jump to #1667
+end
+[826] :254:GETUPVAL       v10 = u_v14
+[828] :254:GETTABLEKS     v9 = v10.PlayerStats
+[830] :254:GETTABLEKS     v8 = v9.Flow
+[832] :254:GETTABLEKS     v7 = v8.Value
+[834] :254:JUMPXEQKS      if v7 == "Puzzle" then -- goto #862
+[835] :254:GETUPVAL       v10 = u_v14
+[837] :254:GETTABLEKS     v9 = v10.PlayerStats
+[839] :254:GETTABLEKS     v8 = v9.InFlow
+[841] :254:GETTABLEKS     v7 = v8.Value
+[842] :254:JUMPIFNOT      if v7 then -- goto #861
+[843] :255:GETUPVAL       v7 = u_v16
+[844] :255:GETUPVAL       v11 = u_v1
+[845] :255:GETUPVAL       v16 = u_v15
+[847] :255:GETTABLEKS     v15 = v16.Values
+[849] :255:GETTABLEKS     v14 = v15.HasBall
+[851] :255:GETTABLEKS     v13 = v14.Value
+[854] :255:GETIMPORT      v12 = tostring
+[855] :255:CALL           v12 = v12(v13)
+[856] :255:GETTABLE       v10 = v11[v12]
+[857] :255:ADD            v9 = v10 + v3
+[858] :255:ADDK           v8 = v9 + 3
+[860] :255:SETTABLEKS     v7.WalkSpeed = v8
+end
+[861] :255:JUMP           -- jump to #1667
+end
+[862] :256:GETUPVAL       v10 = u_v14
+[864] :256:GETTABLEKS     v9 = v10.PlayerStats
+[866] :256:GETTABLEKS     v8 = v9.Flow
+[868] :256:GETTABLEKS     v7 = v8.Value
+[870] :256:JUMPXEQKS      if v7 == "Wild Card" then -- goto #916
+[871] :256:GETUPVAL       v10 = u_v14
+[873] :256:GETTABLEKS     v9 = v10.PlayerStats
+[875] :256:GETTABLEKS     v8 = v9.InFlow
+[877] :256:GETTABLEKS     v7 = v8.Value
+[878] :256:JUMPIFNOT      if v7 then -- goto #915
+[879] :256:GETUPVAL       v10 = u_v14
+[881] :256:GETTABLEKS     v9 = v10.PlayerStats
+[883] :256:GETTABLEKS     v8 = v9.FlowRNG
+[885] :256:GETTABLEKS     v7 = v8.Value
+[887] :256:JUMPXEQKN      if v7 ~= 3 then -- goto #897
+[888] :256:GETUPVAL       v10 = u_v14
+[890] :256:GETTABLEKS     v9 = v10.PlayerStats
+[892] :256:GETTABLEKS     v8 = v9.FlowRNG
+[894] :256:GETTABLEKS     v7 = v8.Value
+[896] :256:JUMPXEQKN      if v7 == 4 then -- goto #916
+end
+[897] :257:GETUPVAL       v7 = u_v16
+[898] :257:GETUPVAL       v11 = u_v1
+[899] :257:GETUPVAL       v16 = u_v15
+[901] :257:GETTABLEKS     v15 = v16.Values
+[903] :257:GETTABLEKS     v14 = v15.HasBall
+[905] :257:GETTABLEKS     v13 = v14.Value
+[908] :257:GETIMPORT      v12 = tostring
+[909] :257:CALL           v12 = v12(v13)
+[910] :257:GETTABLE       v10 = v11[v12]
+[911] :257:ADD            v9 = v10 + v3
+[912] :257:ADDK           v8 = v9 + 3
+[914] :257:SETTABLEKS     v7.WalkSpeed = v8
+end
+[915] :257:JUMP           -- jump to #1667
+end
+end
+[916] :258:GETUPVAL       v10 = u_v14
+[918] :258:GETTABLEKS     v9 = v10.PlayerStats
+[920] :258:GETTABLEKS     v8 = v9.Flow
+[922] :258:GETTABLEKS     v7 = v8.Value
+[924] :258:JUMPXEQKS      if v7 == "Destructive Impulses" then -- goto #952
+[925] :258:GETUPVAL       v10 = u_v14
+[927] :258:GETTABLEKS     v9 = v10.PlayerStats
+[929] :258:GETTABLEKS     v8 = v9.InFlow
+[931] :258:GETTABLEKS     v7 = v8.Value
+[932] :258:JUMPIFNOT      if v7 then -- goto #951
+[933] :259:GETUPVAL       v7 = u_v16
+[934] :259:GETUPVAL       v11 = u_v1
+[935] :259:GETUPVAL       v16 = u_v15
+[937] :259:GETTABLEKS     v15 = v16.Values
+[939] :259:GETTABLEKS     v14 = v15.HasBall
+[941] :259:GETTABLEKS     v13 = v14.Value
+[944] :259:GETIMPORT      v12 = tostring
+[945] :259:CALL           v12 = v12(v13)
+[946] :259:GETTABLE       v10 = v11[v12]
+[947] :259:ADD            v9 = v10 + v3
+[948] :259:ADDK           v8 = v9 + 3
+[950] :259:SETTABLEKS     v7.WalkSpeed = v8
+end
+[951] :259:JUMP           -- jump to #1667
+end
+[952] :260:GETUPVAL       v10 = u_v14
+[954] :260:GETTABLEKS     v9 = v10.PlayerStats
+[956] :260:GETTABLEKS     v8 = v9.Flow
+[958] :260:GETTABLEKS     v7 = v8.Value
+[960] :260:JUMPXEQKS      if v7 == "Soul Harvester" then -- goto #988
+[961] :260:GETUPVAL       v10 = u_v14
+[963] :260:GETTABLEKS     v9 = v10.PlayerStats
+[965] :260:GETTABLEKS     v8 = v9.InFlow
+[967] :260:GETTABLEKS     v7 = v8.Value
+[968] :260:JUMPIFNOT      if v7 then -- goto #987
+[969] :261:GETUPVAL       v7 = u_v16
+[970] :261:GETUPVAL       v11 = u_v1
+[971] :261:GETUPVAL       v16 = u_v15
+[973] :261:GETTABLEKS     v15 = v16.Values
+[975] :261:GETTABLEKS     v14 = v15.HasBall
+[977] :261:GETTABLEKS     v13 = v14.Value
+[980] :261:GETIMPORT      v12 = tostring
+[981] :261:CALL           v12 = v12(v13)
+[982] :261:GETTABLE       v10 = v11[v12]
+[983] :261:ADD            v9 = v10 + v3
+[984] :261:ADDK           v8 = v9 + 3
+[986] :261:SETTABLEKS     v7.WalkSpeed = v8
+end
+[987] :261:JUMP           -- jump to #1667
+end
+[988] :262:GETUPVAL       v10 = u_v14
+[990] :262:GETTABLEKS     v9 = v10.PlayerStats
+[992] :262:GETTABLEKS     v8 = v9.Flow
+[994] :262:GETTABLEKS     v7 = v8.Value
+[996] :262:JUMPXEQKS      if v7 == "Emperor" then -- goto #1024
+[997] :262:GETUPVAL       v10 = u_v14
+[999] :262:GETTABLEKS     v9 = v10.PlayerStats
+[1001] :262:GETTABLEKS     v8 = v9.InFlow
+[1003] :262:GETTABLEKS     v7 = v8.Value
+[1004] :262:JUMPIFNOT      if v7 then -- goto #1023
+[1005] :263:GETUPVAL       v7 = u_v16
+[1006] :263:GETUPVAL       v11 = u_v1
+[1007] :263:GETUPVAL       v16 = u_v15
+[1009] :263:GETTABLEKS     v15 = v16.Values
+[1011] :263:GETTABLEKS     v14 = v15.HasBall
+[1013] :263:GETTABLEKS     v13 = v14.Value
+[1016] :263:GETIMPORT      v12 = tostring
+[1017] :263:CALL           v12 = v12(v13)
+[1018] :263:GETTABLE       v10 = v11[v12]
+[1019] :263:ADD            v9 = v10 + v3
+[1020] :263:ADDK           v8 = v9 + 2.5
+[1022] :263:SETTABLEKS     v7.WalkSpeed = v8
+end
+[1023] :263:JUMP           -- jump to #1667
+end
+[1024] :264:GETUPVAL       v10 = u_v14
+[1026] :264:GETTABLEKS     v9 = v10.PlayerStats
+[1028] :264:GETTABLEKS     v8 = v9.Flow
+[1030] :264:GETTABLEKS     v7 = v8.Value
+[1032] :264:JUMPXEQKS      if v7 == "Buddha's Blessing" then -- goto #1060
+[1033] :264:GETUPVAL       v10 = u_v14
+[1035] :264:GETTABLEKS     v9 = v10.PlayerStats
+[1037] :264:GETTABLEKS     v8 = v9.InFlow
+[1039] :264:GETTABLEKS     v7 = v8.Value
+[1040] :264:JUMPIFNOT      if v7 then -- goto #1059
+[1041] :265:GETUPVAL       v7 = u_v16
+[1042] :265:GETUPVAL       v11 = u_v1
+[1043] :265:GETUPVAL       v16 = u_v15
+[1045] :265:GETTABLEKS     v15 = v16.Values
+[1047] :265:GETTABLEKS     v14 = v15.HasBall
+[1049] :265:GETTABLEKS     v13 = v14.Value
+[1052] :265:GETIMPORT      v12 = tostring
+[1053] :265:CALL           v12 = v12(v13)
+[1054] :265:GETTABLE       v10 = v11[v12]
+[1055] :265:ADD            v9 = v10 + v3
+[1056] :265:ADDK           v8 = v9 + 1.5
+[1058] :265:SETTABLEKS     v7.WalkSpeed = v8
+end
+[1059] :265:JUMP           -- jump to #1667
+end
+[1060] :266:GETUPVAL       v10 = u_v14
+[1062] :266:GETTABLEKS     v9 = v10.PlayerStats
+[1064] :266:GETTABLEKS     v8 = v9.Flow
+[1066] :266:GETTABLEKS     v7 = v8.Value
+[1068] :266:JUMPXEQKS      if v7 == "Ice" then -- goto #1096
+[1069] :266:GETUPVAL       v10 = u_v14
+[1071] :266:GETTABLEKS     v9 = v10.PlayerStats
+[1073] :266:GETTABLEKS     v8 = v9.InFlow
+[1075] :266:GETTABLEKS     v7 = v8.Value
+[1076] :266:JUMPIFNOT      if v7 then -- goto #1095
+[1077] :267:GETUPVAL       v7 = u_v16
+[1078] :267:GETUPVAL       v11 = u_v1
+[1079] :267:GETUPVAL       v16 = u_v15
+[1081] :267:GETTABLEKS     v15 = v16.Values
+[1083] :267:GETTABLEKS     v14 = v15.HasBall
+[1085] :267:GETTABLEKS     v13 = v14.Value
+[1088] :267:GETIMPORT      v12 = tostring
+[1089] :267:CALL           v12 = v12(v13)
+[1090] :267:GETTABLE       v10 = v11[v12]
+[1091] :267:ADD            v9 = v10 + v3
+[1092] :267:ADDK           v8 = v9 + 2
+[1094] :267:SETTABLEKS     v7.WalkSpeed = v8
+end
+[1095] :267:JUMP           -- jump to #1667
+end
+[1096] :268:GETUPVAL       v10 = u_v14
+[1098] :268:GETTABLEKS     v9 = v10.PlayerStats
+[1100] :268:GETTABLEKS     v8 = v9.Flow
+[1102] :268:GETTABLEKS     v7 = v8.Value
+[1104] :268:JUMPXEQKS      if v7 == "Lightning" then -- goto #1132
+[1105] :268:GETUPVAL       v10 = u_v14
+[1107] :268:GETTABLEKS     v9 = v10.PlayerStats
+[1109] :268:GETTABLEKS     v8 = v9.InFlow
+[1111] :268:GETTABLEKS     v7 = v8.Value
+[1112] :268:JUMPIFNOT      if v7 then -- goto #1131
+[1113] :269:GETUPVAL       v7 = u_v16
+[1114] :269:GETUPVAL       v11 = u_v1
+[1115] :269:GETUPVAL       v16 = u_v15
+[1117] :269:GETTABLEKS     v15 = v16.Values
+[1119] :269:GETTABLEKS     v14 = v15.HasBall
+[1121] :269:GETTABLEKS     v13 = v14.Value
+[1124] :269:GETIMPORT      v12 = tostring
+[1125] :269:CALL           v12 = v12(v13)
+[1126] :269:GETTABLE       v10 = v11[v12]
+[1127] :269:ADD            v9 = v10 + v3
+[1128] :269:ADDK           v8 = v9 + 2
+[1130] :269:SETTABLEKS     v7.WalkSpeed = v8
+end
+[1131] :269:JUMP           -- jump to #1667
+end
+[1132] :270:GETUPVAL       v10 = u_v14
+[1134] :270:GETTABLEKS     v9 = v10.PlayerStats
+[1136] :270:GETTABLEKS     v8 = v9.Flow
+[1138] :270:GETTABLEKS     v7 = v8.Value
+[1140] :270:JUMPXEQKS      if v7 == "Stealth" then -- goto #1168
+[1141] :270:GETUPVAL       v10 = u_v14
+[1143] :270:GETTABLEKS     v9 = v10.PlayerStats
+[1145] :270:GETTABLEKS     v8 = v9.InFlow
+[1147] :270:GETTABLEKS     v7 = v8.Value
+[1148] :270:JUMPIFNOT      if v7 then -- goto #1167
+[1149] :271:GETUPVAL       v7 = u_v16
+[1150] :271:GETUPVAL       v11 = u_v1
+[1151] :271:GETUPVAL       v16 = u_v15
+[1153] :271:GETTABLEKS     v15 = v16.Values
+[1155] :271:GETTABLEKS     v14 = v15.HasBall
+[1157] :271:GETTABLEKS     v13 = v14.Value
+[1160] :271:GETIMPORT      v12 = tostring
+[1161] :271:CALL           v12 = v12(v13)
+[1162] :271:GETTABLE       v10 = v11[v12]
+[1163] :271:ADD            v9 = v10 + v3
+[1164] :271:ADDK           v8 = v9 + 2
+[1166] :271:SETTABLEKS     v7.WalkSpeed = v8
+end
+[1167] :271:JUMP           -- jump to #1667
+end
+[1168] :272:GETUPVAL       v10 = u_v14
+[1170] :272:GETTABLEKS     v9 = v10.PlayerStats
+[1172] :272:GETTABLEKS     v8 = v9.Flow
+[1174] :272:GETTABLEKS     v7 = v8.Value
+[1176] :272:JUMPXEQKS      if v7 == "Godspeed" then -- goto #1194
+[1177] :272:GETUPVAL       v10 = u_v14
+[1179] :272:GETTABLEKS     v9 = v10.PlayerStats
+[1181] :272:GETTABLEKS     v8 = v9.InFlow
+[1183] :272:GETTABLEKS     v7 = v8.Value
+[1184] :272:JUMPIFNOT      if v7 then -- goto #1193
+[1185] :273:GETUPVAL       v7 = u_v16
+[1186] :273:GETUPVAL       v11 = u_v1
+[1188] :273:GETTABLEKS     v10 = v11.false
+[1189] :273:ADD            v9 = v10 + v3
+[1190] :273:ADDK           v8 = v9 + 5
+[1192] :273:SETTABLEKS     v7.WalkSpeed = v8
+end
+[1193] :273:JUMP           -- jump to #1667
+end
+[1194] :275:GETUPVAL       v7 = u_v16
+[1195] :275:GETUPVAL       v10 = u_v1
+[1196] :275:GETUPVAL       v15 = u_v15
+[1198] :275:GETTABLEKS     v14 = v15.Values
+[1200] :275:GETTABLEKS     v13 = v14.HasBall
+[1202] :275:GETTABLEKS     v12 = v13.Value
+[1205] :275:GETIMPORT      v11 = tostring
+[1206] :275:CALL           v11 = v11(v12)
+[1207] :275:GETTABLE       v9 = v10[v11]
+[1208] :275:ADD            v8 = v9 + v3
+[1210] :275:SETTABLEKS     v7.WalkSpeed = v8
+end
+[1211] :275:JUMP           -- jump to #1667
+[1212] :278:GETUPVAL       v8 = u_v0
+[1214] :278:GETTABLEKS     v7 = v8.States
+[1216] :278:GETTABLEKS     v8 = v7.TimeSpentRunning
+[1217] :278:MULK           v9 = p7 * 4
+[1218] :278:SUB            v8 = v8 - v9
+[1220] :278:SETTABLEKS     v7.TimeSpentRunning = v8
+[1221] :280:GETUPVAL       v10 = u_v14
+[1223] :280:GETTABLEKS     v9 = v10.PlayerStats
+[1225] :280:GETTABLEKS     v8 = v9.InFlow
+[1227] :280:GETTABLEKS     v7 = v8.Value
+[1228] :280:JUMPIFNOT      if v7 then -- goto #1242
+[1229] :280:GETUPVAL       v10 = u_v14
+[1231] :280:GETTABLEKS     v9 = v10.PlayerStats
+[1233] :280:GETTABLEKS     v8 = v9.Flow
+[1235] :280:GETTABLEKS     v7 = v8.Value
+[1237] :280:JUMPXEQKS      if v7 == "Demon Wings" then -- goto #1243
+[1238] :281:GETUPVAL       v7 = u_v16
+[1239] :281:LOADK          v8 = 11.3
+[1241] :281:SETTABLEKS     v7.JumpHeight = v8
+end
+[1242] :281:JUMP           -- jump to #1268
+end
+[1243] :282:GETUPVAL       v10 = u_v14
+[1245] :282:GETTABLEKS     v9 = v10.PlayerStats
+[1247] :282:GETTABLEKS     v8 = v9.Style
+[1249] :282:GETTABLEKS     v7 = v8.Value
+[1251] :282:JUMPXEQKS      if v7 == "NEL Reo" then -- goto #1265
+[1252] :282:GETUPVAL       v8 = u_v14
+[1254] :282:GETTABLEKS     v7 = v8.Character
+[1255] :282:LOADK          v9 = "StrikeMode"
+[1258] :282:CALL           v7 = v7:GetAttribute(v9)
+[1259] :282:JUMPIF         if not v7 then -- goto #1264
+[1260] :283:GETUPVAL       v7 = u_v16
+[1261] :283:LOADN          v8 = 10
+[1263] :283:SETTABLEKS     v7.JumpHeight = v8
+end
+[1264] :283:JUMP           -- jump to #1268
+end
+[1265] :285:GETUPVAL       v7 = u_v16
+[1266] :285:LOADK          v8 = 8.15
+[1268] :285:SETTABLEKS     v7.JumpHeight = v8
+[1269] :288:GETUPVAL       v7 = u_v3
+[1270] :288:JUMPIFNOT      if v7 then -- goto #1293
+[1271] :289:GETUPVAL       v7 = u_v16
+[1272] :289:GETUPVAL       v11 = u_v1
+[1273] :289:GETUPVAL       v16 = u_v15
+[1275] :289:GETTABLEKS     v15 = v16.Values
+[1277] :289:GETTABLEKS     v14 = v15.HasBall
+[1279] :289:GETTABLEKS     v13 = v14.Value
+[1282] :289:GETIMPORT      v12 = tostring
+[1283] :289:CALL           v12 = v12(v13)
+[1284] :289:GETTABLE       v10 = v11[v12]
+[1285] :289:ADD            v9 = v10 + v3
+[1286] :289:ADDK           v8 = v9 + 3
+[1288] :289:SETTABLEKS     v7.WalkSpeed = v8
+[1289] :290:GETUPVAL       v7 = u_v0
+[1290] :290:LOADK          v8 = 1.3
+[1292] :290:SETTABLEKS     v7.ShotPowerMultiplier = v8
+end
+[1293] :290:JUMP           -- jump to #1667
+[1294] :291:GETUPVAL       v10 = u_v14
+[1296] :291:GETTABLEKS     v9 = v10.PlayerStats
+[1298] :291:GETTABLEKS     v8 = v9.Flow
+[1300] :291:GETTABLEKS     v7 = v8.Value
+[1302] :291:JUMPXEQKS      if v7 == "Monster" then -- goto #1319
+[1303] :291:GETUPVAL       v10 = u_v14
+[1305] :291:GETTABLEKS     v9 = v10.PlayerStats
+[1307] :291:GETTABLEKS     v8 = v9.InFlow
+[1309] :291:GETTABLEKS     v7 = v8.Value
+[1310] :291:JUMPIFNOT      if v7 then -- goto #1318
+[1311] :292:GETUPVAL       v7 = u_v16
+[1312] :292:GETUPVAL       v10 = u_v2
+[1314] :292:GETTABLEKS     v9 = v10.false
+[1315] :292:ADD            v8 = v9 + v3
+[1317] :292:SETTABLEKS     v7.WalkSpeed = v8
+end
+[1318] :292:JUMP           -- jump to #1667
+end
+[1319] :294:GETUPVAL       v10 = u_v14
+[1321] :294:GETTABLEKS     v9 = v10.PlayerStats
+[1323] :294:GETTABLEKS     v8 = v9.Flow
+[1325] :294:GETTABLEKS     v7 = v8.Value
+[1327] :294:JUMPXEQKS      if v7 == "Bee Freestyle" then -- goto #1345
+[1328] :294:GETUPVAL       v10 = u_v14
+[1330] :294:GETTABLEKS     v9 = v10.PlayerStats
+[1332] :294:GETTABLEKS     v8 = v9.InFlow
+[1334] :294:GETTABLEKS     v7 = v8.Value
+[1335] :294:JUMPIFNOT      if v7 then -- goto #1344
+[1336] :295:GETUPVAL       v7 = u_v16
+[1337] :295:GETUPVAL       v11 = u_v2
+[1339] :295:GETTABLEKS     v10 = v11.false
+[1340] :295:ADD            v9 = v10 + v3
+[1341] :295:ADDK           v8 = v9 + 3.5
+[1343] :295:SETTABLEKS     v7.WalkSpeed = v8
+end
+[1344] :295:JUMP           -- jump to #1667
+end
+[1345] :297:GETUPVAL       v10 = u_v14
+[1347] :297:GETTABLEKS     v9 = v10.PlayerStats
+[1349] :297:GETTABLEKS     v8 = v9.Flow
+[1351] :297:GETTABLEKS     v7 = v8.Value
+[1353] :297:JUMPXEQKS      if v7 == "Wild Card" then -- goto #1399
+[1354] :297:GETUPVAL       v10 = u_v14
+[1356] :297:GETTABLEKS     v9 = v10.PlayerStats
+[1358] :297:GETTABLEKS     v8 = v9.InFlow
+[1360] :297:GETTABLEKS     v7 = v8.Value
+[1361] :297:JUMPIFNOT      if v7 then -- goto #1398
+[1362] :297:GETUPVAL       v10 = u_v14
+[1364] :297:GETTABLEKS     v9 = v10.PlayerStats
+[1366] :297:GETTABLEKS     v8 = v9.FlowRNG
+[1368] :297:GETTABLEKS     v7 = v8.Value
+[1370] :297:JUMPXEQKN      if v7 ~= 3 then -- goto #1380
+[1371] :297:GETUPVAL       v10 = u_v14
+[1373] :297:GETTABLEKS     v9 = v10.PlayerStats
+[1375] :297:GETTABLEKS     v8 = v9.FlowRNG
+[1377] :297:GETTABLEKS     v7 = v8.Value
+[1379] :297:JUMPXEQKN      if v7 == 4 then -- goto #1399
+end
+[1380] :298:GETUPVAL       v7 = u_v16
+[1381] :298:GETUPVAL       v11 = u_v2
+[1382] :298:GETUPVAL       v16 = u_v15
+[1384] :298:GETTABLEKS     v15 = v16.Values
+[1386] :298:GETTABLEKS     v14 = v15.HasBall
+[1388] :298:GETTABLEKS     v13 = v14.Value
+[1391] :298:GETIMPORT      v12 = tostring
+[1392] :298:CALL           v12 = v12(v13)
+[1393] :298:GETTABLE       v10 = v11[v12]
+[1394] :298:ADD            v9 = v10 + v3
+[1395] :298:ADDK           v8 = v9 + 3
+[1397] :298:SETTABLEKS     v7.WalkSpeed = v8
+end
+[1398] :298:JUMP           -- jump to #1667
+end
+end
+[1399] :299:GETUPVAL       v10 = u_v14
+[1401] :299:GETTABLEKS     v9 = v10.PlayerStats
+[1403] :299:GETTABLEKS     v8 = v9.Flow
+[1405] :299:GETTABLEKS     v7 = v8.Value
+[1407] :299:JUMPXEQKS      if v7 == "Puzzle" then -- goto #1435
+[1408] :299:GETUPVAL       v10 = u_v14
+[1410] :299:GETTABLEKS     v9 = v10.PlayerStats
+[1412] :299:GETTABLEKS     v8 = v9.InFlow
+[1414] :299:GETTABLEKS     v7 = v8.Value
+[1415] :299:JUMPIFNOT      if v7 then -- goto #1434
+[1416] :300:GETUPVAL       v7 = u_v16
+[1417] :300:GETUPVAL       v11 = u_v2
+[1418] :300:GETUPVAL       v16 = u_v15
+[1420] :300:GETTABLEKS     v15 = v16.Values
+[1422] :300:GETTABLEKS     v14 = v15.HasBall
+[1424] :300:GETTABLEKS     v13 = v14.Value
+[1427] :300:GETIMPORT      v12 = tostring
+[1428] :300:CALL           v12 = v12(v13)
+[1429] :300:GETTABLE       v10 = v11[v12]
+[1430] :300:ADD            v9 = v10 + v3
+[1431] :300:ADDK           v8 = v9 + 3
+[1433] :300:SETTABLEKS     v7.WalkSpeed = v8
+end
+[1434] :300:JUMP           -- jump to #1667
+end
+[1435] :301:GETUPVAL       v10 = u_v14
+[1437] :301:GETTABLEKS     v9 = v10.PlayerStats
+[1439] :301:GETTABLEKS     v8 = v9.Flow
+[1441] :301:GETTABLEKS     v7 = v8.Value
+[1443] :301:JUMPXEQKS      if v7 == "Destructive Impulses" then -- goto #1471
+[1444] :301:GETUPVAL       v10 = u_v14
+[1446] :301:GETTABLEKS     v9 = v10.PlayerStats
+[1448] :301:GETTABLEKS     v8 = v9.InFlow
+[1450] :301:GETTABLEKS     v7 = v8.Value
+[1451] :301:JUMPIFNOT      if v7 then -- goto #1470
+[1452] :302:GETUPVAL       v7 = u_v16
+[1453] :302:GETUPVAL       v11 = u_v2
+[1454] :302:GETUPVAL       v16 = u_v15
+[1456] :302:GETTABLEKS     v15 = v16.Values
+[1458] :302:GETTABLEKS     v14 = v15.HasBall
+[1460] :302:GETTABLEKS     v13 = v14.Value
+[1463] :302:GETIMPORT      v12 = tostring
+[1464] :302:CALL           v12 = v12(v13)
+[1465] :302:GETTABLE       v10 = v11[v12]
+[1466] :302:ADD            v9 = v10 + v3
+[1467] :302:ADDK           v8 = v9 + 3
+[1469] :302:SETTABLEKS     v7.WalkSpeed = v8
+end
+[1470] :302:JUMP           -- jump to #1667
+end
+[1471] :303:GETUPVAL       v10 = u_v14
+[1473] :303:GETTABLEKS     v9 = v10.PlayerStats
+[1475] :303:GETTABLEKS     v8 = v9.Flow
+[1477] :303:GETTABLEKS     v7 = v8.Value
+[1479] :303:JUMPXEQKS      if v7 == "Emperor" then -- goto #1507
+[1480] :303:GETUPVAL       v10 = u_v14
+[1482] :303:GETTABLEKS     v9 = v10.PlayerStats
+[1484] :303:GETTABLEKS     v8 = v9.InFlow
+[1486] :303:GETTABLEKS     v7 = v8.Value
+[1487] :303:JUMPIFNOT      if v7 then -- goto #1506
+[1488] :304:GETUPVAL       v7 = u_v16
+[1489] :304:GETUPVAL       v11 = u_v2
+[1490] :304:GETUPVAL       v16 = u_v15
+[1492] :304:GETTABLEKS     v15 = v16.Values
+[1494] :304:GETTABLEKS     v14 = v15.HasBall
+[1496] :304:GETTABLEKS     v13 = v14.Value
+[1499] :304:GETIMPORT      v12 = tostring
+[1500] :304:CALL           v12 = v12(v13)
+[1501] :304:GETTABLE       v10 = v11[v12]
+[1502] :304:ADD            v9 = v10 + v3
+[1503] :304:ADDK           v8 = v9 + 2.5
+[1505] :304:SETTABLEKS     v7.WalkSpeed = v8
+end
+[1506] :304:JUMP           -- jump to #1667
+end
+[1507] :305:GETUPVAL       v10 = u_v14
+[1509] :305:GETTABLEKS     v9 = v10.PlayerStats
+[1511] :305:GETTABLEKS     v8 = v9.Flow
+[1513] :305:GETTABLEKS     v7 = v8.Value
+[1515] :305:JUMPXEQKS      if v7 == "Buddha's Blessing" then -- goto #1543
+[1516] :305:GETUPVAL       v10 = u_v14
+[1518] :305:GETTABLEKS     v9 = v10.PlayerStats
+[1520] :305:GETTABLEKS     v8 = v9.InFlow
+[1522] :305:GETTABLEKS     v7 = v8.Value
+[1523] :305:JUMPIFNOT      if v7 then -- goto #1542
+[1524] :306:GETUPVAL       v7 = u_v16
+[1525] :306:GETUPVAL       v11 = u_v1
+[1526] :306:GETUPVAL       v16 = u_v15
+[1528] :306:GETTABLEKS     v15 = v16.Values
+[1530] :306:GETTABLEKS     v14 = v15.HasBall
+[1532] :306:GETTABLEKS     v13 = v14.Value
+[1535] :306:GETIMPORT      v12 = tostring
+[1536] :306:CALL           v12 = v12(v13)
+[1537] :306:GETTABLE       v10 = v11[v12]
+[1538] :306:ADD            v9 = v10 + v3
+[1539] :306:ADDK           v8 = v9 + 1.5
+[1541] :306:SETTABLEKS     v7.WalkSpeed = v8
+end
+[1542] :306:JUMP           -- jump to #1667
+end
+[1543] :307:GETUPVAL       v10 = u_v14
+[1545] :307:GETTABLEKS     v9 = v10.PlayerStats
+[1547] :307:GETTABLEKS     v8 = v9.Flow
+[1549] :307:GETTABLEKS     v7 = v8.Value
+[1551] :307:JUMPXEQKS      if v7 == "Ice" then -- goto #1579
+[1552] :307:GETUPVAL       v10 = u_v14
+[1554] :307:GETTABLEKS     v9 = v10.PlayerStats
+[1556] :307:GETTABLEKS     v8 = v9.InFlow
+[1558] :307:GETTABLEKS     v7 = v8.Value
+[1559] :307:JUMPIFNOT      if v7 then -- goto #1578
+[1560] :308:GETUPVAL       v7 = u_v16
+[1561] :308:GETUPVAL       v11 = u_v1
+[1562] :308:GETUPVAL       v16 = u_v15
+[1564] :308:GETTABLEKS     v15 = v16.Values
+[1566] :308:GETTABLEKS     v14 = v15.HasBall
+[1568] :308:GETTABLEKS     v13 = v14.Value
+[1571] :308:GETIMPORT      v12 = tostring
+[1572] :308:CALL           v12 = v12(v13)
+[1573] :308:GETTABLE       v10 = v11[v12]
+[1574] :308:ADD            v9 = v10 + v3
+[1575] :308:ADDK           v8 = v9 + 2
+[1577] :308:SETTABLEKS     v7.WalkSpeed = v8
+end
+[1578] :308:JUMP           -- jump to #1667
+end
+[1579] :309:GETUPVAL       v10 = u_v14
+[1581] :309:GETTABLEKS     v9 = v10.PlayerStats
+[1583] :309:GETTABLEKS     v8 = v9.Flow
+[1585] :309:GETTABLEKS     v7 = v8.Value
+[1587] :309:JUMPXEQKS      if v7 == "Lightning" then -- goto #1615
+[1588] :309:GETUPVAL       v10 = u_v14
+[1590] :309:GETTABLEKS     v9 = v10.PlayerStats
+[1592] :309:GETTABLEKS     v8 = v9.InFlow
+[1594] :309:GETTABLEKS     v7 = v8.Value
+[1595] :309:JUMPIFNOT      if v7 then -- goto #1614
+[1596] :310:GETUPVAL       v7 = u_v16
+[1597] :310:GETUPVAL       v11 = u_v1
+[1598] :310:GETUPVAL       v16 = u_v15
+[1600] :310:GETTABLEKS     v15 = v16.Values
+[1602] :310:GETTABLEKS     v14 = v15.HasBall
+[1604] :310:GETTABLEKS     v13 = v14.Value
+[1607] :310:GETIMPORT      v12 = tostring
+[1608] :310:CALL           v12 = v12(v13)
+[1609] :310:GETTABLE       v10 = v11[v12]
+[1610] :310:ADD            v9 = v10 + v3
+[1611] :310:ADDK           v8 = v9 + 2
+[1613] :310:SETTABLEKS     v7.WalkSpeed = v8
+end
+[1614] :310:JUMP           -- jump to #1667
+end
+[1615] :311:GETUPVAL       v10 = u_v14
+[1617] :311:GETTABLEKS     v9 = v10.PlayerStats
+[1619] :311:GETTABLEKS     v8 = v9.Flow
+[1621] :311:GETTABLEKS     v7 = v8.Value
+[1623] :311:JUMPXEQKS      if v7 == "Stealth" then -- goto #1651
+[1624] :311:GETUPVAL       v10 = u_v14
+[1626] :311:GETTABLEKS     v9 = v10.PlayerStats
+[1628] :311:GETTABLEKS     v8 = v9.InFlow
+[1630] :311:GETTABLEKS     v7 = v8.Value
+[1631] :311:JUMPIFNOT      if v7 then -- goto #1650
+[1632] :312:GETUPVAL       v7 = u_v16
+[1633] :312:GETUPVAL       v11 = u_v1
+[1634] :312:GETUPVAL       v16 = u_v15
+[1636] :312:GETTABLEKS     v15 = v16.Values
+[1638] :312:GETTABLEKS     v14 = v15.HasBall
+[1640] :312:GETTABLEKS     v13 = v14.Value
+[1643] :312:GETIMPORT      v12 = tostring
+[1644] :312:CALL           v12 = v12(v13)
+[1645] :312:GETTABLE       v10 = v11[v12]
+[1646] :312:ADD            v9 = v10 + v3
+[1647] :312:ADDK           v8 = v9 + 2
+[1649] :312:SETTABLEKS     v7.WalkSpeed = v8
+end
+[1650] :312:JUMP           -- jump to #1667
+end
+[1651] :314:GETUPVAL       v7 = u_v16
+[1652] :314:GETUPVAL       v10 = u_v2
+[1653] :314:GETUPVAL       v15 = u_v15
+[1655] :314:GETTABLEKS     v14 = v15.Values
+[1657] :314:GETTABLEKS     v13 = v14.HasBall
+[1659] :314:GETTABLEKS     v12 = v13.Value
+[1662] :314:GETIMPORT      v11 = tostring
+[1663] :314:CALL           v11 = v11(v12)
+[1664] :314:GETTABLE       v9 = v10[v11]
+[1665] :314:ADD            v8 = v9 + v3
+[1667] :314:SETTABLEKS     v7.WalkSpeed = v8
+[1668] :318:GETUPVAL       v10 = u_v14
+[1670] :318:GETTABLEKS     v9 = v10.PlayerStats
+[1672] :318:GETTABLEKS     v8 = v9.Flow
+[1674] :318:GETTABLEKS     v7 = v8.Value
+[1676] :318:JUMPXEQKS      if v7 ~= "Dribbler" then -- goto #1686
+[1677] :318:GETUPVAL       v10 = u_v14
+[1679] :318:GETTABLEKS     v9 = v10.PlayerStats
+[1681] :318:GETTABLEKS     v8 = v9.Flow
+[1683] :318:GETTABLEKS     v7 = v8.Value
+[1685] :318:JUMPXEQKS      if v7 == "Destructive Impulses" then -- goto #1708
+end
+[1686] :318:GETUPVAL       v10 = u_v14
+[1688] :318:GETTABLEKS     v9 = v10.PlayerStats
+[1690] :318:GETTABLEKS     v8 = v9.InFlow
+[1692] :318:GETTABLEKS     v7 = v8.Value
+[1693] :318:JUMPIFNOT      if v7 then -- goto #1707
+[1694] :318:GETUPVAL       v10 = u_v15
+[1696] :318:GETTABLEKS     v9 = v10.Values
+[1698] :318:GETTABLEKS     v8 = v9.HasBall
+[1700] :318:GETTABLEKS     v7 = v8.Value
+[1701] :318:JUMPIFNOT      if v7 then -- goto #1707
+[1702] :319:GETUPVAL       v7 = u_v16
+[1704] :319:GETTABLEKS     v8 = v7.WalkSpeed
+[1705] :319:ADDK           v8 = v8 + 4
+[1707] :319:SETTABLEKS     v7.WalkSpeed = v8
+end
+[1708] :323:GETUPVAL       v10 = u_v14
+[1710] :323:GETTABLEKS     v9 = v10.PlayerGui
+[1712] :323:GETTABLEKS     v8 = v9.Style
+[1714] :323:GETTABLEKS     v7 = v8.Enabled
+[1715] :323:JUMPIF         if not v7 then -- goto #1731
+[1716] :323:GETUPVAL       v10 = u_v14
+[1718] :323:GETTABLEKS     v9 = v10.PlayerGui
+[1720] :323:GETTABLEKS     v8 = v9.Flow
+[1722] :323:GETTABLEKS     v7 = v8.Enabled
+[1723] :323:JUMPIF         if not v7 then -- goto #1731
+[1724] :323:GETUPVAL       v10 = u_v14
+[1726] :323:GETTABLEKS     v9 = v10.PlayerGui
+[1728] :323:GETTABLEKS     v8 = v9.Customization
+[1730] :323:GETTABLEKS     v7 = v8.Enabled
+end
+end
+[1731] :323:JUMPIFNOT      if v7 then -- goto #1739
+[1732] :324:GETUPVAL       v7 = u_v16
+[1733] :324:LOADN          v8 = 0
+[1735] :324:SETTABLEKS     v7.JumpHeight = v8
+[1736] :325:GETUPVAL       v7 = u_v16
+[1737] :325:LOADN          v8 = 0
+[1739] :325:SETTABLEKS     v7.WalkSpeed = v8
+[1740] :328:GETUPVAL       v8 = u_v0
+[1742] :328:GETTABLEKS     v7 = v8.NoJump
+[1743] :328:JUMPIFNOT      if v7 then -- goto #1747
+[1744] :329:GETUPVAL       v7 = u_v16
+[1745] :329:LOADN          v8 = 0
+[1747] :329:SETTABLEKS     v7.JumpHeight = v8
+[1748] :333:GETUPVAL       v7 = u_v13
+[1749] :333:GETUPVAL       v8 = u_v14
+[1750] :333:CALL           v7 = v7(v8)
+[1751] :335:GETUPVAL       v9 = u_v0
+[1753] :335:GETTABLEKS     v8 = v9.States
+[1754] :335:GETUPVAL       v12 = u_v0
+[1756] :335:GETTABLEKS     v11 = v12.States
+[1758] :335:GETTABLEKS     v10 = v11.TimeSpentRunning
+[1761] :335:LOADK          v11 = 0
+[1763] :335:GETIMPORT      v9 = math.max
+[1764] :335:CALL           v9 = v9(v10, v11)
+[1766] :335:SETTABLEKS     v8.TimeSpentRunning = v9
+[1767] :336:GETUPVAL       v11 = u_v14
+[1769] :336:GETTABLEKS     v10 = v11.PlayerStats
+[1771] :336:GETTABLEKS     v9 = v10.InFlow
+[1773] :336:GETTABLEKS     v8 = v9.Value
+[1774] :336:JUMPIFNOT      if v8 then -- goto #1785
+[1775] :336:GETUPVAL       v12 = u_v14
+[1777] :336:GETTABLEKS     v11 = v12.PlayerStats
+[1779] :336:GETTABLEKS     v10 = v11.Flow
+[1781] :336:GETTABLEKS     v9 = v10.Value
+[1783] :336:JUMPXEQKS      if v9 ~= "Godspeed" then -- goto #1785
+[1784] :336:LOADB          v8 = false +1
+end
+end
+[1785] :336:LOADB          v8 = true
+[1786] :337:GETUPVAL       v12 = u_v14
+[1788] :337:GETTABLEKS     v11 = v12.PlayerStats
+[1790] :337:GETTABLEKS     v10 = v11.Style
+[1792] :337:GETTABLEKS     v9 = v10.Value
+[1794] :337:JUMPXEQKS      if v9 == "Loki" then -- goto #1853
+[1796] :338:JUMPXEQKS      if v7 == "Godspeed" then -- goto #1799
+[1797] :338:LOADN          v9 = 1
+[1798] :338:JUMP           -- jump to #1799
+end
+[1799] :338:LOADN          v9 = 2
+[1801] :339:JUMPXEQKS      if v7 == "Godspeed" then -- goto #1804
+[1802] :339:LOADK          v10 = 1.5
+[1803] :339:JUMP           -- jump to #1804
+end
+[1804] :339:LOADN          v10 = 3
+[1805] :340:GETUPVAL       v14 = u_v0
+[1807] :340:GETTABLEKS     v13 = v14.States
+[1809] :340:GETTABLEKS     v12 = v13.TimeSpentRunning
+[1810] :340:SUB            v11 = v12 - v9
+[1811] :342:LOADN          v12 = 0
+[1813] :342:JUMPIFNOTLT    if v12 < v11 then -- goto #1853
+[1814] :343:LOADN          v14 = 0
+[1817] :343:MOVE           v13 = v11
+[1818] :343:MOVE           v15 = v10
+[1820] :343:GETIMPORT      v12 = math.clamp
+[1821] :343:CALL           v12 = v12(v13, v14, v15)
+[1822] :343:MOVE           v11 = v12
+[1823] :344:JUMPIFNOT      if v8 then -- goto #1838
+[1824] :345:GETUPVAL       v12 = u_v16
+[1826] :345:GETTABLEKS     v13 = v12.WalkSpeed
+[1828] :345:GETIMPORT      v14 = math.map
+[1829] :345:MOVE           v15 = v11
+[1830] :345:LOADN          v16 = 0
+[1831] :345:LOADN          v17 = 3
+[1832] :345:LOADK          v18 = 1.3
+[1833] :345:LOADK          v19 = 5.2
+[1834] :345:CALL           v14 = v14(v15, v16, v17, v18, v19)
+[1835] :345:ADD            v13 = v13 + v14
+[1837] :345:SETTABLEKS     v12.WalkSpeed = v13
+end
+[1838] :345:JUMP           -- jump to #1852
+[1839] :347:GETUPVAL       v12 = u_v16
+[1841] :347:GETTABLEKS     v13 = v12.WalkSpeed
+[1843] :347:GETIMPORT      v14 = math.map
+[1844] :347:MOVE           v15 = v11
+[1845] :347:LOADN          v16 = 0
+[1846] :347:LOADN          v17 = 3
+[1847] :347:LOADN          v18 = 1
+[1848] :347:LOADN          v19 = 4
+[1849] :347:CALL           v14 = v14(v15, v16, v17, v18, v19)
+[1850] :347:ADD            v13 = v13 + v14
+[1852] :347:SETTABLEKS     v12.WalkSpeed = v13
+end
+end
+[1853] :353:GETUPVAL       v9 = u_v16
+[1855] :353:GETTABLEKS     v10 = v9.WalkSpeed
+[1856] :353:GETUPVAL       v13 = u_v0
+[1858] :353:GETTABLEKS     v12 = v13.SpeedMultiplier
+[1859] :353:GETUPVAL       v15 = u_v15
+[1862] :353:CALL           v15 = v15:GetScale()
+[1863] :353:SUBK           v14 = v15 - 1
+[1864] :353:MULK           v13 = v14 * 0.1
+[1865] :353:ADD            v11 = v12 + v13
+[1866] :353:MUL            v10 = v10 * v11
+[1868] :353:SETTABLEKS     v9.WalkSpeed = v10
+[1869] :354:GETUPVAL       v9 = u_v16
+[1871] :354:GETTABLEKS     v10 = v9.JumpHeight
+[1872] :354:LOADN          v12 = 1
+[1873] :354:GETUPVAL       v15 = u_v15
+[1876] :354:CALL           v15 = v15:GetScale()
+[1877] :354:SUBK           v14 = v15 - 1
+[1878] :354:MULK           v13 = v14 * 0.1
+[1879] :354:ADD            v11 = v12 + v13
+[1880] :354:MUL            v10 = v10 * v11
+[1882] :354:SETTABLEKS     v9.JumpHeight = v10
+[1883] :355:RETURN         return
+end
+[104] :105:CALL           v5:Connect(v7, v8)
+[106] :100:RETURN         return
+end
+v20 = KnitStart
+[159] :054:SETTABLEKS     v19.KnitStart = v20
+[160] :358:NEWCLOSURE     
+local function KnitInit(p8)
+-- proto pool id: 10
+-- num upvalues: 6
+-- num inner protos: 2
+-- size instructions: 61
+-- size constants: 21
 -- lineinfo gap: 24
 -- max stack size: 6
 -- is typed: false
-[001] :011:GETUPVAL       v1 = u_v2
-[003] :011:GETTABLEKS     v0 = v1.Health
-[005] :011:JUMPXEQKN      if v0 == 0 then -- goto #24
-[006] :012:GETUPVAL       v0 = u_v2
-[008] :012:GETIMPORT      v2 = Enum.HumanoidStateType.GettingUp
-[009] :012:LOADB          v3 = false
-[012] :012:CALL           v0:SetStateEnabled(v2, v3)
-[013] :007:GETUPVAL       v0 = u_v1
-[014] :007:GETUPVAL       v5 = u_v1
-[016] :007:GETTABLEKS     v4 = v5.CFrame
-[018] :007:GETTABLEKS     v3 = v4.LookVector
-[019] :007:MULK           v2 = v3 * 100
-[022] :007:CALL           v0:ApplyImpulse(v2)
-[023] :014:RETURN         return
+[001] :359:GETUPVAL       v1 = u_v9
+[003] :359:GETTABLEKS     v0 = v1.new
+[004] :359:CALL           v0 = v0()
+[006] :359:SETTABLEKS     p8.Trove = v0
+[008] :361:GETIMPORT      v0 = require
+[010] :361:GETIMPORT      v3 = script
+[012] :361:GETTABLEKS     v2 = v3.Parent
+[014] :361:GETTABLEKS     v1 = v2.AnimationController
+[015] :361:CALL           v0 = v0(v1)
+[017] :361:SETTABLEKS     p8.Animations = v0
+[019] :362:GETIMPORT      v0 = table.clone
+[020] :362:GETUPVAL       v1 = u_v18
+[021] :362:CALL           v0 = v0(v1)
+[023] :362:SETTABLEKS     p8.States = v0
+[024] :364:LOADN          v0 = 1
+[026] :364:SETTABLEKS     p8.ShotPowerMultiplier = v0
+[028] :368:GETTABLEKS     v0 = p8.Trove
+[029] :368:GETUPVAL       v3 = u_v14
+[031] :368:GETTABLEKS     v2 = v3.CharacterAdded
+[032] :368:NEWCLOSURE     v3 = function(p9)
+-- proto pool id: 8
+-- num upvalues: 5
+-- num inner protos: 0
+-- size instructions: 61
+-- size constants: 17
+-- lineinfo gap: 24
+-- max stack size: 8
+-- is typed: false
+[001] :369:SETUPVAL       u_v15 = p9
+[002] :370:GETUPVAL       v0 = u_v15
+[003] :370:LOADK          v2 = "Humanoid"
+[006] :370:CALL           v0 = v0:WaitForChild(v2)
+[007] :370:SETUPVAL       u_v16 = v0
+[008] :371:GETUPVAL       v0 = u_v15
+[009] :371:LOADK          v2 = "HumanoidRootPart"
+[012] :371:CALL           v0 = v0:WaitForChild(v2)
+[013] :371:SETUPVAL       u_v17 = v0
+[014] :373:GETUPVAL       v0 = u_v16
+[016] :373:GETIMPORT      v2 = Enum.HumanoidStateType.FallingDown
+[017] :373:LOADB          v3 = false
+[020] :373:CALL           v0:SetStateEnabled(v2, v3)
+[021] :374:GETUPVAL       v0 = u_v16
+[023] :374:GETIMPORT      v2 = Enum.HumanoidStateType.Physics
+[024] :374:LOADB          v3 = false
+[027] :374:CALL           v0:SetStateEnabled(v2, v3)
+[028] :375:GETUPVAL       v0 = u_v16
+[030] :375:GETIMPORT      v2 = Enum.HumanoidStateType.Climbing
+[031] :375:LOADB          v3 = false
+[034] :375:CALL           v0:SetStateEnabled(v2, v3)
+[035] :377:GETUPVAL       v0 = u_v18
+[036] :377:LOADNIL        v1 = nil
+[037] :377:LOADNIL        v2 = nil
+[038] :377:FORGPREP       for v1, v2 in v0 do -- end at #44
+[039] :378:GETUPVAL       v6 = u_v0
+[041] :378:GETTABLEKS     v5 = v6.States
+[042] :378:SETTABLE       v5[v3] = v4
+[044] :377:FORGLOOP       end -- iterate + jump to #39
+[045] :381:GETUPVAL       v0 = u_v0
+[046] :381:LOADN          v1 = 0
+[048] :381:SETTABLEKS     v0.SpeedBoost = v1
+[049] :382:GETUPVAL       v0 = u_v0
+[050] :382:LOADN          v1 = 0
+[052] :382:SETTABLEKS     v0.SpeedBoost2 = v1
+[053] :383:GETUPVAL       v0 = u_v0
+[054] :383:LOADB          v1 = false
+[056] :383:SETTABLEKS     v0.OwnWalkState = v1
+[057] :385:GETUPVAL       v0 = u_v0
+[060] :385:CALL           v0:RespawnChecks()
+[061] :386:RETURN         return
 end
-[024] :017:GETUPVAL       v1 = u_v3
-[026] :017:GETTABLEKS     v0 = v1.Value
-[027] :017:JUMPIFNOT      if v0 then -- goto #51
-[028] :018:GETUPVAL       v0 = u_v2
-[030] :018:GETIMPORT      v2 = Enum.HumanoidStateType.Ragdoll
-[033] :018:CALL           v0:ChangeState(v2)
-[034] :019:GETUPVAL       v0 = u_v2
-[036] :019:GETIMPORT      v2 = Enum.HumanoidStateType.GettingUp
-[037] :019:LOADB          v3 = false
-[040] :019:CALL           v0:SetStateEnabled(v2, v3)
-[041] :007:GETUPVAL       v0 = u_v1
-[042] :007:GETUPVAL       v5 = u_v1
-[044] :007:GETTABLEKS     v4 = v5.CFrame
-[046] :007:GETTABLEKS     v3 = v4.LookVector
-[047] :007:MULK           v2 = v3 * 100
-[050] :007:CALL           v0:ApplyImpulse(v2)
+[040] :368:CALL           v0:Connect(v2, v3)
+[042] :388:GETTABLEKS     v0 = p9.Trove
+[044] :388:GETIMPORT      v4 = game
+[046] :388:GETTABLEKS     v3 = v4.Players
+[048] :388:GETTABLEKS     v2 = v3.PlayerRemoving
+[049] :388:NEWCLOSURE     v3 = function(p10)
+-- proto pool id: 9
+-- num upvalues: 5
+-- num inner protos: 0
+-- size instructions: 22
+-- size constants: 3
+-- lineinfo gap: 24
+-- max stack size: 3
+-- is typed: false
+[001] :389:GETUPVAL       v0 = u_v14
+[003] :389:JUMPIFNOTEQ    if p10 ~= v0 then -- goto #22
+[004] :390:LOADNIL        v0 = nil
+[005] :390:SETUPVAL       u_v15 = v0
+[006] :391:LOADNIL        v0 = nil
+[007] :391:SETUPVAL       u_v17 = v0
+[008] :392:LOADNIL        v0 = nil
+[009] :392:SETUPVAL       u_v16 = v0
+[010] :393:GETUPVAL       v1 = u_v0
+[012] :393:GETTABLEKS     v0 = v1.Trove
+[015] :393:CALL           v0:Destroy()
+[016] :394:GETUPVAL       v1 = u_v0
+[018] :394:GETTABLEKS     v0 = v1.BaseTrove
+[021] :394:CALL           v0:Destroy()
 end
-[051] :007:RETURN         return
-[052] :021:GETUPVAL       v1 = u_v3
-[054] :021:GETTABLEKS     v0 = v1.Value
-[055] :021:JUMPIF         if not v0 then -- goto #61
-[056] :022:GETUPVAL       v0 = u_v2
-[058] :022:GETIMPORT      v2 = Enum.HumanoidStateType.GettingUp
-[061] :022:CALL           v0:ChangeState(v2)
-[062] :024:RETURN         return
+[022] :396:RETURN         return
 end
-[033] :010:CALL           v5:Connect(v7)
-[035] :026:GETTABLEKS     v5 = v2.Died
-[036] :026:MOVE           v7 = v4
-[039] :026:CALL           v5:Connect(v7)
-[040] :026:RETURN         return
+[057] :388:CALL           v0:Connect(v2, v3)
+[060] :398:CALL           v0:RespawnChecks()
+[061] :399:RETURN         return
+end
+v20 = KnitInit
+[168] :358:SETTABLEKS     v19.KnitInit = v20
+[170] :401:RETURN         return v19
